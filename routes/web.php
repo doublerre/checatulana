@@ -12,12 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('web.posts');
+    return view('welcome');
+});
+Route::get('/panel', function () {
+    return view('web.dashboard');
 });
 
 Auth::routes();
 
 Route::get('/blog', 'Web\PageController@blog')->name('blog');
+
 
 Route::get('/post/{slug}', 'Web\PageController@post')->name('post');
 Route::get('/category/{slug}', 'Web\PageController@category')->name('category');

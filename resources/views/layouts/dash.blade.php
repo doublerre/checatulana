@@ -253,26 +253,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Articulos Publicado</h5>
-
-                <div class="card-body">
-                @yield('content')  
-
-              </div>
-            </div>
-
-            </div><!-- /.card -->
-          </div>
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+   
+    @yield('content')  
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -289,7 +271,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Main Footer -->
   
-</div>
+
 <footer class="main-footer">
     <!-- To the right -->
 
