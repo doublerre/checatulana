@@ -8,6 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>ChecaTuLana | Panel</title>
 
@@ -204,7 +205,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Perfil</p>
                 </a>
@@ -221,9 +222,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Agregar Usuario </p>
                 </a>
               </li>
-              
-              
             </ul>
+             <!-- Cerrar sesion -->
+             <li class="nav-item has-treeview menu-open">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                {{ Auth::user()->name }} <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            </ul>
+              
+            </li>
           </li>
         </ul>
       </nav>
@@ -253,8 +273,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
 
     <!-- Main content -->
-   
-    @yield('content')  
+    <div class="card">
+      <h5 class="card-header">Entradas</h5>
+      <div class="card-body">
+        @yield('content')
+        
+      </div>
+    </div>
+    
+   </div>
+      
+    
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
