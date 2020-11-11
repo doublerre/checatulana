@@ -14,12 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Auth::routes();
 Route::get('/panel', function () {
     return view('web.dashboard');
 });
-
-Auth::routes();
-
 Route::get('/blog', 'Web\PageController@blog')->name('blog');
 
 
