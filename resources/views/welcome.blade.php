@@ -42,7 +42,7 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link" href="/login">Iniciar Sesion</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/register">Registro</a>
