@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-
+@section('title','Etiquetas')
 @section('content')
 <div class="container">
     <div class="row">

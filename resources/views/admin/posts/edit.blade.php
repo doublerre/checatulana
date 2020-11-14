@@ -1,4 +1,5 @@
 @extends('adminlte::page')
+@section('title', 'Editar Articulo')
 
 @section('content')
 <div class="container">
