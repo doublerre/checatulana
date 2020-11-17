@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::get('/panel', function () {
-    return view('web.dashboard');
-});
+
 Route::get('/blog', 'Web\PageController@blog')->name('blog');
 
 

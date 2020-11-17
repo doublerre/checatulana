@@ -28,7 +28,7 @@
          </div>
       </div>
       <div class="main">
-         <div class="col-md-6 col-sm-10">
+         <div class="col-md-6 col-sm-12">
             <div class="login-form">
                @yield('content')
             </div>

@@ -14,11 +14,10 @@
                         {{ $post->category->name }}
                     </a>
                 </div>
-
+                @if($post->file)
+                    <img class="card-img-top" src="{{ $post->file }}" alt="Card image cap">
+                @endif 
                 <div class="card-body">
-                    @if($post->file)
-                        <img src="{{ $post->file }}" class="img-responsive">
-                    @endif
                     
                     {{ $post->excerpt }}
                     <hr>

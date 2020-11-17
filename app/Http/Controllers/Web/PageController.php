@@ -10,7 +10,10 @@ use App\Post;
 
 class PageController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function blog(){
     	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
