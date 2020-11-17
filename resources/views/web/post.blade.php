@@ -3,19 +3,19 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md col-md-offset-8">
 
         	<h1>{{ $post->name }}</h1>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     Catergoría 
                     <a href="{{ route('category', $post->category->slug) }}">
                         {{ $post->category->name }}
                     </a>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     @if($post->file)
                         <img src="{{ $post->file }}" class="img-responsive">
                     @endif
