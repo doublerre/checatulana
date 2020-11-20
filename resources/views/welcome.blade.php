@@ -25,6 +25,61 @@
           font-size: 3.5rem;
         }
       }
+
+      body { 
+        font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
+        padding-bottom: 0px!important;   
+      }
+
+      .row {
+        margin-top: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 50px;
+      }
+
+      .card {
+        border-radius: 0; 
+        border-top: 2.5px solid #206AB9;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 2.5px solid #206AB9;
+      }
+
+      .card-body{
+        margin-top: -50px;
+        margin-left: -10px;
+        margin-right: 0px;
+        margin-bottom: -50px;
+      }
+
+      .card-title{
+        font-weight: bolder;
+        font-size: 13.5pt;
+      }
+
+      .card-img {
+        width: 120px;
+        height: auto;
+        align: center:
+      }
+
+      #bottom {
+        border-top: 0px;
+      }
+
+      #contacto {
+        text-align: left;
+      }
+
+      #informacion {
+        color: white;
+        text-align: left;
+      }
+
+      .titulo{
+        font-size: 13.5pt;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
@@ -42,7 +97,7 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/login">Iniciar Sesion</a>
+        <a class="nav-link" href="/login">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/register">Registro</a>
@@ -111,144 +166,148 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-              {{-- tarjetas  --}}
+            {{-- tarjetas  --}}
               
   <div class="row row-cols-1 row-cols-md-3">
-    
-          <div class="col mb-4">
-              <div class="card h-100">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src="img/icons/01.png" class="card-img" alt="...">
-                  </div>
-                <div class="card-body">
-                  <h5 class="card-title">MARCO JURIDICO</h5>
-                  <p class="card-text">
-                     Operaciones del presupuesto <br>
-                    Disciplina finaciera <br>
-                    Contabilidad Gubernamental <br>
-                    Fiscalizacion <br>
-                    Formatos
-                  </p>
-                </div>
-              </div>
-              </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="img/icons/02.png" class="card-img" alt="...">
-              </div>
-            <div class="card-body">
-              <h5 class="card-title">CHECA TU LANA</h5>
+    <div class="col-md-4 col-sm-12">
+      <div class="card h-100">
+        <div class="row no-gutters">
+          <div class="card-body">
+            <h5 class="card-title">MARCO JURÍDICO</h5>
               <p class="card-text">
-                Planeacion <br>
-                Programacion <br>
-                Presupuestacion <br>
+                Operaciones del presupuesto <br>
+                Disciplina finaciera <br>
+                Contabilidad Gubernamental <br>
+                Fiscalización <br>
+                Formatos
+              </p>
+          </div>
+          <div class="col-md-4 col-sm">
+            <img src="img/icons/01.png" class="card-img" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col md-4">
+      <div class="card h-100">
+        <div class="row no-gutters">
+          <div class="card-body">
+            <h5 class="card-title">CHECA TU LANA</h5>
+              <p class="card-text">
+                Planeación <br>
+                Programación <br>
+                Presupuestación <br>
                 Ejercicio y control <br>
                 Seguimiento <br>
-                Evaluacion <br>
-                Rendicion de cuentas 
-             </p>
-            </div>
+                Evaluación <br>
+                Rendición de cuentas 
+              </p>
           </div>
+          <div class="col-md-4 col-sm">
+            <img src="img/icons/02.png" class="card-img" alt="...">
           </div>
+        </div>
       </div>
-      <div class="col mb-4">
-        <div class="card h-100">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="img/icons/03.png" class="card-img" alt="...">
-            </div>
+    </div>
+    <div class="col md-4">
+      <div class="card h-100">
+        <div class="row no-gutters">
           <div class="card-body">
-            <h5 class="card-title">PARTICIPACION CIUDADANA</h5>
-            <p class="card-text">
-              Plataforma digital avancemos todos<br>
-              Indice<br>
-              Decidiendo juntos <br>
-              Proponle a Zacatecas <br>
-              Obra transparente <br>
-              Deuda Publica <br>
-           </p>
+            <h5 class="card-title">PARTICIPACIÓN CIUDADANA</h5>
+              <p class="card-text">
+                Plat. digital avancemos todos<br>
+                Índice<br>
+                Decidiendo juntos <br>
+                Proponle a Zacatecas <br>
+                Obra transparente <br>
+                Deuda Pública <br>
+              </p>
+          </div>
+          <div class="col-md-2 col-sm">
+            <img src="img/icons/03.png" class="card-img" alt="...">
           </div>
         </div>
-        </div>
       </div>
-      <div class="col mb-4">
-        <div class="card h-100">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="img/icons/04.png" class="card-img" alt="...">
-            </div>
+    </div>
+    <div class="col md-4">
+      <div class="card h-1000" id = "bottom">
+        <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">PROGRAMAS Y ACCIONES</h5>
-            <p class="card-text">
-              Programas Sociales<br>
-              Programas economicos<br>
-              Agua y medio ambiente<br>
-              Otros Programas<br>
-              Obra Publica <br>
-           </p>
+              <p class="card-text">
+                Programas Sociales<br>
+                Programas económicos<br>
+                Agua y medio ambiente<br>
+                Otros Programas<br>
+                Obra Pública <br>
+              </p>
+          </div>
+          <div class="col-md-3 col-sm">
+            <img src="img/icons/04.png" class="card-img" alt="...">
           </div>
         </div>
       </div>
     </div>
-      <div class="col mb-4">
-        <div class="card h-100">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="img/icons/05.png" class="card-img" alt="...">
-            </div>
+    <div class="col md-4">
+      <div class="card h-100" id = "bottom">
+        <div class="row no-gutters">
           <div class="card-body">
-            <h5 class="card-title">SISTEMA DE EVALUACION</h5>
-            <p class="card-text">
-              Evaluacion al desempeno<br>
-              Programa anual de Evaluacion<br>
-              Resultado de las evaluaciones<br>
-           </p>
+            <h5 class="card-title">SISTEMA DE EVALUACIÓN</h5>
+              <p class="card-text">
+                Evaluación al desempeno<br>
+                Programa anual de Evaluación<br>
+                Resultado de las evaluaciones<br>
+              </p>
+          </div>
+          <div class="col-md-3 col-sm">
+            <img src="img/icons/05.png" class="card-img" alt="...">
           </div>
         </div>
       </div>
-      </div>
-    <div class="card  h-100 bm-4">
+    </div>
+    <div class="col md-4">
+      <div class = "card h-100" id = "bottom">
         <div class="row no-gutters">
-          <div class="col-md-4">
+          <div class="card-body">
+            <h5 class="card-title">FISCALIZACIÓN</h5>
+              <p class="card-text">
+                Programas de fiscalización<br>
+                Estadísticas<br>
+              </p>
+          </div>
+          <div class="imagen">
             <img src="img/icons/06.png" class="card-img" alt="...">
           </div>
-          <div class="card-body">
-            <h5 class="card-title">FISCALIZACION</h5>
-            <p class="card-text">
-              Programas de fiscalizacion<br>
-              Estadisticas<br>
-           </p>
-          </div>
         </div>
       </div>
     </div>
-     
-</div>
+  </div>
 
 
 
 </main>
 <footer>
-  <div class="partFooter">
+<div class="partFooter">
+    <div class="row align-items-center">
       <img src="img/imgfooter.png" alt="">
+    </div>
   </div>
-
-  <div class="partFooter">
-      <h4>Contacto</h4>
-      <h4>Circuito Cerro del Gato s/n
-      Colonia Ciudad Administrativa 
-      C.P 98160 
-      Zacatecas,Zac
-      </h4>
-      <a href="#">Terminos de uso</a>
-      <a href="#">Mapa del Sitio</a>
+  <div class="partFooter" id="contacto">
+    <br>
+    <h4>Contacto
+    <br>Circuito Cerro del Gato s/n
+    <br>Colonia Ciudad Administrativa 
+    <br>C.P 98160 
+    <br>Zacatecas,Zac
+    </h4>
+    <a href="#">Términos de uso</a>
+    <a href="#">Mapa del Sitio</a>
+    </div>
   </div>
-  <div class="partFooter">
-      <h3>Que es checa tu lana?</h3>
+  <div class="partFooter" id="informacion">
+    <br>
+    <h3 class = "titulo">¿Qué es checa tu lana?</h3>
+    <p id=> Es el portal para dar a conocer los mecanismos y acciones del gobierno de Zacatecas para incorporar a la sociedad en su toma de desiciones.</p>
   </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

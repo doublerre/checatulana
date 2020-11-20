@@ -15,7 +15,7 @@
                     </a>
                 </div>
                 @if($post->file)
-                    <img class="card-img-top" src="{{ $post->file }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ $post->file }}" width="auto" height="350px" alt="Card image cap">
                 @endif 
                 <div class="card-body">
                     
