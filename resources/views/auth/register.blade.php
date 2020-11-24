@@ -68,6 +68,9 @@
                                 <button type="submit" class="btn btn-black">
                                     Registrar
                                 </button>
+                                <a class="btn btn-link" href="{{ route('login') }}">
+                                    ¡Ya tengo una cuenta!
+                                </a>
                             </div>
                         </div>
                     </form>

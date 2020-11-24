@@ -1,18 +1,18 @@
-@extends('layouts.app')
-
+@extends('adminlte::page')
+@section('title', 'Articulos')
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
                     Lista de Entradas 
                     <a href="{{ route('posts.create') }}" class="pull-right btn btn-sm btn-primary">
                         Crear
                     </a>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
 
                     <table class="table table-striped table-hover">
                         <thead>

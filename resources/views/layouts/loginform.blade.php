@@ -12,8 +12,8 @@
 <div class="sidenav">
      
    
-         <div class="login-main-text" >
-            <img src="img/brand.png" alt="" width="302" height="62" >
+         <div   class="login-main-text" >
+            <img src="img/icons/tulanalogo.png" alt="" width="302" height="62" >
             <h4>Portal de trasparencia del estado de Zacatecas</h4>
             <!--<strong> OBJETIVO DE LA CREACIÓN DE LA
                PLATAFORMA DIGITAL </strong>
@@ -28,7 +28,7 @@
          </div>
       </div>
       <div class="main">
-         <div class="col-md-6 col-sm-10">
+         <div class="col-md-6 col-sm-12">
             <div class="login-form">
                @yield('content')
             </div>
