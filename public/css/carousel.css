@@ -39,11 +39,13 @@ body {
 .card-text {
     color: #3d3bcc;
 }
-
+.texted{
+    color: rgb(104, 101, 101);
+}
 .card-title {
     color: black;
     font-weight: bold;
-    text-decoration: underline #00F260;
+    border-bottom: 2px solid #00F260;
 }
 
 .carousel-item>img {

@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/contenido', function () {
+    return view('home');
+});
 
 
 Auth::routes();

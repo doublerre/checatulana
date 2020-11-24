@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="Joni" content="">
+    <meta name="description" content="Plataforma de trasparencia del estado de Zacatecas">
     <title>Checa Tu Lana</title>
 
     <!-- Bootstrap core CSS -->
@@ -59,7 +58,7 @@
       }
 
       .card-img {
-        width: 120px;
+        width: 180px;
         height: auto;
         align: center:
       }
@@ -127,7 +126,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="img/zac/zac1.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/zac/zac1.jpg" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
         <div class="container">
          <!-- <div class="carousel-caption text-left">
             <h1>Example headline.</h1>
@@ -170,10 +169,10 @@
               
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col-md-4 col-sm-12">
-      <div class="card h-100">
+      <a href="#"> <div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
-            <h5 class="card-title">MARCO JURÍDICO</h5>
+           <h5 class="card-title">MARCO JURÍDICO</h5>
               <p class="card-text">
                 Operaciones del presupuesto <br>
                 Disciplina finaciera <br>
@@ -186,10 +185,11 @@
             <img src="img/icons/01.png" class="card-img" alt="...">
           </div>
         </div>
+      </a> 
       </div>
     </div>
     <div class="col md-4">
-      <div class="card h-100">
+      <a href="#"><div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">CHECA TU LANA</h5>
@@ -208,12 +208,13 @@
           </div>
         </div>
       </div>
+    </a>
     </div>
     <div class="col md-4">
-      <div class="card h-100">
+      <a href="#"><div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
-            <h5 class="card-title">PARTICIPACIÓN CIUDADANA</h5>
+           <h5 class="card-title">PARTICIPACIÓN CIUDADANA</h5>
               <p class="card-text">
                 Plat. digital avancemos todos<br>
                 Índice<br>
@@ -227,10 +228,11 @@
             <img src="img/icons/03.png" class="card-img" alt="...">
           </div>
         </div>
+      </a>
       </div>
     </div>
     <div class="col md-4">
-      <div class="card h-1000" id = "bottom">
+      <a href="#"><div class="card h-1000" id = "bottom">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">PROGRAMAS Y ACCIONES</h5>
@@ -247,9 +249,10 @@
           </div>
         </div>
       </div>
+    </a>
     </div>
     <div class="col md-4">
-      <div class="card h-100" id = "bottom">
+      <a href="#"><div class="card h-100" id = "bottom">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">SISTEMA DE EVALUACIÓN</h5>
@@ -263,10 +266,10 @@
             <img src="img/icons/05.png" class="card-img" alt="...">
           </div>
         </div>
-      </div>
+      </div></a>
     </div>
     <div class="col md-4">
-      <div class = "card h-100" id = "bottom">
+      <a href="#"> <div class = "card h-100" id = "bottom">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">FISCALIZACIÓN</h5>
@@ -279,7 +282,7 @@
             <img src="img/icons/06.png" class="card-img" alt="...">
           </div>
         </div>
-      </div>
+      </div></a>
     </div>
   </div>
 
