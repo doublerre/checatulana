@@ -8,6 +8,7 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/carousel.css" rel="stylesheet">
 </head>
+
 <body>
  
       <header>
@@ -17,29 +18,54 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <!--<ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/register">Registro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Capacitaciones</a>
-              </li>
-            </ul>-->
-            <!--<form class="form-inline mt-2 mt-md-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>-->
           </div>
         </nav>
       </header>
-      <main role="main">
-
+      <style>
+        body {
+          font-family: "Lato", sans-serif;
+        }
+        
+        .sidenav {
+          width: 250px;
+          position: fixed;
+          z-index: 1;
+          top: 380px;
+          left: 10px;
+          background: #fff;
+          overflow-x: hidden;
+          padding: 8px 0;
+        }
+        
+        .sidenav a {
+          padding: 6px 8px 6px 16px;
+          text-decoration:none;
+          border-left: 2px solid rgb(47, 47, 168);
+          font-size: 25px;
+          color: #7f858a;
+          display: block;
+        }
+        
+        .sidenav a:hover {
+          color: #232425;
+        }
+        
+        .main {
+          margin-left: 250px; /* Same width as the sidebar + left position in px */
+          font-size: 28px; /* Increased text to enable scrolling */
+          padding: 0px 10px;
+          
+        }
+         .a{
+           color: rgb(47, 47, 168);
+         }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        </style>
+        </head>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -48,13 +74,13 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="bd-placeholder-img" width="100%" height="100%" src="img/zac/zac1.jpg" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
+              <img class="bd-placeholder-img" width="100%" height="100%"  preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
               <div class="container">
-               <!-- <div class="carousel-caption text-left">
-                  <h1>Example headline.</h1>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                </div>-->
+                <div class="carousel-caption ">
+                  <h1>PRESUPUESTOS DE EGRESOS 2019</h1>
+                  <p><strong>$5,894,356.9</strong></p>
+           
+                </div>
               </div>
             </div>
             <div class="carousel-item">
@@ -87,15 +113,27 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-        <nav class="texted" class="nav flex-column">
-            <a class="nav-link"  href="#">Marco Juridico</a>
-            <a class="nav-link" href="#">Checa tu lana</a>
-            <a class="nav-link" href="#">Trasparencia </a>
-            <a class="nav-link " href="#" >Capacitacion</a>
-            <a class="nav-link " href="#" >Datos Abiertos</a>
-          </nav>
-
-      </main>
+        <body>
+        
+        <div class="sidenav">
+          <a href="#marco_juridico">Marco Juridico</a>
+          <a href="#checa_tulana">Checa tu lana</a>
+          <a href="#trasparencia">Trasparencia</a>
+          <a href="#capacitacion">Capacitaciones</a>
+          <a href="#datos_abiertos">Datos Abiertos</a>
+        </div>
+        
+        <div class="main">
+          <h2>MARCO JURIDICO</h2>
+          <ul>
+            <li><a href="">Operaciones del presupuesto</a></li>
+            <li><a href="">Disciplina financiera</a></li>
+            <li><a href="">Contabilidad gubernamental</a></li>
+            <li><a href="">Fiscalizacion</a></li>
+            <li><a href="">Formatos</a></li>
+          </ul>
+        </div>  
+    </div>
    
 </body>
 </html>
