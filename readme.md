@@ -1,5 +1,6 @@
 - Repositorio oficial Plataforma #CHECATULANA zacatecas
 
+LIGA DEL SITIO https://checatulana.zacatecas.gob.mx/
 - Dependecias a instalar:
     
 1. Servidor Apache
@@ -24,4 +25,5 @@ Forma correcta de correr el proyecto:
 1.  - php artisan migrate // hace la migracion de las tablas a la base de datos 
 
 1. - php artisan serve // corre el servidor del proyecto
+
 
