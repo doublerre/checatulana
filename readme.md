@@ -1,4 +1,3 @@
-
 - Repositorio oficial Plataforma #CHECATULANA zacatecas
 
 - Dependecias a instalar:
@@ -10,7 +9,7 @@
 
 Forma correcta de correr el proyecto:
 
-- 1.-cd var/www/ // puede que te de error access denied, hay que cambiar los privilegios
+- 1.-cd var/www/ puede que te de error access denied, hay que cambiar los privilegios
 - 2.-git clone git@gitlab.com:JoniGo/checatulana.git
 - 3.-cd checatulana
 - 4.- crear archivo .env en el directorio superior en el archivo .env:
