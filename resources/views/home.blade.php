@@ -25,53 +25,63 @@
             </div>
           </nav>
       
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="bd-placeholder-img" width="100%" height="100%"  preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
-              <div class="container">
-                <div class="carousel-caption ">
-                  <h1>PRESUPUESTOS DE EGRESOS 2019</h1>
-                  <p><strong>$5,894,356.9</strong></p>
-           
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban1.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
+                <div class="container">
+                  <div class="carousel-caption ">
+                    <h1>PRESUPUESTOS DE EGRESOS 2019</h1>
+                    <p><strong>$5,894,356.9</strong></p>
+             
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban2.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+                <div class="container">
+                  <div class="carousel-caption">
+                    <!--<h1>Another example headline.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban3.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+                <div class="container">
+                  <!--<div class="carousel-caption text-right">
+                    <h1>One more for good measure.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                  </div>-->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban4.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+                <div class="container">
+                  <!--<div class="carousel-caption text-right">
+                    <h1>One more for good measure.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                  </div>-->
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <img class="bd-placeholder-img" width="100%" height="100%" src="img/zac/zac2.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
-              <div class="container">
-                <div class="carousel-caption">
-                  <!--<h1>Another example headline.</h1>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img class="bd-placeholder-img" width="100%" height="100%" src="img/zac/zac3.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
-              <div class="container">
-                <!--<div class="carousel-caption text-right">
-                  <h1>One more for good measure.</h1>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                </div>-->
-              </div>
-            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
-          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>  
       </header>  
           <aside>
             <article>
@@ -104,11 +114,15 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="card-body">
                     <ul>
-                      <li>Computer Science</li>
-                      <li>Economics</li>
-                      <li>Sociology</li>
-                      <li>Nursing</li>
-                      <li>English</li>
+                      <li>Constitución Politica Federal y Estatal</li>
+                      <li>Ley de Planeación del Estados de Zacatecas</li>
+                      <li>Linemientos para la Integración del Anteproyecto</li>
+                      <li>Lineamiento para la operación del PbR</li>
+                      <li>Leyes hacendarias y de coordinación fiscal Federal, Estatal y Municipal</li>
+                      <li>Proyectos (Paquete Económico)(Falta)</li>
+                      <li>Ley de Ingresos Federal y Estatal</li>
+                      <li>Decreto de Presupuesto Federal y Estatal</li>
+                    
                     </ul>
                   </div>
                 </div>
