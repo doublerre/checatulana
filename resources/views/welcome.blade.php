@@ -169,7 +169,7 @@
               
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col-md-4 col-sm-12">
-      <a href="#"> <div class="card h-100">
+      <a href="/contenido"> <div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
            <h5 class="card-title">MARCO JURÍDICO</h5>

@@ -7,65 +7,24 @@
     <title>Contenido</title>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/carousel.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
 </head>
 
 <body>
- 
+  <div>
       <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" href="#"><img src="img/brand.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-          </div>
-        </nav>
-      </header>
-      <style>
-        body {
-          font-family: "Lato", sans-serif;
-        }
-        
-        .sidenav {
-          width: 250px;
-          position: fixed;
-          z-index: 1;
-          top: 380px;
-          left: 10px;
-          background: #fff;
-          overflow-x: hidden;
-          padding: 8px 0;
-        }
-        
-        .sidenav a {
-          padding: 6px 8px 6px 16px;
-          text-decoration:none;
-          border-left: 2px solid rgb(47, 47, 168);
-          font-size: 25px;
-          color: #7f858a;
-          display: block;
-        }
-        
-        .sidenav a:hover {
-          color: #232425;
-        }
-        
-        .main {
-          margin-left: 250px; /* Same width as the sidebar + left position in px */
-          font-size: 28px; /* Increased text to enable scrolling */
-          padding: 0px 10px;
-          
-        }
-         .a{
-           color: rgb(47, 47, 168);
-         }
-        
-        @media screen and (max-height: 450px) {
-          .sidenav {padding-top: 15px;}
-          .sidenav a {font-size: 18px;}
-        }
-        </style>
-        </head>
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"><img src="img/brand.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+            </div>
+          </nav>
+      
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -112,28 +71,147 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
-        </div>
-        <body>
-        
-        <div class="sidenav">
-          <a href="#marco_juridico">Marco Juridico</a>
-          <a href="#checa_tulana">Checa tu lana</a>
-          <a href="#trasparencia">Trasparencia</a>
-          <a href="#capacitacion">Capacitaciones</a>
-          <a href="#datos_abiertos">Datos Abiertos</a>
-        </div>
-        
-        <div class="main">
-          <h2>MARCO JURIDICO</h2>
-          <ul>
-            <li><a href="">Operaciones del presupuesto</a></li>
-            <li><a href="">Disciplina financiera</a></li>
-            <li><a href="">Contabilidad gubernamental</a></li>
-            <li><a href="">Fiscalizacion</a></li>
-            <li><a href="">Formatos</a></li>
-          </ul>
         </div>  
-    </div>
+      </header>  
+          <aside>
+            <article>
+              <div class="sidenav">
+                <a href="#marco_juridico">Marco Juridico</a>
+                <a href="#checa_tulana">Checa tu lana</a>
+                <a href="#trasparencia">Trasparencia</a>
+                <a href="#capacitacion">Capacitaciones</a>
+                <a href="#datos_abiertos">Datos Abiertos</a>
+              </div>
+            </article>
+          </aside>
+        
+        <section >
+          <h2>MARCO JURIDICO</h2>
+         <!-- <img src="img/icons/01.png" width="15px" height="15px"  alt="">-->
+            <div id="accordion" class="myaccordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Operaciones del presupuesto
+                      <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                      <li>Computer Science</li>
+                      <li>Economics</li>
+                      <li>Sociology</li>
+                      <li>Nursing</li>
+                      <li>English</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Disciplina financiera
+                      <span class="fa-stack fa-2x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                      <li>Informatics</li>
+                      <li>Mathematics</li>
+                      <li>Greek</li>
+                      <li>Biostatistics</li>
+                      <li>English</li>
+                      <li>Nursing</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Contabilidad gubernamental
+                      <span class="fa-stack fa-2x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                      <li>Astrophysics</li>
+                      <li>Informatics</li>
+                      <li>Criminology</li>
+                      <li>Economics</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Contabilidad gubernamental
+                      <span class="fa-stack fa-2x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                      <li>Astrophysics</li>
+                      <li>Informatics</li>
+                      <li>Criminology</li>
+                      <li>Economics</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Contabilidad gubernamental
+                      <span class="fa-stack fa-2x">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    <ul>
+                      <li>Astrophysics</li>
+                      <li>Informatics</li>
+                      <li>Criminology</li>
+                      <li>Economics</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        </section>
+  </div>
    
 </body>
 </html>
