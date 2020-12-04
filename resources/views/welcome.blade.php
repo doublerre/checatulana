@@ -61,7 +61,7 @@
       .card-img {
         width: 120px;
         height: auto;
-        align: center:
+        align: center;
       }
 
       #bottom {
@@ -116,10 +116,9 @@
 
 {{-- Apartado del carrucel superior  --}}
 
-
 <main role="main">
 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -127,17 +126,17 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="img/zac/zac1.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban1.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
         <div class="container">
-         <!-- <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-          </div>-->
+          <div class="carousel-caption ">
+            <!--<h1>PRESUPUESTOS DE EGRESOS 2019</h1>
+            <p><strong>$5,894,356.9</strong></p>-->
+     
+          </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="img/zac/zac2.jpg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban2.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
         <div class="container">
           <div class="carousel-caption">
             <!--<h1>Another example headline.</h1>
@@ -147,7 +146,17 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="img/zac/zac3.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban3.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+        <div class="container">
+          <!--<div class="carousel-caption text-right">
+            <h1>One more for good measure.</h1>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+          </div>-->
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban4.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
         <div class="container">
           <!--<div class="carousel-caption text-right">
             <h1>One more for good measure.</h1>
@@ -170,7 +179,7 @@
               
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col-md-4 col-sm-12">
-      <div class="card h-100">
+      <a href="/contenido"> <div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">MARCO JURÍDICO</h5>
@@ -186,10 +195,11 @@
             <img src="img/icons/01.png" class="card-img" alt="...">
           </div>
         </div>
+        </a>
       </div>
     </div>
     <div class="col md-4">
-      <div class="card h-100">
+      <a href="/contenido#checa_tulana"><div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">CHECA TU LANA</h5>
@@ -208,6 +218,7 @@
           </div>
         </div>
       </div>
+      </a>
     </div>
     <div class="col md-4">
       <div class="card h-100">
@@ -228,6 +239,7 @@
           </div>
         </div>
       </div>
+      </a>
     </div>
     <div class="col md-4">
       <div class="card h-1000" id = "bottom">

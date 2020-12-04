@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/panel', function () {
-    return view('web.dashboard');
+Route::get('/contenido', function () {
+    return view('home');
 });
 
 Auth::routes();

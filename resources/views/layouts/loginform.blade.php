@@ -53,13 +53,13 @@
          background: #f7f7f7;
          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
          padding: 30px;
-    }
+      }
 
-    h5 {
-      text-align: center;
-      font-weight: bolder;
-      font-size: 20pt;
-    }
+      h5 {
+         text-align: center;
+         font-weight: bolder;
+         font-size: 20pt;
+      }
 
    </style>
 </head>
