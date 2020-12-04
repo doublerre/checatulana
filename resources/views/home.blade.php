@@ -17,6 +17,11 @@
         height: auto;
         align: center;
       }
+      .card-img-download{
+        width: 80px;
+        height: auto;
+        align: center;
+      }
     </style>
 </head>  
 <body>
@@ -92,7 +97,7 @@
           <aside>
             <article>
               <div class="sidenav">
-                <a href="#marco_juridico">Marco Juridico</a>
+                <a href="#marco_juridico">Marco Jurídico</a>
                 <a href="#checa_tulana">Checa tu lana</a>
                 <a href="#transparencia">Transparencia</a>
                 <a href="#capacitacion">Capacitaciones</a>
@@ -103,7 +108,7 @@
         
         <section id = "marco_juridico">
           <h2>
-              MARCO JURIDICO
+              MARCO JURÍDICO
               <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="img/icons/01.png" class="card-img" alt="...">
@@ -125,14 +130,41 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="card-body">
                     <div class = "card-pdf" id = "headingPdf">
-                      <button class="btn1 btn-link" data-toggle="collapse1" data-target="#collapsePdf" aria-expanded="true" aria-controls="collapsePdf">
+                      <a class="btn1 btn-link" data-toggle="collapse" data-target="#collapsePdf" aria-expanded="true" aria-controls="collapsePdf">
                       <p>Constitución Politica Federal y Estatal</p>
-                      </button>
+                      </a>
                     </div>
-                    <div id="collapsePdf" class="collapse" aria-labelledby="headingPdf" data-parent="#headingPdf">
+                    <div id="collapsePdf" class="collapse" aria-labelledby="headingOne" data-parent="#headingPdf">
                       <div class="card-body">
-                        texto
-                      </div>
+                        <div class = "row">
+                          <div class="col-sm-6">
+                            <div class = "card">
+                              <div class="card-body">
+                                <div class="card-title-pdf">
+                                    Constitución Política del Estado
+                                </div>
+                                <div class="card text-center">
+                                  <p></p>
+                                  <a href="ruta/archivo" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
+                                </div>
+                              </div> 
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class = "card">
+                              <div class="card-body">
+                                <div class="card-title-pdf">
+                                    Constitución Política Federal
+                                </div>
+                                <div class="card text-center">
+                                  <p></p>
+                                  <a href="ruta/archivo" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
+                                </div>
+                              </div> 
+                            </div>
+                          </div>
+                        </div>
+                      </div>  
                     </div>
                     <p>Ley de Planeación del Estados de Zacatecas</p>
                     <p>Linemientos para la Integración del Anteproyecto</p>
