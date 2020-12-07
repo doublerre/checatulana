@@ -35,11 +35,7 @@
               <div class="carousel-item active">
                 <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban1.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
                 <div class="container">
-                  <div class="carousel-caption ">
-                    <h1>PRESUPUESTOS DE EGRESOS 2019</h1>
-                    <p><strong>$5,894,356.9</strong></p>
-             
-                  </div>
+                 
                 </div>
               </div>
               <div class="carousel-item">
