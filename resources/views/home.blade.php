@@ -11,9 +11,20 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+
+    <script>
+      const colors = ["rgb(104, 101, 101)","orange"];
+      function cambiacolor_texto(elemento){ 
+        var current = Number(elemento.dataset.ci || 0); // init to 0 on first click
+        current = (current + 1) % colors.length; // clamp array index
+        elemento.dataset.ci = current; // store new value in element
+        elemento.style.color = colors[current]; // set color
+      }
+    </script>
+
     <style> 
         .card-img {
-        width: 110px;
+        width: 100px;
         height: auto;
         align: center;
       }
@@ -128,10 +139,11 @@
                   </h3>
                 </div>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
+                  <div class="card-body-contenido">
+                    <br>
                     <div class = "card-pdf" id = "headingPdf">
                       <a class="btn1 btn-link" data-toggle="collapse" data-target="#collapsePdf" aria-expanded="true" aria-controls="collapsePdf">
-                      <p>Constitución Politica Federal y Estatal</p>
+                      <p onclick="cambiacolor_texto(this);">Constitución Politica Federal y Estatal</p>
                       </a>
                     </div>
                     <div id="collapsePdf" class="collapse" aria-labelledby="headingOne" data-parent="#headingPdf">
@@ -173,6 +185,7 @@
                     <p>Proyectos (Paquete Económico)(Falta)</p>
                     <p>Ley de Ingresos Federal y Estatal</p>
                     <p>Decreto de Presupuesto Federal y Estatal</p>
+                    <br>
                   </div>
                 </div>
               </div>
@@ -189,7 +202,7 @@
                   </h2>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                  <div class="card-body">
+                  <div class="card-body-contenido">
                     <ul>
                       <li>Texto</li>
                     </ul>
@@ -209,7 +222,7 @@
                   </h2>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                  <div class="card-body">
+                  <div class="card-body-contenido">
                     <ul>
                       <li>Texto</li>
                     </ul>
@@ -229,7 +242,7 @@
                   </h2>
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                  <div class="card-body">
+                  <div class="card-bod-contenido">
                     <ul>
                       <li>Texto</li>
                     </ul>
@@ -249,7 +262,7 @@
                   </h2>
                 </div>
                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                  <div class="card-body">
+                  <div class="card-body-contenido">
                     <ul>
                       <li>Texto</li>
                     </ul>

@@ -60,6 +60,7 @@ section h2 {
     color: #3d3bcc;
 }
 
+
 .texted {
     color: rgb(104, 101, 101);
 }
@@ -68,12 +69,6 @@ section h2 {
     color: black;
     font-weight: bold;
     border-bottom: 2px solid #00F260;
-}
-
-.card-title-pdf {
-    color: rgba(0, 102, 255, 0.863);
-    text-align: center;
-    font-size: 1.2rem;
 }
 
 .carousel-item>img {
@@ -243,6 +238,16 @@ body {
     background: #F9F9F9;
 }
 
+.myaccordion .card-title-pdf {
+    color: rgba(0, 102, 255, 0.863);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.myaccordion .card-body-contenido {
+    font-size: 1.2rem;
+}
+
 .myaccordion .fa-stack {
     font-size: 18px;
 }
@@ -255,7 +260,7 @@ body {
 }
 
 .myaccordion .btn1 {
-    font-size: 16px;
+    font-size: 1.21rem;
     padding: 0;
     border: 0px;
     background: none;
@@ -270,6 +275,16 @@ body {
 .myaccordion li+li {
     margin-top: 10px;
 }
+
+.myaccordion .btn1:hover,
+.myaccordion .btn1:focus {
+    color: #232425;
+}
+
+.myaccordion .btn1:onclick {
+    color: #eccb0c;
+}
+
 
 body {
     font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 

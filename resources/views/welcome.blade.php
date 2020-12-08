@@ -55,11 +55,11 @@
 
       .card-title{
         font-weight: bolder;
-        font-size: 13.5pt;
+        font-size: 13pt;
       }
 
-      .card-img {
-        width: 120px;
+      .card-img{
+        width: 100px;
         height: auto;
         align: center;
       }
@@ -179,7 +179,7 @@
               
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col-md-4 col-sm-12">
-      <a href="/contenido"> <div class="card h-100">
+      <a href="/contenido"><div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">MARCO JURÍDICO</h5>
