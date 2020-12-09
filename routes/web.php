@@ -18,6 +18,7 @@ Route::get('/contenido', function () {
     return view('home');
 });
 
+
 Auth::routes();
 
 Route::get('/blog', 'Web\PageController@blog')->name('blog');

@@ -1,15 +1,15 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     Crear etiqueta
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     {!! Form::open(['route' => 'tags.store']) !!}
                         
                         @include('admin.tags.partials.form')

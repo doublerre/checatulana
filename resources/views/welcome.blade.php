@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="Joni" content="">
+    <meta name="description" content="Plataforma de trasparencia del estado de Zacatecas">
     <title>Checa Tu Lana</title>
 
     <!-- Bootstrap core CSS -->
@@ -259,6 +258,7 @@
           </div>
         </div>
       </div>
+    </a>
     </div>
     <div class="col md-4">
       <div class="card h-100" id = "bottom">
@@ -291,7 +291,7 @@
             <img src="img/icons/06.png" class="card-img" alt="...">
           </div>
         </div>
-      </div>
+      </div></a>
     </div>
   </div>
 

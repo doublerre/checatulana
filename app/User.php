@@ -31,4 +31,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+    public function adminlte_image(){
+        return "vendor/adminlte/dist/img/icon.png";
+    }
+    public function adminlte_desc(){
+        return "Admin";
+    }
+    public function adminlte_profile_url(){
+        return "profile/username";
+    }
 }

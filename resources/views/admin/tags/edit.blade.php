@@ -1,15 +1,15 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
-@section('content')
+@section('cont')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Editar etiqueta
+            <div class="card">
+                <div class="card-header">
+                    Editar etiqueta lore
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     {!! Form::model($tag, ['route' => ['tags.update', $tag->id], 'method' => 'PUT']) !!}
                         
                         @include('admin.tags.partials.form')
@@ -21,3 +21,4 @@
     </div>
 </div>
 @endsection
+
