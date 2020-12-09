@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contenido</title>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/content.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -39,7 +39,7 @@
   <div>
       <header>
           <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#"><img src="img/brand.png" alt=""></a>
+            <a class="navbar-brand" href="/"><img src="img/brand.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -54,46 +54,27 @@
               <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
+              {{--carrusel 1--}}
               <div class="carousel-item active">
                 <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban1.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
-                <div class="container">
-                  <div class="carousel-caption ">
-                    <!--<h1>PRESUPUESTOS DE EGRESOS 2019</h1>
-                    <p><strong>$5,894,356.9</strong></p>-->
-                  </div>
-                </div>
               </div>
+        
+              {{--carrusel 2--}}
               <div class="carousel-item">
                 <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban2.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
-                <div class="container">
-                  <div class="carousel-caption">
-                    <!--<h1>Another example headline.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
-                  </div>
-                </div>
               </div>
+        
+              {{--carrusel 3--}}
               <div class="carousel-item">
                 <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban3.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
-                <div class="container">
-                  <!--<div class="carousel-caption text-right">
-                    <h1>One more for good measure.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                  </div>-->
-                </div>
               </div>
+        
+              {{--carrusel 4--}}
               <div class="carousel-item">
                 <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban4.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
-                <div class="container">
-                  <!--<div class="carousel-caption text-right">
-                    <h1>One more for good measure.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                  </div>-->
-                </div>
               </div>
             </div>
+            {{--control de carrusel--}}
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
@@ -117,7 +98,7 @@
             </article>
           </aside>
         
-        <section id = "marco_juridico">
+        <section id ="marco_juridico">
           <h2>
               MARCO JURÍDICO
               <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
@@ -577,6 +558,7 @@
             </div>
         </section>
       </div>
+      
       <script> 
         $('button').click(function() { 
             $(this).find('i').toggleClass('fas fa-plus fas fa-minus'); 

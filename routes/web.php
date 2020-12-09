@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/contenido', function () {
-    return view('home');
+Route::get('/portal', function () {
+    return view('content');
 });
 
 
