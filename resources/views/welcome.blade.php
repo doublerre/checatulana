@@ -54,13 +54,13 @@
 
       .card-title{
         font-weight: bolder;
-        font-size: 13.5pt;
+        font-size: 13pt;
       }
 
-      .card-img {
-        width: 180px;
+      .card-img{
+        width: 100px;
         height: auto;
-        align: center:
+        align: center;
       }
 
       #bottom {
@@ -115,10 +115,9 @@
 
 {{-- Apartado del carrucel superior  --}}
 
-
 <main role="main">
 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -128,7 +127,11 @@
       <div class="carousel-item active">
         <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban1.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
         <div class="container">
-         
+          <div class="carousel-caption ">
+            <!--<h1>PRESUPUESTOS DE EGRESOS 2019</h1>
+            <p><strong>$5,894,356.9</strong></p>-->
+     
+          </div>
         </div>
       </div>
       <div class="carousel-item">
@@ -175,10 +178,10 @@
               
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col-md-4 col-sm-12">
-      <a href="/contenido"> <div class="card h-100">
+      <a href="/contenido"><div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
-           <h5 class="card-title">MARCO JURÍDICO</h5>
+            <h5 class="card-title">MARCO JURÍDICO</h5>
               <p class="card-text">
                 Operaciones del presupuesto <br>
                 Disciplina finaciera <br>
@@ -191,11 +194,11 @@
             <img src="img/icons/01.png" class="card-img" alt="...">
           </div>
         </div>
-      </a> 
+        </a>
       </div>
     </div>
     <div class="col md-4">
-      <a href="#"><div class="card h-100">
+      <a href="/contenido#checa_tulana"><div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">CHECA TU LANA</h5>
@@ -214,13 +217,13 @@
           </div>
         </div>
       </div>
-    </a>
+      </a>
     </div>
     <div class="col md-4">
-      <a href="#"><div class="card h-100">
+      <div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
-           <h5 class="card-title">PARTICIPACIÓN CIUDADANA</h5>
+            <h5 class="card-title">PARTICIPACIÓN CIUDADANA</h5>
               <p class="card-text">
                 Plat. digital avancemos todos<br>
                 Índice<br>
@@ -234,11 +237,11 @@
             <img src="img/icons/03.png" class="card-img" alt="...">
           </div>
         </div>
-      </a>
       </div>
+      </a>
     </div>
     <div class="col md-4">
-      <a href="#"><div class="card h-1000" id = "bottom">
+      <div class="card h-1000" id = "bottom">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">PROGRAMAS Y ACCIONES</h5>
@@ -258,7 +261,7 @@
     </a>
     </div>
     <div class="col md-4">
-      <a href="#"><div class="card h-100" id = "bottom">
+      <div class="card h-100" id = "bottom">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">SISTEMA DE EVALUACIÓN</h5>
@@ -272,10 +275,10 @@
             <img src="img/icons/05.png" class="card-img" alt="...">
           </div>
         </div>
-      </div></a>
+      </div>
     </div>
     <div class="col md-4">
-      <a href="#"> <div class = "card h-100" id = "bottom">
+      <div class = "card h-100" id = "bottom">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">FISCALIZACIÓN</h5>
