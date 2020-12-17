@@ -73,19 +73,19 @@
   {{-- tarjetas  --}}
   <div class="row row-cols-1 row-cols-md-3">
     <div class="col-md-4 col-sm-12">
-      <a id="urlcard" href="/portal"><div class="card h-100">
+      <a id="urlcard" href="/portal#marco_juridico"><div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">MARCO JURÍDICO</h5>
               <p class="card-text">
                 Operaciones del presupuesto <br>
                 Disciplina finaciera <br>
-                Contabilidad Gubernamental <br>
+                Contabilidad gubernamental <br>
                 Fiscalización <br>
                 Formatos
               </p>
           </div>
-          <div class="col-md-4 col-sm">
+          <div class="imagen">
             <img src="img/icons/01.png" class="card-img" alt="...">
           </div>
         </div>
@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="col md-4">
-      <a id="urlcard" href="/portal#checa_tulana"><div class="card h-100">
+      <a id="urlcard" href="/portal#checa_tu_lana"><div class="card h-100">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">CHECA TU LANA</h5>
@@ -107,7 +107,7 @@
                 Rendición de cuentas 
               </p>
           </div>
-          <div class="col-md-4 col-sm">
+          <div class="imagen">
             <img src="img/icons/02.png" class="card-img" alt="...">
           </div>
         </div>
@@ -128,7 +128,7 @@
                 Deuda Pública <br>
               </p>
           </div>
-          <div class="col-md-2 col-sm">
+          <div class="col-md-2 col-sm-auto">
             <img src="img/icons/03.png" class="card-img" alt="...">
           </div>
         </div>
@@ -141,14 +141,14 @@
           <div class="card-body">
             <h5 class="card-title">PROGRAMAS Y ACCIONES</h5>
               <p class="card-text">
-                Programas Sociales<br>
+                Programas sociales<br>
                 Programas económicos<br>
                 Agua y medio ambiente<br>
                 Otros Programas<br>
-                Obra Pública <br>
+                Obra pública <br>
               </p>
           </div>
-          <div class="col-md-3 col-sm">
+          <div class="imagen">
             <img src="img/icons/04.png" class="card-img" alt="...">
           </div>
         </div>
@@ -162,11 +162,11 @@
             <h5 class="card-title">SISTEMA DE EVALUACIÓN</h5>
               <p class="card-text">
                 Evaluación al desempeno<br>
-                Programa anual de Evaluación<br>
+                Programa anual de evaluación<br>
                 Resultado de las evaluaciones<br>
               </p>
           </div>
-          <div class="col-md-3 col-sm">
+          <div class="imagen">
             <img src="img/icons/05.png" class="card-img" alt="...">
           </div>
         </div>

@@ -32,7 +32,7 @@
     </script>
 
     <style> 
-        .card-img {
+      .card-img {
         width: 100px;
         height: auto;
         align: center;
@@ -42,26 +42,31 @@
         height: auto;
         align: center;
       }
+      h2:target {
+      color: white;
+      background: #1c87c9;
+    }
     </style>
 </head>  
 <body>
   <div>
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!-- Quité temporalmente "fixated top", para ver el porqué no se posicionaba 
+        en el titulo cuando se seleccionaba una sección, y efectivamente, era por eso; porque el titulo se posiciona detrás de la barra pegajosa" -->
         <a class="navbar-brand" href="/"><img src="img/brand.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
         </div>
-        </nav>
+      </nav>
       
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
+          <!--<ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
+          </ol> -->
           <div class="carousel-inner">
             {{--carrusel 1--}}
               <div class="carousel-item active">
@@ -93,21 +98,29 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-      </header>  
+    </header>  
 
           <aside>
             <article>
               <div class="sidenav">
-                <a href="#portal">Marco Jurídico</a>
-                <a href="#checa_tulana">Checa tu lana</a>
+                <a href="#marco_juridico">Marco Jurídico</a>
+                <a href="#checa_tu_lana">Checa tu lana</a>
                 <a href="#transparencia">Transparencia</a>
                 <a href="#capacitacion">Capacitaciones</a>
                 <a href="#datos_abiertos">Datos Abiertos</a>
               </div>
             </article>
           </aside>
-        
-        <section id = "marco_juridico">
+
+        <!-- Este div es para que evite ponerse la barra pegajosa sobre el titulo de la sección, y en lugar se posicione en aquí-->
+        <div id ="marco_juridico">
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+
+        <div name = "marco_juridico">
           <h2>
               MARCO JURÍDICO
               <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
@@ -260,9 +273,17 @@
                 </div>
               </div>
             </div>
-        </section>
+        </div>
 
-        <section id = "checa_tulana">
+        <!-- Este div es para que evite ponerse la barra pegajosa sobre el titulo de la sección, y en lugar se posicione en aquí-->
+        <div id ="checa_tu_lana">
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+
+        <div name = "checa_tulana">
           <h2>
             CHECA TU LANA
             <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
@@ -413,9 +434,17 @@
                 </div>
               </div>
             </div>
-        </section>
+        </div>
 
-        <section id = "transparencia">
+        <!-- Este div es para que evite ponerse la barra pegajosa sobre el titulo de la sección, y en lugar se posicione en aquí-->
+        <div id ="transparencia">
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+
+        <div name = "transparencia">
           <h2>
               TRANSPARENCIA
               <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
@@ -428,7 +457,7 @@
                 <div class="card-header" id="headingFifteen">
                   <h2 class="mb-0">
                     <button class="header d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen" onclick="cambiacolor_texto2(this);">
-                      Apartado #1
+                      Plataforma Nacional de Transparencia
                       <span class="fa-stack fa-sm">
                         <i class="fas fa-stack-2x"></i>
                         <i class="fas fa-plus fa-stack-2x"></i> 
@@ -448,7 +477,27 @@
                 <div class="card-header" id="headingSixteen">
                   <h2 class="mb-0">
                     <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen" onclick="cambiacolor_texto2(this);">
-                      Apartado #2
+                      Estadísticas
+                      <span class="fa-stack fa-2x">
+                        <i class="fas fa-stack-2x"></i>
+                        <i class="fas fa-plus fa-stack-2x"></i> 
+                      </span>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen">
+                  <div class="card-body">
+                    <ul>
+                    <li>Texto</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingSixteen">
+                  <h2 class="mb-0">
+                    <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen" onclick="cambiacolor_texto2(this);">
+                      Orientación - Charlas Presupuestarias
                       <span class="fa-stack fa-2x">
                         <i class="fas fa-stack-2x"></i>
                         <i class="fas fa-plus fa-stack-2x"></i> 
@@ -465,9 +514,17 @@
                 </div>
               </div>
             </div>
-        </section>
+        </div>
 
-        <section id = "capacitacion">
+        <!-- Este div es para que evite ponerse la barra pegajosa sobre el titulo de la sección, y en lugar se posicione en aquí-->
+        <div id ="capacitacion">
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+
+        <div name = "capacitacion">
           <h2>
               CAPACITACIONES
               <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
@@ -480,7 +537,7 @@
                 <div class="card-header" id="headingSeventeen">
                   <h2 class="mb-0">
                     <button class="header d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen" onclick="cambiacolor_texto2(this);">
-                      Apartado #1
+                      Cursos
                       <span class="fa-stack fa-sm">
                         <i class="fas fa-stack-2x"></i>
                         <i class="fas fa-plus fa-stack-2x"></i>  
@@ -500,7 +557,7 @@
                 <div class="card-header" id="headingEightteen">
                   <h2 class="mb-0">
                     <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEightteen" aria-expanded="false" aria-controls="collapseEightteen" onclick="cambiacolor_texto2(this);">
-                      Apartado #2
+                      Blog
                       <span class="fa-stack fa-2x">
                         <i class="fas fa-stack-2x"></i>
                         <i class="fas fa-plus fa-stack-2x"></i> 
@@ -517,9 +574,17 @@
                 </div>
               </div>
             </div>
-        </section>
+        </div>
 
-        <section id = "datos_abiertos">
+        <!-- Este div es para que evite ponerse la barra pegajosa sobre el titulo de la sección, y en lugar se posicione en aquí-->
+        <div id ="datos_abiertos">
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+
+        <div name = "datos_abiertos">
           <h2>
               DATOS ABIERTOS
               <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
@@ -569,7 +634,7 @@
                 </div>
               </div>
             </div>
-        </section>
+        </div>
       </div>
       
       <script> 
