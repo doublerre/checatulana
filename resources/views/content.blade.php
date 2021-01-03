@@ -53,10 +53,12 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> <!-- Quité temporalmente "fixated top", para ver el porqué no se posicionaba 
         en el titulo cuando se seleccionaba una sección, y efectivamente, era por eso; porque el titulo se posiciona detrás de la barra pegajosa" -->
-        <a class="navbar-brand" href="/"><img src="img/brand.png" alt=""></a>
+        <a class="navbar-brand" href="/"><img src="img/brand-sin-fondo.png" id ="image-nav" alt=""></a>
+        <!--
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
         </div>
       </nav>
