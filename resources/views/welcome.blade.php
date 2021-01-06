@@ -15,10 +15,10 @@
   <body>
     <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#"><img src="img/brand.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#"><img src="img/brand-sin-fondo.png" alt="" id = "brand"></a>
+    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>-->
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <!--<form class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -33,11 +33,11 @@
 <main role="main">
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
+    <!--<ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    </ol>-->
     <div class="carousel-inner">
       {{--carrusel 1--}}
       <div class="carousel-item active">
@@ -88,8 +88,8 @@
           <div class="col-md-4 col-sm">
             <img src="img/icons/01.png" class="card-img" alt="...">
           </div>
+          </a>
         </div>
-        </a>
       </div>
     </div>
 
@@ -114,6 +114,7 @@
             <img src="img/icons/02.png" class="card-img" alt="...">
           </div>
         </div>
+        </a>
       </div>
       </a>
     </div>
@@ -161,6 +162,7 @@
             <img src="img/icons/04.png" class="card-img" alt="...">
           </div>
         </div>
+        </a>
       </div>
     </a>
     </div>
@@ -182,6 +184,7 @@
             <img src="img/icons/05.png" class="card-img" alt="...">
           </div>
         </div>
+        </a>
       </div>
     </a>
     </div> 
@@ -202,6 +205,7 @@
             <img src="img/icons/06.png" class="card-img" alt="...">
           </div>
         </div>
+        </a>
       </div>
     </a>
     </div>
@@ -210,27 +214,27 @@
 
 {{-- footer  --}}
 <footer>
-<div class="partFooter">
-    <div class="row align-items-center">
-      <img src="img/imgfooter.png" alt="">
+  <div class="partFooter">
+    <div class="row align-items-center" id = "logoPresupuesto">
+      <img src="img/img-footer-sin-fondo.png" alt="">
     </div>
   </div>
   <div class="partFooter" id="contacto">
     <br>
-    <h4>Contacto
-    <br>Circuito Cerro del Gato s/n
-    <br>Colonia Ciudad Administrativa 
-    <br>C.P 98160 
-    <br>Zacatecas,Zac
+    <h4 class = "infoContacto">
+      Contacto
+      <br>Circuito Cerro del Gato s/n
+      <br>Colonia Ciudad Administrativa 
+      <br>C.P 98160 
+      <br>Zacatecas,Zac
     </h4>
     <a href="#">Términos de uso</a>
     <a href="#">Mapa del Sitio</a>
-    </div>
   </div>
   <div class="partFooter" id="informacion">
     <br>
     <h3 class = "titulo">¿Qué es checa tu lana?</h3>
-    <p id=> Es el portal para dar a conocer los mecanismos y acciones del gobierno de Zacatecas para incorporar a la sociedad en su toma de desiciones.</p>
+    <p id> Es el portal para dar a conocer los mecanismos y acciones del gobierno de Zacatecas para incorporar a la sociedad en su toma de desiciones.</p>
   </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -134,6 +134,7 @@ body {
 }
 
 .myaccordion .card-body-contenido {
+    margin-left: 10px;
     font-size: 1.2rem;
 }
 
@@ -170,9 +171,6 @@ body {
     color: #232425;
 }
 
-.myaccordion .btn1:onclick {
-    color: #eccb0c;
-}
 
 
 body {
