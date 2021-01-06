@@ -81,7 +81,7 @@
       </div>
    </div>}
    <div class="main">
-      <form action="/examples/actions/confirmation.php" method="post">
+      <form  method="post">
          <h5>Iniciar Sesión</h5>
          <div class="login-form">
             @yield('content')

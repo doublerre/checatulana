@@ -72,8 +72,9 @@
             {{-- tarjetas  --}}
               
   <div class="row row-cols-1 row-cols-md-3">
-    <div class="col-md-4 col-sm-12">
-      <a id="urlcard" href="/portal#marco_juridico"><div class="card h-100 ">
+    <div class="col-md-4">
+      <a id="urlcard" href="/portal#marco_juridico">
+      <div class="card h-100 ">
         <div class="row no-gutters">
           <div class="card-body">
             <h5 class="card-title">MARCO JURÍDICO</h5>
