@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'slug', 'body', 'file'
+        'id', 'name','body'
     ];
 
-    public function subcategories()
+    public function category()
     {
-        return $this->hasMany(Subcategories::class);
+        return $this->belongsTo(Category::class);
     }
 }

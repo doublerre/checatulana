@@ -188,7 +188,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'blog',
+    'dashboard_url' => '/dashboard/blogs',
 
     'logout_url' => 'logout',
 
@@ -244,7 +244,7 @@ return [
         ['header' => 'Entradas'],
         [
             'text'        => 'Home',
-            'url'         => 'blog/',
+            'url'         => '/dashboard/blogs',
             'icon'        => 'fas fa-home',
             'label_color' => 'success',
         ],

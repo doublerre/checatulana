@@ -11,6 +11,10 @@
     {{ Form::textarea('body', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
+    {{ Form::label('image', 'Imagen') }}
+    {{ Form::file('image') }}
+</div>
+<div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
 </div>
 

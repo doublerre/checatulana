@@ -53,7 +53,10 @@ class CategoryController extends Controller
     public function store(CategoryStoreRequest $request)
     {
         $category = Category::create($request->all());
-
+        if($request->file('image')){
+            $path = Storage::disk('public')->put('image',  $request->file('image'));
+            $category->fill(['file' => asset($path)])->save();
+        }
         return redirect()->route('categories.edit', $category->id)->with('info', 'Categoría creada con éxito');
     }
 

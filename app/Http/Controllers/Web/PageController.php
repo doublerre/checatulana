@@ -10,10 +10,12 @@ use App\Post;
 
 class PageController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function welcome(){
+        $categories = Category::orderBy('id', 'DESC')->paginate();
+        $data= ['categories'=>$categories];
+        return view('welcome',$data);
     }
+  
     public function blog(){
     	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
@@ -43,5 +45,7 @@ class PageController extends Controller
 
     	return view('web.post', compact('post'));
     }
+
+  
 
 }

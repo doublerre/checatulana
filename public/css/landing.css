@@ -15,7 +15,7 @@
 
   body { 
     font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif; 
-    padding-bottom: 0px!important;  
+    padding-bottom: 0px !important;  
     padding-top: 3rem;
    
     color: #5a5a5a; 
@@ -85,6 +85,7 @@ section h2 {
     color: black;
     font-weight: bold;
     border-bottom: 2px solid #00F260;
+    text-transform: uppercase;
 }
 
   .row {

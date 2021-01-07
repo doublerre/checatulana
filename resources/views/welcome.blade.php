@@ -70,14 +70,14 @@
     </a>
   </div>
             {{-- tarjetas  --}}
-              
-  <div class="row row-cols-1 row-cols-md-3">
-    <div class="col-md-4">
+  <div class="col-md-3">
+    <div class="row-md-4">
       <a id="urlcard" href="/portal#marco_juridico">
+        @foreach ($categories as $item)  
       <div class="card h-100 ">
         <div class="row no-gutters">
           <div class="card-body">
-            <h5 class="card-title">MARCO JURÍDICO</h5>
+            <h5 class="card-title">{{$item->name}}</h5>
               <p class="card-text">
                 Operaciones del presupuesto <br>
                 Disciplina finaciera <br>
@@ -87,130 +87,19 @@
               </p>
           </div>
           <div class="col-md-4 col-sm">
-            <img src="img/icons/01.png" class="card-img" alt="...">
+            @if($item->file)
+            <img class="card-img" src="{{ $item->file }}">
+        @endif 
+           <!-- <img src="img/icons/01.png" class="card-img" alt="...">-->
           </div>
           </a>
         </div>
       </div>
-    </div>
-
-    {{-- tarjeta  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#checa_tulana">
-        <div class="card h-100">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">CHECA TU LANA</h5>
-              <p class="card-text">
-                Planeación <br>
-                Programación <br>
-                Presupuestación <br>
-                Ejercicio y control <br>
-                Seguimiento <br>
-                Evaluación <br>
-                Rendición de cuentas 
-              </p>
-          </div>
-          <div class="col-md-4 col-sm">
-            <img src="img/icons/02.png" class="card-img" alt="...">
-          </div>
-        </div>
-        </a>
-      </div>
-      </a>
-    </div>
-
-    {{-- tarjetas  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#participacion_ciudadana"><div class="card h-100 ">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">PARTICIPACIÓN CIUDADANA</h5>
-              <p class="card-text">
-                Plat. digital avancemos todos<br>
-                Índice<br>
-                Decidiendo juntos <br>
-                Proponle a Zacatecas <br>
-                Obra transparente <br>
-                Deuda Pública <br>
-              </p>
-          </div>
-          <div class="col-md-2 col-sm">
-            <img src="img/icons/03.png" class="card-img" alt="...">
-          </div>
-        </div>
-      </a>
-      </div>
-      </a>
-    </div>
-
-    {{-- tarjeta  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#marco_juridico"> 
-      <div class="card h-1000" id = "bottom">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">PROGRAMAS Y ACCIONES</h5>
-              <p class="card-text">
-                Programas Sociales<br>
-                Programas económicos<br>
-                Agua y medio ambiente<br>
-                Otros Programas<br>
-                Obra Pública <br>
-              </p>
-          </div>
-          <div class="col-md-3 col-sm">
-            <img src="img/icons/04.png" class="card-img" alt="...">
-          </div>
-        </div>
-        </a>
-      </div>
-    </a>
-    </div>
-
-   {{-- tarjeta  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#marco_juridico">
-      <div class="card h-100" id = "bottom">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">SISTEMA DE EVALUACIÓN</h5>
-              <p class="card-text">
-                Evaluación al desempeno<br>
-                Programa anual de Evaluación<br>
-                Resultado de las evaluaciones<br>
-              </p>
-          </div>
-          <div class="col-md-3 col-sm">
-            <img src="img/icons/05.png" class="card-img" alt="...">
-          </div>
-        </div>
-        </a>
-      </div>
-    </a>
-    </div> 
-
- {{-- tarjeta  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#marco_juridico">
-      <div class = "card h-100" id = "bottom">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">FISCALIZACIÓN</h5>
-              <p class="card-text">
-                Programas de fiscalización<br>
-                Estadísticas<br>
-              </p>
-          </div>
-          <div class="imagen">
-            <img src="img/icons/06.png" class="card-img" alt="...">
-          </div>
-        </div>
-        </a>
-      </div>
-    </a>
+      @endforeach 
     </div>
   </div>
+     
+    
 </main>
 
 {{-- footer  --}}
