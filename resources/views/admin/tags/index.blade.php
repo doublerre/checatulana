@@ -17,7 +17,7 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th width="10px">ID</th>
+                               
                                 <th>Nombre</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
@@ -25,7 +25,7 @@
                         <tbody>
                             @foreach($tags as $tag)
                             <tr>
-                                <td>{{ $tag->id }}</td>
+                               
                                 <td>{{ $tag->name }}</td>
                                 <td width="10px">
                                     <a href="{{ route('tags.show', $tag->id) }}" class="btn btn-sm btn-default">Ver</a>

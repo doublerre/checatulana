@@ -182,7 +182,7 @@
                         </div>
                       </div>  
                     </div>
-                    <p>Ley de Planeación del Estados de Zacatecas</p>
+                    <a href="/post/joni">Ley de Planeación del Estados de Zacatecas</a>
                     <p>Linemientos para la Integración del Anteproyecto</p>
                     <p>Lineamiento para la operación del PbR</p>
                     <p>Leyes hacendarias y de coordinación fiscal Federal, Estatal y Municipal</p>
