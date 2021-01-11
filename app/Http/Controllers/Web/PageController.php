@@ -11,7 +11,7 @@ use App\Post;
 class PageController extends Controller
 {
     public function welcome(){
-        $categories = Category::orderBy('id', 'DESC')->paginate();
+        $categories = Category::orderBy('id', 'ASC')->paginate();
         $data= ['categories'=>$categories];
         return view('welcome',$data);
     }

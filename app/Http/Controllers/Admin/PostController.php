@@ -69,6 +69,10 @@ class PostController extends Controller
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $post->fill(['file' => asset($path)])->save();
         }
+        elseif ($request->file('pdf')) {
+            $path = Storage::disk('public')->put('pdf',  $request->file('pdf'));
+            $post->fill(['filepdf' => asset($path)])->save();
+        }
 
         //TAGS
         $post->tags()->attach($request->get('tags'));

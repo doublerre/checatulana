@@ -255,9 +255,15 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Categoría',
+            'text'        => 'Categorías',
             'url'         => 'categories/',
             'icon'        => 'fas fa-bars',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Subcategorías',
+            'url'         => 'subcategories/',
+            'icon'        => 'fas fa-angle-right',
             'label_color' => 'success',
         ],
         [

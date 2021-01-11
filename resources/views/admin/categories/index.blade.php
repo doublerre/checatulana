@@ -17,7 +17,6 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th width="10px">ID</th>
                                 <th>Nombre</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
@@ -25,7 +24,7 @@
                         <tbody>
                             @foreach($categories as $category)
                             <tr>
-                                <td>{{ $category->id }}</td>
+                               
                                 <td>{{ $category->name }}</td>
                                 <td width="10px">
                                     <a href="{{ route('categories.show', $category->id) }}" class="btn btn-sm btn-default">Ver</a>

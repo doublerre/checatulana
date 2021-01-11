@@ -19,6 +19,7 @@
 </div>
 
 @section('scripts')
+<script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
 <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <script>
 	$(document).ready(function(){
@@ -29,4 +30,5 @@
 	    });
 	});
 </script>
+
 @endsection
