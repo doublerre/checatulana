@@ -15,3 +15,9 @@
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
 </div>
+<div>
+    @foreach ($errors->all() as $error)
+	    {{ $error }}		
+	@endforeach
+		
+</div>

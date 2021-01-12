@@ -249,12 +249,6 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Etiquetas',
-            'url'         => 'tags/',
-            'icon'        => 'fas fa-hashtag',
-            'label_color' => 'success',
-        ],
-        [
             'text'        => 'Categorías',
             'url'         => 'categories/',
             'icon'        => 'fas fa-bars',
