@@ -10,9 +10,8 @@
                 </div>
 
                 <div class="card-body">
-                    <p><strong>Nombre</strong> {{ $subcategories->name }}</p>
-                    <p><strong>Slug</strong> {{ $subcategories->slug }}</p>
-                    <p><strong>Descripción</strong> {{ $subcategories->body }}</p>
+                    <p><strong>Nombre</strong> {{ $subcategory->name }}</p>
+                    <p><strong>Descripción</strong> {{ $subcategory->body }}</p>
                 </div>
             </div>
         </div>

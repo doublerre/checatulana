@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="card-body">
-                    {!! Form::model($subcategories, ['route' => ['subcategories.update', $subcategories->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($subcategory, ['route' => ['subcategories.update', $subcategory->id], 'method' => 'PUT']) !!}
                         
                         @include('admin.subcategories.partials.form')
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Subcategories extends Model
 {
     protected $fillable = [
-        'id', 'name','body'
+        'id', 'name','body','category_id'
     ];
 
     public function category()

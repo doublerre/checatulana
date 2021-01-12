@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Post;
 use App\Category;
-use App\Tag;
+use App\Subcategories;
 
 class PostController extends Controller
 {
@@ -47,10 +47,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $tags       = Tag::orderBy('name', 'ASC')->get();
+        //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
 
-        return view('admin.posts.create', compact('categories', 'tags'));
+        return view('admin.posts.create', compact('subcategories'));
     }
 
     /**
@@ -69,13 +69,8 @@ class PostController extends Controller
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $post->fill(['file' => asset($path)])->save();
         }
-        elseif ($request->file('pdf')) {
-            $path = Storage::disk('public')->put('pdf',  $request->file('pdf'));
-            $post->fill(['filepdf' => asset($path)])->save();
-        }
-
         //TAGS
-        $post->tags()->attach($request->get('tags'));
+        $post->subcategories()->attach($request->get('subcategories'));
 
         return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada creada con éxito');
     }
@@ -102,12 +97,12 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $tags       = Tag::orderBy('name', 'ASC')->get();
-        $post       = Post::find($id);
+        //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
+        $post= Post::find($id);
         $this->authorize('pass', $post);
 
-        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
+        return view('admin.posts.edit', compact('post','subcategories'));
     }
 
     /**
@@ -131,7 +126,7 @@ class PostController extends Controller
         }
 
         //TAGS
-        $post->tags()->sync($request->get('tags'));
+        $post->categories()->sync($request->get('categories'));
 
         return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada actualizada con éxito');
     }

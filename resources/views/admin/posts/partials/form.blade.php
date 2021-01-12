@@ -1,8 +1,8 @@
 {{ Form::hidden('user_id', auth()->user()->id) }}
 
 <div class="form-group">
-	{{ Form::label('category_id', 'Categorías') }}
-	{{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
+	{{ Form::label('subcategory_id', 'Subcategorías') }}
+	{{ Form::select('subcategory_id', $subcategories, null, ['class' => 'form-control']) }}
 </div> 
 <div class="form-group">
     {{ Form::label('name', 'Nombre de la etiqueta') }}
@@ -26,16 +26,6 @@
 	</label>
 </div>
 <div class="form-group">
-	{{ Form::label('tags', 'Etiquetas') }}
-	<div>
-	@foreach($tags as $tag)
-		<label>
-			{{ Form::checkbox('tags[]', $tag->id) }} {{ $tag->name }}
-		</label>
-	@endforeach
-	</div>
-</div>
-<div class="form-group">
     {{ Form::label('excerpt', 'Extracto') }}
     {{ Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2']) }}
 </div>
@@ -45,6 +35,12 @@
 </div>
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
+</div>
+<div>
+    @foreach ($errors->all() as $error)
+	    {{ $error }}		
+	@endforeach
+		
 </div>
 
 @section('scripts')

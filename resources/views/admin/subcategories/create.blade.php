@@ -1,5 +1,4 @@
 @extends('adminlte::page')
-@section('title', 'Crear Articulo')
 
 @section('content')
 <div class="container">
@@ -7,11 +6,11 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
                 <div class="card-header">
-                    Crear subcategoria
+                    Crear subcategoría
                 </div>
 
                 <div class="card-body">
-                    {!! Form::open(['route' => 'subcategories.store', 'files' => true]) !!}
+                    {!! Form::open(['route' => 'subcategories.store']) !!}
                         
                         @include('admin.subcategories.partials.form')
 

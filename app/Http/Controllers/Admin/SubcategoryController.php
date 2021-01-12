@@ -3,16 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostStoreRequest;
-use App\Http\Requests\PostUpdateRequest;
+use App\Http\Requests\SubcategoryStoreRequest;
+use App\Http\Requests\SubcategoryUpdateRequest;
 
 use App\Http\Controllers\Controller;
 
-use Illuminate\Support\Facades\Storage;
-
 use App\Subcategories;
 use App\Category;
-
 
 class SubcategoryController extends Controller
 {
@@ -33,9 +30,7 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        $subcategories = Subcategories::orderBy('id', 'ASC')
-            //->where('user_id', auth()->user()->id)
-            ->paginate();
+        $subcategories = Subcategories::orderBy('id', 'ASC')->paginate();
 
         return view('admin.subcategories.index', compact('subcategories'));
     }
@@ -48,7 +43,6 @@ class SubcategoryController extends Controller
     public function create()
     {
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-
         return view('admin.subcategories.create', compact('categories'));
     }
 
@@ -58,15 +52,12 @@ class SubcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostStoreRequest $request)
+    public function store(SubcategoryStoreRequest $request)
     {
-        $subcategories = Subcategories::create($request->all());
-        $this->authorize('pass', $subcategories);
-
-        //TAGS
-        $subcategories->category()->attach($request->get('category'));
-
-        return redirect()->route('subcategories.edit', $subcategories->id)->with('info', 'Entrada creada con éxito');
+        $subcategory = Subcategories::create($request->all());
+        //$this->authorize('pass', $subcategory);
+        $subcategory->category()->attach($request->get('categories'));
+        return redirect()->route('subcategories.edit', $subcategory->id)->with('info', 'Etiqueta creada con éxito');
     }
 
     /**
@@ -77,10 +68,9 @@ class SubcategoryController extends Controller
      */
     public function show($id)
     {
-        $subcategories = Subcategories::find($id);
-        //$this->authorize('pass', $subcategories);
+        $subcategory = Subcategories::find($id);
 
-        return view('admin.subcategories.show', compact('subcategories'));
+        return view('admin.subcategories.show', compact('subcategory'));
     }
 
     /**
@@ -91,10 +81,9 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $this->authorize('pass', $subcategories);
+        $subcategory = Subcategories::find($id);
 
-        return view('admin.subcategories.edit', compact('subcategories', 'categories'));
+        return view('admin.subcategories.edit', compact('subcategory'));
     }
 
     /**
@@ -104,23 +93,13 @@ class SubcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostUpdateRequest $request, $id)
+    public function update(SubcategoryUpdateRequest $request, $id)
     {
-        $subcategories = Subcategories::find($id);
-        $this->authorize('pass', $subcategories);
+        $subcategory = Subcategories::find($id);
 
-        $subcategories->fill($request->all())->save();
+        $subcategory->fill($request->all())->save();
 
-        //IMAGE 
-        if($request->file('image')){
-            $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $post->fill(['file' => asset($path)])->save();
-        }
-
-        //TAGS
-        $subcategories->category()->sync($request->get('subcategory'));
-
-        return redirect()->route('subcategories.edit', $subcategories->id)->with('info', 'Entrada actualizada con éxito');
+        return redirect()->route('subcategories.edit', $subcategory->id)->with('info', 'Etiqueta actualizada con éxito');
     }
 
     /**
@@ -131,8 +110,7 @@ class SubcategoryController extends Controller
      */
     public function destroy($id)
     {
-        $subcategories = Subcategories::find($id)->delete();
-        $this->authorize('pass', $subcategories);
+        $subcategory = Subcategories::find($id)->delete();
 
         return back()->with('info', 'Eliminado correctamente');
     }

@@ -10,8 +10,8 @@
             <div class="card">
                 <div class="card-header">
                     Catergoría 
-                    <a href="{{ route('category', $post->category->slug) }}">
-                        {{ $post->category->name }}
+                    <a href="{{ route('subcategories', $post->subcategories->name) }}">
+                        {{ $post->subcategories->name }}
                     </a>
                 </div>
                 @if($post->file)
@@ -23,13 +23,6 @@
                     <hr>
                     {!! $post->body !!}
                     <hr>
-
-                    Etiquetas
-                    @foreach($post->tags as $tag)
-                    <a href="{{ route('tag', $tag->slug) }}">
-                        {{ $tag->name }}
-                    </a>
-                    @endforeach
                 </div>
             </div>
 

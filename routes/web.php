@@ -26,7 +26,7 @@ Route::get('/dashboard/blogs', 'Web\PageController@blog')->name('blog');
 Route::get('/post/{slug}', 'Web\PageController@post')->name('post');
 Route::get('/category/{slug}', 'Web\PageController@category')->name('category');
 Route::get('/tag/{slug}', 'Web\PageController@tag')->name('tag');
-Route::resource('tags', 		'Admin\TagController');
+//Route::resource('tags', 		'Admin\TagController');
 Route::resource('categories', 	'Admin\CategoryController');
 Route::resource('subcategories', 	'Admin\SubcategoryController');
 Route::resource('posts', 		'Admin\PostController');
