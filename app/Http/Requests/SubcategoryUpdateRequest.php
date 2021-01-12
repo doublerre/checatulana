@@ -25,6 +25,7 @@ class SubcategoryUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'slug' => 'required'
         ];
     }
 }

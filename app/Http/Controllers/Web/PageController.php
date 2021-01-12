@@ -5,14 +5,19 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
-use App\Tag;
+use App\Subcategories;
 use App\Post;
 
 class PageController extends Controller
 {
+    public function getSubcategory($id){
+        $subcategories_posts= Subcategories::where('category_id',$id)->get();
+        return response()->json($subcategories_posts);
+    }
     public function welcome(){
         $categories = Category::orderBy('id', 'ASC')->paginate();
-        $data= ['categories'=>$categories];
+        $subcategories = Subcategories::orderBy('id', 'ASC')->paginate();
+        $data= ['categories'=>$categories, 'subcategories'=>$subcategories];
         return view('welcome',$data);
     }
   

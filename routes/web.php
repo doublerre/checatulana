@@ -30,3 +30,4 @@ Route::get('/tag/{slug}', 'Web\PageController@tag')->name('tag');
 Route::resource('categories', 	'Admin\CategoryController');
 Route::resource('subcategories', 	'Admin\SubcategoryController');
 Route::resource('posts', 		'Admin\PostController');
+Route::get('/subcategory/{id}', 'Web\PageController@getSubcategory')->name('apiCategory');

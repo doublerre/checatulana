@@ -83,7 +83,7 @@
         
               
   <div class="row row-cols-1 row-cols-md-3">
-    @foreach ($categories as $item)
+    @foreach ($categories->where('id','3') as $item)
     <div class="col-md-4">
       <a id="urlcard" href="/portal#marco_juridico">
       <div class="card h-100 ">
@@ -92,11 +92,9 @@
             <h5 class="card-title">{{$item->name}}</h5>
 
               <p class="card-text">
-                Operaciones del presupuesto <br>
-                Disciplina finaciera <br>
-                Contabilidad Gubernamental <br>
-                Fiscalización <br>
-                Formatos
+                @foreach ($subcategories->where('category_id','3') as $subcategory)
+                   {{$subcategory->name}} <br> 
+                @endforeach
               </p>
           </div>
           <div class="col-md-4 col-sm">
@@ -108,6 +106,7 @@
     </div>
     @endforeach
   </div>
+  
 </main>
 
 {{-- footer  --}}
