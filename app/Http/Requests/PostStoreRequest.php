@@ -33,7 +33,7 @@ class PostStoreRequest extends FormRequest
         ];
 
         if($this->get('image'))        
-            $rules = array_merge($rules, ['image'=> 'mime:jpg,jpeg,png,pdf']);
+            $rules = array_merge($rules, ['image'=> 'mime:jpg,jpeg,png']);
 
         return $rules;
     }

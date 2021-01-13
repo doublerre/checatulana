@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-
+@section('title', 'Articulo')
 @section('content')
 <div class="container">
     <div class="row">
@@ -7,15 +7,15 @@
 
         	<h1>{{ $post->name }}</h1>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Catergoría 
+            <div class="card">
+                <div class="card-heading">
+                    Subcategoria 
                     <a href="{{ route('subcategory', $post->subcategory->slug) }}">
                         {{ $post->subcategory->name }}
                     </a>
                 </div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     @if($post->file)
                         <img src="{{ $post->file }}" class="img-responsive">
                     @endif

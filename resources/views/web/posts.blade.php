@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-
+@section('title', 'Articulos')
 @section('content')
 <div class="container">
     <div class="row">
@@ -8,10 +8,10 @@
         	<h1>Lista de artículos</h1>
 
         	@foreach($posts as $post)
-            <div class="panel panel-default">
-                <div class="panel-heading">{{ $post->name }}</div>
+            <div class="card">
+                <div class="card-heading">{{ $post->name }}</div>
 
-                <div class="panel-body">
+                <div class="card-body">
                     @if($post->file)
                         <img src="{{ $post->file }}" class="img-responsive">
                     @endif

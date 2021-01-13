@@ -1,4 +1,4 @@
-@extends('web.posts')
+@extends('adminlte::page')
 
 @section('content')
 <div class="container">
