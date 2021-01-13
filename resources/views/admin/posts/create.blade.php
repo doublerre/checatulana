@@ -7,7 +7,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="card">
                 <div class="card-header">
-                    Crear entrada
+                    Crear Artículos
                 </div>
 
                 <div class="card-body">

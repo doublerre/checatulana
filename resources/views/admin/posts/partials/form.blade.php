@@ -5,7 +5,7 @@
 	{{ Form::select('subcategory_id', $subcategories, null, ['class' => 'form-control']) }}
 </div> 
 <div class="form-group">
-    {{ Form::label('name', 'Nombre de la etiqueta') }}
+    {{ Form::label('name', 'Nombre del Artículo') }}
     {{ Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) }}
 </div>
 <div class="form-group">
@@ -30,7 +30,7 @@
     {{ Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2']) }}
 </div>
 <div class="form-group">
-    {{ Form::label('body', 'Descripción') }}
+    {{ Form::label('body', 'Contenido') }}
     {{ Form::textarea('body', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
@@ -42,3 +42,19 @@
 	@endforeach
 		
 </div>
+@section('scripts')
+<script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
+<script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
+<script>
+	$(document).ready(function(){
+	    $("#name, #slug").stringToSlug({
+	        callback: function(text){
+	            $('#slug').val(text);
+	        }
+	    });
+	    CKEDITOR.config.height = 400;
+		CKEDITOR.config.width  = 'auto';
+		CKEDITOR.replace('body');
+	});
+</script>
+@endsection
