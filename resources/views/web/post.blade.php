@@ -3,26 +3,28 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md col-md-offset-8">
+        <div class="col-md-8 col-md-offset-2">
 
         	<h1>{{ $post->name }}</h1>
 
-            <div class="card">
-                <div class="card-header">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                     Catergoría 
-                    <a href="{{ route('subcategories', $post->subcategories->name) }}">
-                        {{ $post->subcategories->name }}
+                    <a href="{{ route('subcategory', $post->subcategory->slug) }}">
+                        {{ $post->subcategory->name }}
                     </a>
                 </div>
-                @if($post->file)
-                    <img class="card-img-top" src="{{ $post->file }}" width="auto" height="350px" alt="Card image cap">
-                @endif 
-                <div class="card-body">
+
+                <div class="panel-body">
+                    @if($post->file)
+                        <img src="{{ $post->file }}" class="img-responsive">
+                    @endif
                     
                     {{ $post->excerpt }}
                     <hr>
                     {!! $post->body !!}
                     <hr>
+
                 </div>
             </div>
 
