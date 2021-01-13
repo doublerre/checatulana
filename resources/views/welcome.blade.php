@@ -79,9 +79,7 @@
     </a>
   </div>
             {{-- tarjetas  --}}
-    
-        
-              
+               
   <div class="row row-cols-1 row-cols-md-3">
     @foreach ($categories->where('id','3') as $item)
     <div class="col-md-4">

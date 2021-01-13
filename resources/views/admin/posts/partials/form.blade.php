@@ -1,4 +1,4 @@
-
+{{ Form::hidden('user_id', auth()->user()->id) }}
 
 <div class="form-group">
 	{{ Form::label('subcategory_id', 'Subcategorías') }}
