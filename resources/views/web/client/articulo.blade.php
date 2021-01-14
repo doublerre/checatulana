@@ -17,7 +17,7 @@
     
 @endsection
 @section('footer')
-<footer>
+<footer class="bg-dark">
     <div class="partFooter">
       <div class="row align-items-center" id = "logoPresupuesto">
         <img src="{{url('img/img-footer-sin-fondo.png') }}"  alt="" >
@@ -38,7 +38,7 @@
     <div class="partFooter" id="informacion">
       <br>
       <h3 class = "titulo">¿Qué es checa tu lana?</h3>
-      <p id> Es el portal para dar a conocer los mecanismos y acciones del gobierno de Zacatecas para incorporar a la sociedad en su toma de desiciones.</p>
+      <p style="color:#ffffff"> Es el portal para dar a conocer los mecanismos y acciones del gobierno de Zacatecas para incorporar a la sociedad en su toma de desiciones.</p>
     </div>
   </footer>
     

@@ -18,6 +18,7 @@
                         <thead>
                             <tr>
                                 <th>Nombre</th>
+                                <th>Subcategoria Perteneciente</th>
                                 <th colspan="3">&nbsp;</th>
                             </tr>
                         </thead>
@@ -26,6 +27,7 @@
                             <tr>
                             
                                 <td>{{ $post->name }}</td>
+                                <td>{{$post->subcategory_id}}</td>
                                 <td width="10px">
                                     <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-default">Ver</a>
                                 </td>

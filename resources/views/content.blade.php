@@ -167,10 +167,10 @@
                               <div class="card-body">
                                 <div class="card-title-pdf">
                                   Constitución Política del Estado
-                                </div>
+                                </div> 
                                 <div class="card text-center">
                                   <p></p>
-                                  <a href="http://www.finanzas.gob.mx/contenido/InformacionFinanciera/Constituciones/CPELYSZ.pdf" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
+                                  <a href="http://www.finanzas.gob.mx/contenido/InformacionFinanciera/Constituciones/CPELYSZ.pdf" target="_blank"download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
                                 </div>
                               </div> 
                             </div>
@@ -183,7 +183,7 @@
                                 </div>
                                 <div class="card text-center">
                                   <p></p>
-                                  <a href="https://www.dof.gob.mx/constitucion/marzo_2014_constitucion.pdf" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
+                                  <a href="https://www.dof.gob.mx/constitucion/marzo_2014_constitucion.pdf" target="_blank" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
                                 </div>
                               </div> 
                             </div>

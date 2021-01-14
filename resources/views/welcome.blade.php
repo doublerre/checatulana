@@ -7,10 +7,8 @@
     <title>Checa Tu Lana</title>
 
     <!-- Bootstrap core CSS -->
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/landing.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/landing.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -58,16 +56,17 @@
       <div class="carousel-item">
         <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-04.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
       </div>
-      {{--carrusel 6--}}
+
+      {{--carrusel 5--}}
       <div class="carousel-item">
         <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-06.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
       </div>
-      {{--carrusel 7--}}
+
+      {{--carrusel 6--}}
       <div class="carousel-item">
         <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-07.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
       </div>
     </div>
-    
     {{--control de carrusel--}}
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -78,33 +77,130 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-            {{-- tarjetas  --}}
-               
-  <div class="row row-cols-1 row-cols-md-3">
-    @foreach ($categories as $item)
-    <div class="col-md-4">
-      <a id="urlcard" href="/portal#marco_juridico">
-      <div class="card h-100 ">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">{{$item->name}}</h5>
 
-              <p class="card-text">
-                @foreach ($subcategories->where('category_id','3') as $subcategory)
-                   {{$subcategory->name}} <br> 
-                @endforeach
-              </p>
-          </div>
-          <div class="col-md-4 col-sm">
-            <img src="img/icons/01.png" class="card-img" alt="...">
+  {{-- tarjetas  --}}
+  <div class="cards">
+    <div class="row row-cols-1 row-cols-md-3 row-col-sm-6 row-col-xs-12">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal#marco_juridico"><div class="card h-100" id="top1">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="marcoJuridico">MARCO JURÍDICO</h5>
+                <p class="card-text">
+                  Operaciones del presupuesto <br>
+                  Disciplina finaciera <br>
+                  Contabilidad gubernamental <br>
+                  Fiscalización <br>
+                  Formatos
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/01.png" class="card-img" alt="...">
+            </div>
           </div>
           </a>
         </div>
       </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal#checa_tu_lana"><div class="card h-100" id="top2">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="checaTuLana">CHECA TU LANA</h5>
+                <p class="card-text">
+                  Planeación <br>
+                  Programación <br>
+                  Presupuestación <br>
+                  Ejercicio y control <br>
+                  Seguimiento <br>
+                  Evaluación <br>
+                  Rendición de cuentas 
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/02.png" class="card-img" alt="...">
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal"><div class="card h-100">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="partCiudadana">PARTICIPACIÓN CIUDADANA</h5>
+                <p class="card-text">
+                  Plat. digital avancemos todos<br>
+                  Índice<br>
+                  Decidiendo juntos <br>
+                  Proponle a Zacatecas <br>
+                  Obra transparente <br>
+                  Deuda Pública <br>
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/03.png" class="card-img" alt="...">
+            </div>
+          </div>
+        </div>
+        </a>
+      </div> 
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal"><div class="card h-1000" id = "bottom">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="programasAcciones">PROGRAMAS Y ACCIONES</h5>
+                <p class="card-text">
+                  Programas sociales<br>
+                  Programas económicos<br>
+                  Agua y medio ambiente<br>
+                  Otros Programas<br>
+                  Obra pública <br>
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/04.png" class="card-img" alt="...">
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal"><div class="card h-100" id = "bottom">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="sistEvaluacion">SISTEMA DE EVALUACIÓN</h5>
+                <p class="card-text">
+                  Evaluación al desempeño<br>
+                  Programa anual de evaluación<br>
+                  Resultado de las evaluaciones<br>
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/05.png" class="card-img" alt="...">
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal"><div class = "card h-100" id = "bottom">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title">FISCALIZACIÓN</h5>
+                <p class="card-text">
+                  Programas de fiscalización<br>
+                  Estadísticas<br>
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/06.png" class="card-img" alt="...">
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
     </div>
-    @endforeach
   </div>
-  
 </main>
 
 {{-- footer  --}}
@@ -137,3 +233,4 @@
 </body>
 
 </html>
+
