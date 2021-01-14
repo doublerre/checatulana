@@ -8,12 +8,12 @@
         	<h1>Lista de artículos</h1>
 
         	@foreach($posts as $post)
-            <div class="card">
+            <div class="card" style="width: 850px">
                 <div class="card-header"><strong>{!! $post->name !!}</strong></div>
 
                 <div class="card-body">
                     @if($post->file)
-                        <img src="{!! $post->file !!}" class="img-responsive">
+                        <img src="{!! $post->file !!}" class="img-responsive" style="width: 740px">
                     @endif
                     
                     {!! $post->excerpt !!}

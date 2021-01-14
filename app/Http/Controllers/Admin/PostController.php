@@ -72,7 +72,7 @@ class PostController extends Controller
         //TAGS
        // $post->subcategories()->attach($request->get('subcategories'));
 
-        return redirect()->route('posts.edit', $post->id);
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**

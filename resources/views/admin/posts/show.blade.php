@@ -11,7 +11,7 @@
 
                 <div class="card-body">
                     <p><strong>Nombre</strong> {!! $post->name !!}</p>
-                    <p><strong>Nombre</strong> {!! $post->excerpt !!}</p>
+                    <p><strong>Extracto</strong> {!! $post->excerpt !!}</p>
                     @if($post->file)
                     <img src="{!! $post->file !!}" class="img-responsive">
                     @else

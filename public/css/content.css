@@ -29,7 +29,14 @@ section h2 {
     font-weight: bold;
 }
 
+.link-article{
+    text-decoration: none;
+    color: #7f858a;
 
+}
+.link-article:hover{
+    text-decoration: none;
+}
 /* Carousel base class */
 
 .carousel {

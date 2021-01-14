@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -24,7 +24,7 @@ class PageController extends Controller
     public function blog(){
     	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
-    	return view('web.posts', compact('posts'));
+    	return view('web.admin.posts', compact('posts'));
     }
 
     public function subcategory($slug){
@@ -32,14 +32,14 @@ class PageController extends Controller
         $posts = Post::where('subcategory_id', $subcategory)
             ->orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
-        return view('web.posts', compact('posts'));
+        return view('web.admin.posts', compact('posts'));
     }
 
 
     public function post($slug){
     	$post = Post::where('slug', $slug)->first();
 
-    	return view('web.post', compact('post'));
+    	return view('web.admin.post', compact('post'));
     }
 
   

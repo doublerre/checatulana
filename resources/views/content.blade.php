@@ -131,12 +131,12 @@
           </aside>
         
         <section id ="marco_juridico">
-          <h2>
+          <a href=""><h2>
               MARCO JURÍDICO
               <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="img/icons/01.png" class="card-img" alt="..." >
-          </h2>
+          </h2></a>
           <!-- <img src="img/icons/01.png" width="15px" height="15px"  alt="">-->
             <div id="accordion" class="myaccordion">
               <div class="card">
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="card text-center">
                                   <p></p>
-                                  <a href="ruta/archivo" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
+                                  <a href="http://www.finanzas.gob.mx/contenido/InformacionFinanciera/Constituciones/CPELYSZ.pdf" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
                                 </div>
                               </div> 
                             </div>
@@ -183,7 +183,7 @@
                                 </div>
                                 <div class="card text-center">
                                   <p></p>
-                                  <a href="ruta/archivo" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
+                                  <a href="https://www.dof.gob.mx/constitucion/marzo_2014_constitucion.pdf" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
                                 </div>
                               </div> 
                             </div>
@@ -191,13 +191,13 @@
                         </div>
                       </div>  
                     </div>
-                    <a href="/post/joni">Ley de Planeación del Estados de Zacatecas</a>
-                    <p>Linemientos para la Integración del Anteproyecto</p>
-                    <p>Lineamiento para la operación del PbR</p>
-                    <p>Leyes hacendarias y de coordinación fiscal Federal, Estatal y Municipal</p>
-                    <p>Proyectos (Paquete Económico)(Falta)</p>
-                    <p>Ley de Ingresos Federal y Estatal</p>
-                    <p>Decreto de Presupuesto Federal y Estatal</p>
+                  </p><a class="link-article" href="/articulo/ley-de-planeacion-del-estados-de-zacatecas">Ley de Planeación del Estados de Zacatecas</a></p>
+                  </p> <a class="link-article" href="/articulo/ley-de-planeacion-del-estados-de-zacatecas">Linemientos para la Integración del Anteproyecto</a> </p>
+                  <p> <a class="link-article" href="/articulo/ley-de-planeacion-del-estados-de-zacatecas">Lineamiento para la operación del PbR</a> </p>
+                    <p><a class="link-article" href="/articulo/ley-de-planeacion-del-estados-de-zacatecas">Leyes hacendarias y de coordinación fiscal Federal, Estatal y Municipal</a> </p>
+                    <p> <a class="link-article" href="/articulo/ley-de-planeacion-del-estados-de-zacatecas">Proyectos (Paquete Económico)(Falta)</a> </p>
+                    <p><a class="link-article" href="/articulo/ley-de-planeacion-del-estados-de-zacatecas">Ley de Ingresos Federal y Estatal</a> </p>
+                    <p><a class="link-article" href="/articulo/ley-de-planeacion-del-estados-de-zacatecas">Decreto de Presupuesto Federal y Estatal</a></p>
                     <br>
                   </div>
                 </div>

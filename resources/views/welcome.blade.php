@@ -81,7 +81,7 @@
             {{-- tarjetas  --}}
                
   <div class="row row-cols-1 row-cols-md-3">
-    @foreach ($categories->where('id','3') as $item)
+    @foreach ($categories as $item)
     <div class="col-md-4">
       <a id="urlcard" href="/portal#marco_juridico">
       <div class="card h-100 ">

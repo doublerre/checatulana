@@ -50,14 +50,14 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryStoreRequest $request)
+    public function store(Request $request)
     {
         $category = Category::create($request->all());
         if($request->file('image')){
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $category->fill(['file' => asset($path)])->save();
         }
-        return redirect()->route('categories.edit', $category->id);
+        return redirect()->route('categories.show', $category->id)->with('status', 'Profile updated!');
     }
 
     /**
@@ -93,13 +93,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $category = Category::find($id);
 
         $category->fill($request->all())->save();
 
-        return redirect()->route('categories.edit', $category->id);
+        return redirect()->route('categories.show', $category->id)->with('status', 'Profile updated!');
     }
 
     /**

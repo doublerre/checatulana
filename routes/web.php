@@ -18,14 +18,16 @@ Route::get('/portal', function () {
     return view('content');
 });
 
-Route::get('/', 'Web\PageController@welcome')->name('welcome');
-
+Route::get('/', 'Web\ContentController@welcome')->name('welcome');
+//Route::get('/dashboard/blogs', 'Web\ContentController@blog')->name('blog');
+Route::get('/articulo/{slug}', 'Web\ContentController@post')->name('post');
+//Route::get('/subcategory/{slug}', 'Web\ContentController@subcategory')->name('subcategory');
 Auth::routes();
 //ROUTES ADMIN
-Route::get('/dashboard/blogs', 'Web\PageController@blog')->name('blog');
-Route::get('/post/{slug}', 'Web\PageController@post')->name('post');
-Route::get('/subcategory/{slug}', 'Web\PageController@subcategory')->name('subcategory');
-Route::get('/tag/{slug}', 'Web\PageController@tag')->name('tag');
+Route::get('/dashboard/blogs', 'Admin\PageController@blog')->name('blog');
+Route::get('/post/{slug}', 'Admin\PageController@post')->name('post');
+Route::get('/subcategory/{slug}', 'Admin\PageController@subcategory')->name('subcategory');
+//Route::get('/tag/{slug}', 'Admin\PageController@tag')->name('tag');
 
 //ROUTES ADMIN
 //Route::resource('tags', 		'Admin\TagController');

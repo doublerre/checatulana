@@ -7,7 +7,7 @@
 
         	<h1><strong>{!! $post->name !!}</strong></h1>
 
-            <div class="card">
+            <div class="card" style="width: 850px">
                 <div class="card-header">
                     Subcategoria 
                     <a href="{{ route('subcategory', $post->subcategory->slug) }}">
@@ -17,7 +17,7 @@
 
                 <div class="card-body">
                     @if($post->file)
-                        <img src="{{ $post->file }}" class="img-responsive">
+                        <img src="{{ $post->file }}" class="img-responsive" style="width: 740px">
                     @endif
                     
                     {!! $post->excerpt !!}
