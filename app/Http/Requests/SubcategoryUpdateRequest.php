@@ -25,7 +25,7 @@ class SubcategoryUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'slug' => 'required'
+            'slug' => 'required|unique:subcategories,slug,'.$this->subcategory,
         ];
     }
 }

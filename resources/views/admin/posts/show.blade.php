@@ -11,10 +11,11 @@
 
                 <div class="card-body">
                     <p><strong>Nombre</strong> {!! $post->name !!}</p>
+                    <p><strong>Nombre</strong> {!! $post->excerpt !!}</p>
                     @if($post->file)
                     <img src="{!! $post->file !!}" class="img-responsive">
                     @else
-                    I don't have any records!
+                   <img src="img/errorimage.svg" alt="Sin Imagen">
                     @endif
                     <p><strong>Contenido</strong>  {!! $post->body !!}</p>
                 </div>

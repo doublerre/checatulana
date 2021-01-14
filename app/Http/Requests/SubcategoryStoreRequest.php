@@ -25,7 +25,7 @@ class SubcategoryStoreRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'slug' => 'required'
+            'slug' => 'required|unique:subcategories,slug',
         ];
     }
 }

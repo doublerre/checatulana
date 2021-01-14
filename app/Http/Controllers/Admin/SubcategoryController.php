@@ -42,7 +42,8 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $categories = Category::pluck('name', 'id');
+        //return $categories;
         return view('admin.subcategories.create', compact('categories'));
     }
 
@@ -52,12 +53,12 @@ class SubcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SubcategoryStoreRequest $request)
+    public function store(Request $request)
     {
         $subcategory = Subcategories::create($request->all());
         //$this->authorize('pass', $subcategory);
-        $subcategory->category()->attach($request->get('categories'));
-        return redirect()->route('subcategories.edit', $subcategory->id)->with('info', 'Etiqueta creada con éxito');
+        //$subcategory->category()->attach($request->get('categories'));
+        return redirect()->route('subcategories.show', $subcategory->id)->with('info', 'Etiqueta creada con éxito');
     }
 
     /**
@@ -81,8 +82,8 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $subcategory = Subcategories::find($id);
-
         return view('admin.subcategories.edit', compact('subcategory'));
     }
 
@@ -93,7 +94,7 @@ class SubcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(SubcategoryUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $subcategory = Subcategories::find($id);
 
