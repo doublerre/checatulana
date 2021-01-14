@@ -9,7 +9,7 @@
 
         	@foreach($posts as $post)
             <div class="card">
-                <div class="card-heading">{!! $post->name !!}</div>
+                <div class="card-header"><strong>{!! $post->name !!}</strong></div>
 
                 <div class="card-body">
                     @if($post->file)

@@ -33,7 +33,7 @@ class PostUpdateRequest extends FormRequest
         ];
 
         if($this->get('image'))        
-            $rules = array_merge($rules, ['image'=> 'mime:jpg,jpeg,png']);
+            $rules = array_merge($rules, ['image'=>'mime:jpg,jpeg,png']);
 
         return $rules;
     }

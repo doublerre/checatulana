@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        	<h1>{!! $post->name !!}</h1>
+        	<h1><strong>{!! $post->name !!}</strong></h1>
 
             <div class="card">
-                <div class="card-heading">
+                <div class="card-header">
                     Subcategoria 
                     <a href="{{ route('subcategory', $post->subcategory->slug) }}">
                         {{ $post->subcategory->name }}
