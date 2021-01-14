@@ -58,7 +58,7 @@ class SubcategoryController extends Controller
         $subcategory = Subcategories::create($request->all());
         //$this->authorize('pass', $subcategory);
         //$subcategory->category()->attach($request->get('categories'));
-        return redirect()->route('subcategories.show', $subcategory->id)->with('info', 'Etiqueta creada con éxito');
+        return redirect()->route('subcategories.show', $subcategory->id);
     }
 
     /**
@@ -100,7 +100,7 @@ class SubcategoryController extends Controller
 
         $subcategory->fill($request->all())->save();
 
-        return redirect()->route('subcategories.edit', $subcategory->id)->with('info', 'Etiqueta actualizada con éxito');
+        return redirect()->route('subcategories.edit', $subcategory->id);
     }
 
     /**
@@ -113,6 +113,6 @@ class SubcategoryController extends Controller
     {
         $subcategory = Subcategories::find($id)->delete();
 
-        return back()->with('info', 'Eliminado correctamente');
+        return back();
     }
 }

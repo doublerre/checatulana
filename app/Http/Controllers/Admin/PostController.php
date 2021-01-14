@@ -72,7 +72,7 @@ class PostController extends Controller
         //TAGS
        // $post->subcategories()->attach($request->get('subcategories'));
 
-        return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada creada con éxito');
+        return redirect()->route('posts.edit', $post->id);
     }
 
     /**
@@ -128,7 +128,7 @@ class PostController extends Controller
         //TAGS
        // $post->categories()->sync($request->get('categories'));
 
-        return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada actualizada con éxito');
+        return redirect()->route('posts.edit', $post->id);
     }
 
     /**
@@ -142,6 +142,6 @@ class PostController extends Controller
         $post = Post::find($id)->delete();
         //$this->authorize('pass', $post);
 
-        return back()->with('info', 'Eliminado correctamente');
+        return back();
     }
 }

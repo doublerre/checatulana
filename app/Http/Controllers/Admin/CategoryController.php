@@ -57,7 +57,7 @@ class CategoryController extends Controller
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $category->fill(['file' => asset($path)])->save();
         }
-        return redirect()->route('categories.edit', $category->id)->with('info', 'Categoría creada con éxito');
+        return redirect()->route('categories.edit', $category->id);
     }
 
     /**
@@ -99,7 +99,7 @@ class CategoryController extends Controller
 
         $category->fill($request->all())->save();
 
-        return redirect()->route('categories.edit', $category->id)->with('info', 'Categoría actualizada con éxito');
+        return redirect()->route('categories.edit', $category->id);
     }
 
     /**
@@ -112,6 +112,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id)->delete();
 
-        return back()->with('info', 'Eliminado correctamente');
+        return back();
     }
 }
