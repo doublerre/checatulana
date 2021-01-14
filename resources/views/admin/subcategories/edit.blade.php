@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 @section('title', 'Editar Articulo')
 
 @section('content')
@@ -14,7 +14,7 @@
                     {!! Form::model($subcategory, ['route' => ['subcategories.update', $subcategory->id], 'method' => 'PUT']) !!}
                         
                         @include('admin.subcategories.partials.form')
-
+                        
                     {!! Form::close() !!}
                 </div>
             </div>

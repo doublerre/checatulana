@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-        	<h1>{{ $post->name }}</h1>
+        	<h1>{!! $post->name !!}</h1>
 
             <div class="card">
                 <div class="card-heading">
@@ -20,7 +20,7 @@
                         <img src="{{ $post->file }}" class="img-responsive">
                     @endif
                     
-                    {{ $post->excerpt }}
+                    {!! $post->excerpt !!}
                     <hr>
                     {!! $post->body !!}
                     <hr>
@@ -31,4 +31,4 @@
         </div>
     </div>
 </div>
-@endsection
+@stop

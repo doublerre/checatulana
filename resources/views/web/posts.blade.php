@@ -9,14 +9,14 @@
 
         	@foreach($posts as $post)
             <div class="card">
-                <div class="card-heading">{{ $post->name }}</div>
+                <div class="card-heading">{!! $post->name !!}</div>
 
                 <div class="card-body">
                     @if($post->file)
-                        <img src="{{ $post->file }}" class="img-responsive">
+                        <img src="{!! $post->file !!}" class="img-responsive">
                     @endif
                     
-                    {{ $post->excerpt }}
+                    {!! $post->excerpt !!}
                     <a href="{{ route('post', $post->slug) }}" class="pull-right">Leer más</a>
                 </div>
             </div>
