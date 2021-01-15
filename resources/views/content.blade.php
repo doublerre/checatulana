@@ -216,6 +216,10 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
                   <div class="card-body-contenido">
+                    @foreach ($posts->where('subcategory_id','20') as $post)
+                  </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                     <ul>
                       <li>Texto</li>
                     </ul>

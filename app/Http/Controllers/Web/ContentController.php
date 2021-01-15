@@ -10,10 +10,7 @@ use App\Post;
 
 class ContentController extends Controller
 {
-    public function getSubcategory($id){
-        $subcategories_posts= Subcategories::where('category_id',$id)->get();
-        return response()->json($subcategories_posts);
-    }
+    
     public function welcome(){
         $categories = Category::orderBy('id', 'ASC')->paginate();
         $subcategories = Subcategories::orderBy('id', 'ASC')->paginate();
@@ -21,8 +18,8 @@ class ContentController extends Controller
         return view('welcome',$data);
     }
     public function blog1(){
-    	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
-
+        $subcategory = Subcategories::orderBy('id', 'ASC')->paginate();
+    	$posts = Post::orderBy('id', 'ASC')->where('status', 'PUBLISHED')->paginate();
     	return view('content', compact('posts'));
     }
   

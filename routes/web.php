@@ -14,12 +14,12 @@
 //Route::get('/', function () {
   //  return view('welcome');
 //});
-Route::get('/portal', function () {
-    return view('content');
-});
+// Route::get('/portal', function () {
+//     return view('content');
+// });
 
 Route::get('/', 'Web\ContentController@welcome')->name('welcome');
-//Route::get('/dashboard/blogs', 'Web\ContentController@blog')->name('blog');
+Route::get('/portal', 'Web\ContentController@blog1');
 Route::get('/articulo/{slug}', 'Web\ContentController@post')->name('post');
 //Route::get('/subcategory/{slug}', 'Web\ContentController@subcategory')->name('subcategory');
 Auth::routes();
