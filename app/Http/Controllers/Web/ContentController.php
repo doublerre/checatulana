@@ -18,9 +18,11 @@ class ContentController extends Controller
         return view('welcome',$data);
     }
     public function blog1(){
+        $categories = Category::orderBy('id', 'ASC')->paginate();
         $subcategory = Subcategories::orderBy('id', 'ASC')->paginate();
-    	$posts = Post::orderBy('id', 'ASC')->where('status', 'PUBLISHED')->paginate();
-    	return view('content', compact('posts'));
+        $posts = Post::orderBy('id', 'ASC')->where('status', 'PUBLISHED')->paginate();
+        $data= ['categories'=>$categories,'subcategories'=>$subcategory,'posts'=>$posts];
+    	return view('content', $data);
     }
   
     public function blog(){
