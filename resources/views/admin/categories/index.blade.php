@@ -33,7 +33,7 @@
                                     <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-default">Editar</a>
                                 </td>
                                 <td width="10px">
-                                    {!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE']) !!}
+                                    {!! Form::open(['class'=>'delete', 'route' => ['categories.destroy', $category->id], 'method' => 'DELETE']) !!}
                                         <button class="btn btn-sm btn-danger">
                                             Eliminar
                                         </button>                           
@@ -51,3 +51,39 @@
     </div>
 </div>
 @stop
+@section('js')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+ @if (session('eliminar')== 'ok')
+ <script>
+    Swal.fire(
+        '¡Eliminado!',
+        'La  categorías ha sido eliminada',
+        'success'
+        )
+ </script>
+     
+ @endif
+<script>
+    $('.delete').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+  title: '¿Estás seguro de eliminar esta categoría?',
+  text: "Recuerda no eliminar categorias que contengan subcategorías!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, eliminar!'
+}).then((result) => {
+  if (result.isConfirmed) {
+   
+    this.submit();
+  }
+})
+        
+    });
+  
+</script>
+    
+@endsection

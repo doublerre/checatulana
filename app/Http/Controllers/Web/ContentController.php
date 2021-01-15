@@ -20,6 +20,11 @@ class ContentController extends Controller
         $data= ['categories'=>$categories, 'subcategories'=>$subcategories];
         return view('welcome',$data);
     }
+    public function blog1(){
+    	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
+
+    	return view('content', compact('posts'));
+    }
   
     public function blog(){
     	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);

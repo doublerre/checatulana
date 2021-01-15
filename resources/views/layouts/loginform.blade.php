@@ -43,6 +43,7 @@
       }
       
       .login-form {
+         background-color: #f7f7f7
          width: 340px;
          height: auto;
          margin: 30px auto;

@@ -57,7 +57,7 @@ class CategoryController extends Controller
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $category->fill(['file' => asset($path)])->save();
         }
-        return redirect()->route('categories.show', $category->id)->with('status', 'Profile updated!');
+        return redirect()->route('categories.index', $category->id)->with('status', 'Profile updated!');
     }
 
     /**
@@ -112,6 +112,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id)->delete();
 
-        return back();
+        return back()->with('eliminar','ok');
     }
 }

@@ -113,6 +113,6 @@ class SubcategoryController extends Controller
     {
         $subcategory = Subcategories::find($id)->delete();
 
-        return back();
+        return back()->with('eliminar', 'ok');
     }
 }

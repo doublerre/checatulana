@@ -142,6 +142,6 @@ class PostController extends Controller
         $post = Post::find($id)->delete();
         //$this->authorize('pass', $post);
 
-        return back();
+        return back()->with('eliminar','ok');
     }
 }
