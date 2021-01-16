@@ -11,10 +11,20 @@
     {{ Form::textarea('body', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
+    {{ Form::label('image', 'Imagen') }}
+    {{ Form::file('image') }}
+</div>
+<div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
 </div>
-
-@section('scripts')
+<div>
+    @foreach ($errors->all() as $error)
+	    {{ $error }}		
+	@endforeach
+		
+</div>
+@section('js')
+<script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
 <script src="{{ asset('vendor/stringToSlug/jquery.stringToSlug.min.js') }}"></script>
 <script>
 	$(document).ready(function(){
@@ -25,4 +35,5 @@
 	    });
 	});
 </script>
-@endsection
+
+@stop

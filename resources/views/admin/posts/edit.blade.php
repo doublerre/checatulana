@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 @section('title', 'Editar Articulo')
 
 @section('content')
@@ -21,4 +21,4 @@
         </div>
     </div>
 </div>
-@endsection
+@stop

@@ -69,23 +69,32 @@
             <div class="carousel-inner">
               {{--carrusel 1--}}
               <div class="carousel-item active">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban1.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-01.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
               </div>
         
               {{--carrusel 2--}}
               <div class="carousel-item">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban2.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-02.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
               </div>
         
               {{--carrusel 3--}}
               <div class="carousel-item">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban3.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-03.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
               </div>
         
               {{--carrusel 4--}}
               <div class="carousel-item">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban4.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-04.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
               </div>
+              {{--carrusel 6--}}
+              <div class="carousel-item">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-06.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+              </div>
+              {{--carrusel 7--}}
+              <div class="carousel-item">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-07.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+              </div>
+            </div>
             </div>
             {{--control de carrusel--}}
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -122,12 +131,12 @@
           </aside>
         
         <section id ="marco_juridico">
-          <h2>
+          <a href=""><h2>
               MARCO JURÍDICO
               <!-- Esto es para poder separar el texto y la imagen (emula las tabulaciones), será temporal mientras encuentro la solución -->
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <img src="img/icons/01.png" class="card-img" alt="..." >
-          </h2>
+          </h2></a>
           <!-- <img src="img/icons/01.png" width="15px" height="15px"  alt="">-->
             <div id="accordion" class="myaccordion">
               <div class="card">
@@ -158,10 +167,10 @@
                               <div class="card-body">
                                 <div class="card-title-pdf">
                                   Constitución Política del Estado
-                                </div>
+                                </div> 
                                 <div class="card text-center">
                                   <p></p>
-                                  <a href="ruta/archivo" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
+                                  <a href="http://www.finanzas.gob.mx/contenido/InformacionFinanciera/Constituciones/CPELYSZ.pdf" target="_blank"download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
                                 </div>
                               </div> 
                             </div>
@@ -174,7 +183,7 @@
                                 </div>
                                 <div class="card text-center">
                                   <p></p>
-                                  <a href="ruta/archivo" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
+                                  <a href="https://www.dof.gob.mx/constitucion/marzo_2014_constitucion.pdf" target="_blank" download="archivoADescargar"><img src="img/icons/pdf.png" class="card-img-download" alt="..."></a>
                                 </div>
                               </div> 
                             </div>
@@ -182,14 +191,9 @@
                         </div>
                       </div>  
                     </div>
-                    <p>Ley de Planeación del Estados de Zacatecas</p>
-                    <p>Linemientos para la Integración del Anteproyecto</p>
-                    <p>Lineamiento para la operación del PbR</p>
-                    <p>Leyes hacendarias y de coordinación fiscal Federal, Estatal y Municipal</p>
-                    <p>Proyectos (Paquete Económico)(Falta)</p>
-                    <p>Ley de Ingresos Federal y Estatal</p>
-                    <p>Decreto de Presupuesto Federal y Estatal</p>
-                    <br>
+                    @foreach ($posts->where('subcategory_id','1') as $post)
+                      </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                      @endforeach
                   </div>
                 </div>
               </div>
@@ -207,9 +211,10 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
                   <div class="card-body-contenido">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','2') as $post)
+                      </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -227,9 +232,10 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
                   <div class="card-body-contenido">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','3') as $post)
+                        </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -247,9 +253,10 @@
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour">
                   <div class="card-bod-contenido">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','4') as $post)
+                       </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -267,9 +274,10 @@
                 </div>
                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive">
                   <div class="card-body-contenido">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','5') as $post)
+                       </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -307,10 +315,10 @@
                 </div>
                 <div id="collapseEight" class="collapse" aria-labelledby="headingEight">
                   <div class="card-body">
-                    <ul>
-                      <li>Texto</li>
-                    
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','6') as $post)
+                        </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -328,9 +336,10 @@
                 </div>
                 <div id="collapseNine" class="collapse" aria-labelledby="headingNine">
                   <div class="card-body">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','7') as $post)
+                  </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                  
+              @endforeach
                   </div>
                 </div>
               </div>
@@ -348,9 +357,10 @@
                 </div>
                 <div id="collapseTen" class="collapse" aria-labelledby="headingTen">
                   <div class="card-body">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','8') as $post)
+                  </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                  
+              @endforeach
                   </div>
                 </div>
               </div>
@@ -368,9 +378,10 @@
                 </div>
                 <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven">
                   <div class="card-body">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','9') as $post)
+                        </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -388,9 +399,10 @@
                 </div>
                 <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve">
                   <div class="card-body">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','10') as $post)
+                  </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                  
+              @endforeach
                   </div>
                 </div>
               </div>
@@ -408,9 +420,10 @@
                 </div>
                 <div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen">
                   <div class="card-body">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','11') as $post)
+                        </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -428,9 +441,10 @@
                 </div>
                 <div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen">
                   <div class="card-body">
-                    <ul>
-                      <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','12') as $post)
+                  </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                  
+              @endforeach
                   </div>
                 </div>
               </div>
@@ -468,9 +482,10 @@
                 </div>
                 <div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen">
                   <div class="card-body">
-                    <ul>
-                    <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','13') as $post)
+                  </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                  
+              @endforeach
                   </div>
                 </div>
               </div>
@@ -488,9 +503,10 @@
                 </div>
                 <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen">
                   <div class="card-body">
-                    <ul>
-                    <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','14') as $post)
+                        </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -508,9 +524,10 @@
                 </div>
                 <div id="collapseSixteen" class="collapse" aria-labelledby="headingSixteen">
                   <div class="card-body">
-                    <ul>
-                    <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','15') as $post)
+                        </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -548,9 +565,10 @@
                 </div>
                 <div id="collapseSeventeen" class="collapse" aria-labelledby="headingSeventeen">
                   <div class="card-body">
-                    <ul>
-                    <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','16') as $post)
+                  </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                  
+              @endforeach
                   </div>
                 </div>
               </div>
@@ -568,9 +586,10 @@
                 </div>
                 <div id="collapseEightteen" class="collapse" aria-labelledby="headingEightteen">
                   <div class="card-body">
-                    <ul>
-                    <li>Texto</li>
-                    </ul>
+                    @foreach ($posts->where('subcategory_id','17') as $post)
+                        </p><a class="link-article" href="articulo/{{$post->slug}}">{{$post->name}}</a></p>
+                        
+                    @endforeach
                   </div>
                 </div>
               </div>

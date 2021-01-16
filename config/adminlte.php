@@ -188,7 +188,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'blog',
+    'dashboard_url' => '/dashboard/blogs',
 
     'logout_url' => 'logout',
 
@@ -244,20 +244,20 @@ return [
         ['header' => 'Entradas'],
         [
             'text'        => 'Home',
-            'url'         => 'blog/',
+            'url'         => '/dashboard/blogs',
             'icon'        => 'fas fa-home',
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Etiquetas',
-            'url'         => 'tags/',
-            'icon'        => 'fas fa-hashtag',
+            'text'        => 'Categorías',
+            'url'         => 'categories/',
+            'icon'        => 'fas fa-bars',
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Categoría',
-            'url'         => 'categories/',
-            'icon'        => 'fas fa-bars',
+            'text'        => 'Subcategorías',
+            'url'         => 'subcategories/',
+            'icon'        => 'fas fa-angle-right',
             'label_color' => 'success',
         ],
         [

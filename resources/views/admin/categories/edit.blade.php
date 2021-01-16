@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="card-body">
-                    {!! Form::model($category, ['route' => ['categories.update', $category->id], 'method' => 'PUT']) !!}
+                    {!! Form::model($category, ['class'=>'edit','route' => ['categories.update', $category->id], 'method' => 'PUT']) !!}
                         
                         @include('admin.categories.partials.form')
 
@@ -20,4 +20,4 @@
         </div>
     </div>
 </div>
-@endsection
+@stop

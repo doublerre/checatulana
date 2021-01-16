@@ -11,23 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/portal', function () {
-    return view('content');
-});
+//Route::get('/', function () {
+  //  return view('welcome');
+//});
+// Route::get('/portal', function () {
+//     return view('content');
+// });
 
-
+Route::get('/', 'Web\ContentController@welcome')->name('welcome');
+Route::get('/portal', 'Web\ContentController@blog1');
+Route::get('/articulo/{slug}', 'Web\ContentController@post')->name('post');
+//Route::get('/subcategory/{slug}', 'Web\ContentController@subcategory')->name('subcategory');
 Auth::routes();
+//ROUTES ADMIN
+Route::get('/dashboard/blogs', 'Admin\PageController@blog')->name('blog');
+Route::get('/post/{slug}', 'Admin\PageController@post')->name('post');
+Route::get('/subcategory/{slug}', 'Admin\PageController@subcategory')->name('subcategory');
+//Route::get('/tag/{slug}', 'Admin\PageController@tag')->name('tag');
 
-Route::get('/blog', 'Web\PageController@blog')->name('blog');
-
-
-Route::get('/post/{slug}', 'Web\PageController@post')->name('post');
-Route::get('/category/{slug}', 'Web\PageController@category')->name('category');
-Route::get('/tag/{slug}', 'Web\PageController@tag')->name('tag');
-
-Route::resource('tags', 		'Admin\TagController');
+//ROUTES ADMIN
+//Route::resource('tags', 		'Admin\TagController');
 Route::resource('categories', 	'Admin\CategoryController');
+Route::resource('subcategories', 	'Admin\SubcategoryController');
 Route::resource('posts', 		'Admin\PostController');
+//Route::get('/subcategory/{id}', 'Web\PageController@getSubcategory')->name('apiCategory');

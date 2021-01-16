@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    
+    hola
 @stop
 
 @section('css')

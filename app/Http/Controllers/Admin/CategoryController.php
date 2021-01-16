@@ -29,7 +29,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('id', 'DESC')->paginate();
+        $categories = Category::orderBy('id', 'ASC')->paginate();
 
         return view('admin.categories.index', compact('categories'));
     }
@@ -50,11 +50,14 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryStoreRequest $request)
+    public function store(Request $request)
     {
         $category = Category::create($request->all());
-
-        return redirect()->route('categories.edit', $category->id)->with('info', 'Categoría creada con éxito');
+        if($request->file('image')){
+            $path = Storage::disk('public')->put('image',  $request->file('image'));
+            $category->fill(['file' => asset($path)])->save();
+        }
+        return redirect()->route('categories.index', $category->id)->with('status', 'Profile updated!');
     }
 
     /**
@@ -90,13 +93,13 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $category = Category::find($id);
 
         $category->fill($request->all())->save();
 
-        return redirect()->route('categories.edit', $category->id)->with('info', 'Categoría actualizada con éxito');
+        return redirect()->route('categories.show', $category->id)->with('status', 'Profile updated!');
     }
 
     /**
@@ -109,6 +112,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id)->delete();
 
-        return back()->with('info', 'Eliminado correctamente');
+        return back()->with('eliminar','ok');
     }
 }

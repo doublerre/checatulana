@@ -7,10 +7,8 @@
     <title>Checa Tu Lana</title>
 
     <!-- Bootstrap core CSS -->
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/landing.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/landing.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -41,22 +39,32 @@
     <div class="carousel-inner">
       {{--carrusel 1--}}
       <div class="carousel-item active">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban1.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-01.png" preserveAspectRatio="xMidYMid slice" focusable="true" role="img"><rect width="100%" height="100%" /></img>
       </div>
 
       {{--carrusel 2--}}
       <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban2.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-02.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
       </div>
 
       {{--carrusel 3--}}
       <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban3.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-03.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
       </div>
 
       {{--carrusel 4--}}
       <div class="carousel-item">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/ban4.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-04.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+      </div>
+
+      {{--carrusel 5--}}
+      <div class="carousel-item">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-06.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
+      </div>
+
+      {{--carrusel 6--}}
+      <div class="carousel-item">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="img/baners/banner-07.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" /></img>
       </div>
     </div>
     {{--control de carrusel--}}
@@ -69,146 +77,128 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-            {{-- tarjetas  --}}
-              
-  <div class="row row-cols-1 row-cols-md-3">
-    <div class="col-md-4">
-      <a id="urlcard" href="/portal#marco_juridico">
-      <div class="card h-100 ">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">MARCO JURÍDICO</h5>
-              <p class="card-text">
-                Operaciones del presupuesto <br>
-                Disciplina finaciera <br>
-                Contabilidad Gubernamental <br>
-                Fiscalización <br>
-                Formatos
-              </p>
-          </div>
-          <div class="col-md-4 col-sm">
-            <img src="img/icons/01.png" class="card-img" alt="...">
+
+  {{-- tarjetas  --}}
+  <div class="cards">
+    <div class="row row-cols-1 row-cols-md-3 row-col-sm-6 row-col-xs-12">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal#marco_juridico"><div class="card h-100" id="top1">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="marcoJuridico">MARCO JURÍDICO</h5>
+                <p class="card-text">
+                  Operaciones del presupuesto <br>
+                  Disciplina finaciera <br>
+                  Contabilidad gubernamental <br>
+                  Fiscalización <br>
+                  Formatos
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/01.png" class="card-img" alt="...">
+            </div>
           </div>
           </a>
         </div>
       </div>
-    </div>
-
-    {{-- tarjeta  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#checa_tulana">
-        <div class="card h-100">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">CHECA TU LANA</h5>
-              <p class="card-text">
-                Planeación <br>
-                Programación <br>
-                Presupuestación <br>
-                Ejercicio y control <br>
-                Seguimiento <br>
-                Evaluación <br>
-                Rendición de cuentas 
-              </p>
-          </div>
-          <div class="col-md-4 col-sm">
-            <img src="img/icons/02.png" class="card-img" alt="...">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal#checa_tu_lana"><div class="card h-100" id="top2">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="checaTuLana">CHECA TU LANA</h5>
+                <p class="card-text">
+                  Planeación <br>
+                  Programación <br>
+                  Presupuestación <br>
+                  Ejercicio y control <br>
+                  Seguimiento <br>
+                  Evaluación <br>
+                  Rendición de cuentas 
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/02.png" class="card-img" alt="...">
+            </div>
           </div>
         </div>
         </a>
       </div>
-      </a>
-    </div>
-
-    {{-- tarjetas  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#participacion_ciudadana"><div class="card h-100 ">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">PARTICIPACIÓN CIUDADANA</h5>
-              <p class="card-text">
-                Plat. digital avancemos todos<br>
-                Índice<br>
-                Decidiendo juntos <br>
-                Proponle a Zacatecas <br>
-                Obra transparente <br>
-                Deuda Pública <br>
-              </p>
-          </div>
-          <div class="col-md-2 col-sm">
-            <img src="img/icons/03.png" class="card-img" alt="...">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal"><div class="card h-100">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="partCiudadana">PARTICIPACIÓN CIUDADANA</h5>
+                <p class="card-text">
+                  Plat. digital avancemos todos<br>
+                  Índice<br>
+                  Decidiendo juntos <br>
+                  Proponle a Zacatecas <br>
+                  Obra transparente <br>
+                  Deuda Pública <br>
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/03.png" class="card-img" alt="...">
+            </div>
           </div>
         </div>
-      </a>
-      </div>
-      </a>
-    </div>
-
-    {{-- tarjeta  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#marco_juridico"> 
-      <div class="card h-1000" id = "bottom">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">PROGRAMAS Y ACCIONES</h5>
-              <p class="card-text">
-                Programas Sociales<br>
-                Programas económicos<br>
-                Agua y medio ambiente<br>
-                Otros Programas<br>
-                Obra Pública <br>
-              </p>
-          </div>
-          <div class="col-md-3 col-sm">
-            <img src="img/icons/04.png" class="card-img" alt="...">
+        </a>
+      </div> 
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal"><div class="card h-1000" id = "bottom">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="programasAcciones">PROGRAMAS Y ACCIONES</h5>
+                <p class="card-text">
+                  Programas sociales<br>
+                  Programas económicos<br>
+                  Agua y medio ambiente<br>
+                  Otros Programas<br>
+                  Obra pública <br>
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/04.png" class="card-img" alt="...">
+            </div>
           </div>
         </div>
         </a>
       </div>
-    </a>
-    </div>
-
-   {{-- tarjeta  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#marco_juridico">
-      <div class="card h-100" id = "bottom">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">SISTEMA DE EVALUACIÓN</h5>
-              <p class="card-text">
-                Evaluación al desempeno<br>
-                Programa anual de Evaluación<br>
-                Resultado de las evaluaciones<br>
-              </p>
-          </div>
-          <div class="col-md-3 col-sm">
-            <img src="img/icons/05.png" class="card-img" alt="...">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal"><div class="card h-100" id = "bottom">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title" id="sistEvaluacion">SISTEMA DE EVALUACIÓN</h5>
+                <p class="card-text">
+                  Evaluación al desempeño<br>
+                  Programa anual de evaluación<br>
+                  Resultado de las evaluaciones<br>
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/05.png" class="card-img" alt="...">
+            </div>
           </div>
         </div>
         </a>
       </div>
-    </a>
-    </div> 
-
- {{-- tarjeta  --}}
-    <div class="col md-4">
-      <a id="urlcard" href="/portal#marco_juridico">
-      <div class = "card h-100" id = "bottom">
-        <div class="row no-gutters">
-          <div class="card-body">
-            <h5 class="card-title">FISCALIZACIÓN</h5>
-              <p class="card-text">
-                Programas de fiscalización<br>
-                Estadísticas<br>
-              </p>
-          </div>
-          <div class="imagen">
-            <img src="img/icons/06.png" class="card-img" alt="...">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a id="urlcard" href="/portal"><div class = "card h-100" id = "bottom">
+          <div class="row no-gutters">
+            <div class="card-body">
+              <h5 class="card-title">FISCALIZACIÓN</h5>
+                <p class="card-text">
+                  Programas de fiscalización<br>
+                  Estadísticas<br>
+                </p>
+            </div>
+            <div class="col-xs-1">
+              <img src="img/icons/06.png" class="card-img" alt="...">
+            </div>
           </div>
         </div>
         </a>
       </div>
-    </a>
     </div>
   </div>
 </main>
@@ -243,3 +233,4 @@
 </body>
 
 </html>
+

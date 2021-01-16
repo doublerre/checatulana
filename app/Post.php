@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $fillable = [
-        'user_id', 'category_id', 'name', 'slug', 'excerpt', 'body', 'status', 'file'
+        'user_id', 'subcategory_id', 'name', 'slug', 'excerpt', 'body', 'status', 'file'
     ];
 
-    public function category()
+    public function subcategory()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Subcategories::class);
     }
 
     public function user()
@@ -20,8 +20,4 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class);
-    }
 }

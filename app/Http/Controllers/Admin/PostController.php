@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Post;
 use App\Category;
-use App\Tag;
+use App\Subcategories;
 
 class PostController extends Controller
 {
@@ -47,10 +47,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $tags       = Tag::orderBy('name', 'ASC')->get();
+        //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
 
-        return view('admin.posts.create', compact('categories', 'tags'));
+        return view('admin.posts.create', compact('subcategories'));
     }
 
     /**
@@ -62,18 +62,17 @@ class PostController extends Controller
     public function store(PostStoreRequest $request)
     {
         $post = Post::create($request->all());
-        $this->authorize('pass', $post);
+        //$this->authorize('pass', $post);
 
         //IMAGE 
         if($request->file('image')){
             $path = Storage::disk('public')->put('image',  $request->file('image'));
             $post->fill(['file' => asset($path)])->save();
         }
-
         //TAGS
-        $post->tags()->attach($request->get('tags'));
+       // $post->subcategories()->attach($request->get('subcategories'));
 
-        return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada creada con éxito');
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -85,7 +84,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        $this->authorize('pass', $post);
+        //$this->authorize('pass', $post);
 
         return view('admin.posts.show', compact('post'));
     }
@@ -98,12 +97,12 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $tags       = Tag::orderBy('name', 'ASC')->get();
-        $post       = Post::find($id);
-        $this->authorize('pass', $post);
+        //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
+        $post= Post::find($id);
+       // $this->authorize('pass', $post);
 
-        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
+        return view('admin.posts.edit', compact('post','subcategories'));
     }
 
     /**
@@ -116,7 +115,7 @@ class PostController extends Controller
     public function update(PostUpdateRequest $request, $id)
     {
         $post = Post::find($id);
-        $this->authorize('pass', $post);
+        //$this->authorize('pass', $post);
 
         $post->fill($request->all())->save();
 
@@ -127,9 +126,9 @@ class PostController extends Controller
         }
 
         //TAGS
-        $post->tags()->sync($request->get('tags'));
+       // $post->categories()->sync($request->get('categories'));
 
-        return redirect()->route('posts.edit', $post->id)->with('info', 'Entrada actualizada con éxito');
+        return redirect()->route('posts.edit', $post->id);
     }
 
     /**
@@ -141,8 +140,8 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id)->delete();
-        $this->authorize('pass', $post);
+        //$this->authorize('pass', $post);
 
-        return back()->with('info', 'Eliminado correctamente');
+        return back()->with('eliminar','ok');
     }
 }
