@@ -18,9 +18,9 @@
 //     return view('content');
 // });
 
-Route::get('/', 'Web\ContentController@welcome')->name('welcome');
-Route::get('/portal', 'Web\ContentController@blog1');
-Route::get('/articulo/{slug}', 'Web\ContentController@post')->name('post');
+//Route::get('/', 'Web\ContentController@welcome')->name('welcome');
+//Route::get('/portal', 'Web\ContentController@blog1');
+//Route::get('/articulo/{slug}', 'Web\ContentController@post')->name('post');
 //Route::get('/subcategory/{slug}', 'Web\ContentController@subcategory')->name('subcategory');
 Auth::routes();
 //ROUTES ADMIN
