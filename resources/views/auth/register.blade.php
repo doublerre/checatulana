@@ -1,4 +1,4 @@
-@extends('layouts.loginform')
+@extends('adminlte::auth.register')
 
 @section('register')
 <div class="container">

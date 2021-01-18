@@ -11,13 +11,12 @@
 |
 */
 
-//Route::get('/', function () {
-  //  return view('welcome');
-//});
+Route::get('/', function () {
+   return view('auth.login');});
 // Route::get('/portal', function () {
 //     return view('content');
 // });
-
+//Route::get('/', 'Web\ContentController@welcome')->name('welcome');
 //Route::get('/', 'Web\ContentController@welcome')->name('welcome');
 //Route::get('/portal', 'Web\ContentController@blog1');
 //Route::get('/articulo/{slug}', 'Web\ContentController@post')->name('post');
