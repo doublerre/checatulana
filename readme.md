@@ -1,6 +1,7 @@
-- Repositorio oficial Plataforma #CHECATULANA zacatecas
-
-LIGA DEL SITIO https://checatulana.zacatecas.gob.mx/
+-!!Repositorio checatulana Adminstrador!!
+Este repositorio contiene el proyecto que se mostrara al administrador del sitio.
+debera ir en el dominio   https://admin.checatulana.zacatecas.gob.mx/
+sera conectado a la misma base de datos
 - Dependecias a instalar:
     
 1. Servidor Apache
