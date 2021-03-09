@@ -36,5 +36,5 @@ Route::resource('posts', 		'Admin\PostController');
 //Route::get('/subcategory/{id}', 'Web\PageController@getSubcategory')->name('apiCategory');
 
 Route::group(["middleware" => ['auth'], "as" => "profile."], function(){
-   Route::get('index', 'Admin\ProfileController@index')->name('index');
+   Route::get('profile', 'Admin\ProfileController@index')->name('index');
 });
