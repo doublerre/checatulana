@@ -34,3 +34,7 @@ Route::resource('categories', 	'Admin\CategoryController');
 Route::resource('subcategories', 	'Admin\SubcategoryController');
 Route::resource('posts', 		'Admin\PostController');
 //Route::get('/subcategory/{id}', 'Web\PageController@getSubcategory')->name('apiCategory');
+
+Route::group(["middleware" => ['auth'], "as" => "profile."], function(){
+   Route::get('index', 'Admin\ProfileController@index')->name('index');
+});
