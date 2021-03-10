@@ -17,17 +17,16 @@
                         <div class="text-center">
                             <img class="profile-user-img img-fluid img-circle" src="/vendor/adminlte/dist/img/icon.png" alt="User profile picture">
                         </div>
-                        <h3 class="profile-username text-center">Rafael Rangel {user}</h3>
-                        <p class="text-muted text-center">Software Engineer</p>
+                        <h3 class="profile-username text-center">{{auth()->user()->name}}</h3>
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
                                 <b>Rol: </b> <a class="float-right">Administrador.</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Miembro desde: </b> <a class="float-right">02-02-2021</a>
+                                <b>Miembro desde: </b> <a class="float-right">{{auth()->user()->created_at->diffForHumans()}}</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Correo: </b> <a class="float-right">481700307@alumnos.utzac.edu.mx</a>
+                                <b>Correo: </b> <a class="float-right">{{auth()->user()->email}}</a>
                             </li>
                         </ul>
                         <a href="#" class="btn btn-danger btn-block"><b>Cerrar Sesion.</b></a>
@@ -55,7 +54,7 @@
                                     <div class="user-block">
                                         <img class="img-circle img-bordered-sm" src="/vendor/adminlte/dist/img/icon.png" alt="user image">
                                         <span class="username">
-                                        <a href="#">{user}.</a>
+                                        <a href="#">{{auth()->user()->name}}.</a>
                                         </span>
                                         <span class="description">Shared publicly - 7:30 PM today</span>
                                     </div>
@@ -84,7 +83,7 @@
                                     <div class="form-group row">
                                         <label for="inputName" class="col-sm-2 col-form-label">Nombre</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+                                            <input type="text" class="form-control" id="inputName" value="{{auth()->user()->name}}" placeholder="Nombre">
                                         </div>
                                     </div>
                                     <div class="form-group row">
