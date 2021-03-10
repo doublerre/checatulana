@@ -37,5 +37,6 @@ Route::resource('posts', 		'Admin\PostController');
 
 Route::group(["middleware" => ['auth'], "as" => "profile."], function(){
    Route::get('profile', 'Admin\ProfileController@index')->name('index');
-   Route::put('profile/{user}', 'Admin\ProfileController@update')->name('put');
+   Route::put('profile/{user}/update', 'Admin\ProfileController@update')->name('put');
+   Route::put('profile/change_password', 'Admin\ProfileController@change_password')->name('change_password');
 });

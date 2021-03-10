@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\User\ChangePasswordRequest;
+use Illuminate\Support\Facades\Hash;
 
 
 class ProfileController extends Controller
@@ -24,5 +26,13 @@ class ProfileController extends Controller
         $user->save();
         alert()->success('Exito!', 'Perfil editado correctamente.');
         return redirect()->route('profile.index');
+    }
+
+    public function change_password(ChangePasswordRequest $request)
+    {
+        $request->user()->password = Hash::make($request->password);
+        $request->user()->save();
+        alert()->success('Exito!', 'Contraseña actualizada correctamente.');
+        return redirect()->back();
     }
 }

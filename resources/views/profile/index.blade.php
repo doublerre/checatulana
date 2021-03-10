@@ -97,23 +97,36 @@
                             </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="password_update">
-                                <form class="form-horizontal">
+                                <form class="form-horizontal" method="POST" action="{{route('profile.change_password')}}">
+                                    {{csrf_field()}}
+                                    {{method_field('PUT')}}
                                     <div class="form-group row">
-                                        <label for="old_password" class="col-sm-2 col-form-label">Antigua contraseña:</label>
+                                        <label for="old_password" class="col-sm-2 col-form-label">Contraseña actual:</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="old_password" placeholder="Antigua contraseña.">
+                                            <input type="password" name="old_password" class="form-control" id="old_password" placeholder="Antigua contraseña.">
                                         </div>
+                                        @if ($errors->has('old_password'))
+                                            <span>
+                                                <strong style="color:red">{{$errors->first('old_password')}}</strong>
+                                            </span>
+                                        @endif
 									</div>
 									<div class="form-group row">
-                                        <label for="new_password" class="col-sm-2 col-form-label">Nueva contraseña:</label>
+                                        <label for="password" class="col-sm-2 col-form-label">Nueva contraseña:</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="new_password" placeholder="Nueva contraseña.">
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Nueva contraseña.">
                                         </div>
+                                        @if ($errors->has('password'))
+                                            <span>
+                                                <strong style="color:red">{{$errors->first('password')}}</strong>
+                                            </span>
+                                        @endif
 									</div>
+                                    
 									<div class="form-group row">
-                                        <label for="repeat_password" class="col-sm-2 col-form-label">Antigua contraseña:</label>
+                                        <label for="password_confirmation" class="col-sm-2 col-form-label">Confirmar contraseña:</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="repeat_password" placeholder="Repite tu contraseña.">
+                                            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirmar contraseña.">
                                         </div>
 									</div>
                                     <div class="form-group row">
