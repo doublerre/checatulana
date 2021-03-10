@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Perfil')
+@section('title', $user->name)
 
 @section('content_header')
     <h1>Perfil</h1>
@@ -17,16 +17,16 @@
                         <div class="text-center">
                             <img class="profile-user-img img-fluid img-circle" src="/vendor/adminlte/dist/img/icon.png" alt="User profile picture">
                         </div>
-                        <h3 class="profile-username text-center">{{auth()->user()->name}}</h3>
+                        <h3 class="profile-username text-center">{{$user->name}}</h3>
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
                                 <b>Rol: </b> <a class="float-right">Administrador.</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Miembro desde: </b> <a class="float-right">{{auth()->user()->created_at->diffForHumans()}}</a>
+                                <b>Miembro desde: </b> <a class="float-right">{{$user->created_at->diffForHumans()}}</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Correo: </b> <a class="float-right">{{auth()->user()->email}}</a>
+                                <b>Correo: </b> <a class="float-right">{{$user->email}}</a>
                             </li>
                         </ul>
                         <a href="#" class="btn btn-danger btn-block"><b>Cerrar Sesion.</b></a>
@@ -54,7 +54,7 @@
                                     <div class="user-block">
                                         <img class="img-circle img-bordered-sm" src="/vendor/adminlte/dist/img/icon.png" alt="user image">
                                         <span class="username">
-                                        <a href="#">{{auth()->user()->name}}.</a>
+                                        <a href="#">{{$user->name}}.</a>
                                         </span>
                                         <span class="description">Shared publicly - 7:30 PM today</span>
                                     </div>
@@ -79,11 +79,13 @@
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="data_user">
                                 <!-- The timeline -->
-                                <form class="form-horizontal">
+                                <form class="form-horizontal" method="POST" action="{{route('profile.put', $user)}}">
+                                    {{csrf_field()}}
+                                    {{method_field('PUT')}}
                                     <div class="form-group row">
-                                        <label for="inputName" class="col-sm-2 col-form-label">Nombre</label>
+                                        <label for="inputName" class="col-sm-2 col-form-label">Nombre:</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputName" value="{{auth()->user()->name}}" placeholder="Nombre">
+                                            <input type="text" required class="form-control" name="name" id="inputName" value="{{$user->name}}" placeholder="Nombre">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -142,5 +144,6 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script src="/sweetalert/dist/sweetalert.min.js"></script>
+    @include('sweetalert::alert')
 @stop

@@ -37,4 +37,5 @@ Route::resource('posts', 		'Admin\PostController');
 
 Route::group(["middleware" => ['auth'], "as" => "profile."], function(){
    Route::get('profile', 'Admin\ProfileController@index')->name('index');
+   Route::put('profile/{user}', 'Admin\ProfileController@update')->name('put');
 });
