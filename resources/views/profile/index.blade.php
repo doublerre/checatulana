@@ -169,10 +169,10 @@
 									<p>${post.excerpt}</p>
 									<p>
 									<span class="float-right">
-										<a href="http://checatulana.mx/posts/${post.id}/edit" class="btn btn-app">
+										<a href="posts/${post.id}/edit" class="btn btn-app">
 											<i class="fas fa-edit"></i> Editar
 										</a>
-										<a href="http://checatulana.mx/post/${post.slug}" class="btn btn-app">
+										<a href="post/${post.slug}" class="btn btn-app">
 											<i class="fas fa-eye"></i> Ver post
 										</a>
 									</span>
