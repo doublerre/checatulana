@@ -50,30 +50,7 @@
                         <div class="tab-content">
                             <div class="active tab-pane" id="posts">
                                 <!-- Post -->
-                                <div class="post">
-                                    <div class="user-block">
-                                        <img class="img-circle img-bordered-sm" src="/vendor/adminlte/dist/img/icon.png" alt="user image">
-                                        <span class="username">
-                                        <a href="#">{{$user->name}}.</a>
-                                        </span>
-                                        <span class="description">Shared publicly - 7:30 PM today</span>
-                                    </div>
-                                    <!-- /.user-block -->
-                                    <p>
-                                        Lorem ipsum represents a long-held tradition for designers,
-                                        typographers and the like. Some people hate it and argue for
-                                        its demise, but others ignore the hate as they create awesome
-                                        tools to help create filler text for everyone from bacon lovers
-                                        to Charlie Sheen fans.
-                                    </p>
-                                    <p>
-                                        <span class="float-right">
-											<a class="btn btn-app">
-												<i class="fas fa-edit"></i> Editar
-											</a>
-                                        </span>
-                                    </p>
-                                </div>
+                                
                                 <!-- /.post -->
                             </div>
                             <!-- /.tab-pane -->
@@ -158,5 +135,57 @@
 
 @section('js')
     <script src="/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
     @include('sweetalert::alert')
+    <script>
+        $(function(){
+            $(document).ready(function()
+            {
+                get_posts();
+                function get_posts()
+                {
+                    $.ajax({
+                        url: "{{route('profile.posts')}}",
+                        method: "GET",
+                        dataType: "JSON",
+                        success: function(response){
+                            let posts = response;
+                            let template = "";
+                            posts.forEach(post => {
+                                template += `
+								<div class="post">
+									<div class="user-block">
+									<img class="img-circle img-bordered-sm" src="/vendor/adminlte/dist/img/icon.png" alt="user image">
+									<span class="username">
+										<a href="#">{{$user->name}}</a>
+									</span>
+									<span class="description">${post.created_at}</span>
+									</div>
+									<!-- /.user-block -->
+									<b><p>
+										${post.name}
+									</p></b>
+									<img src="${post.file}" class="img-responsive" style="width: 740px">
+									<p>${post.excerpt}</p>
+									<p>
+									<span class="float-right">
+										<a href="http://checatulana.mx/posts/${post.id}/edit" class="btn btn-app">
+											<i class="fas fa-edit"></i> Editar
+										</a>
+										<a href="http://checatulana.mx/post/${post.slug}" class="btn btn-app">
+											<i class="fas fa-eye"></i> Ver post
+										</a>
+									</span>
+									</p>
+									<input class="form-control form-control-sm" type="text" disabled placeholder="ChecaTuLana">
+								</div>
+								<!-- /.post -->`;
+                            });
+							$("#posts").html(template);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 @stop

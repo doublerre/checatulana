@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Http\Request;
 use App\Http\Requests\User\ChangePasswordRequest;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+
+
 
 
 class ProfileController extends Controller
@@ -34,5 +38,11 @@ class ProfileController extends Controller
         $request->user()->save();
         alert()->success('Exito!', 'Contraseña actualizada correctamente.');
         return redirect()->back();
+    }
+
+    public function get_posts()
+    {
+        $posts = DB::table('posts')->where('user_id', auth()->user()->id)->get();
+        return response() -> json($posts);
     }
 }
