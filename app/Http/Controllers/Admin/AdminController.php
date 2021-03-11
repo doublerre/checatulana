@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use APP\User;
+
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -10,5 +12,11 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.users.index');
+    }
+
+    public function get()
+    {
+        $users = User::get();
+        return response() -> json($users);
     }
 }
