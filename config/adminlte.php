@@ -269,7 +269,7 @@ return [
         ['header' => 'Administracion'],
         [
             'text' => 'perfil',
-            'url'  => 'admin/settings',
+            'url'  => 'profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
