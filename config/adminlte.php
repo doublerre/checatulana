@@ -274,7 +274,7 @@ return [
         ],
         [
             'text' => 'Usuarios',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/users',
             'icon' => 'fas fa-users',
         ],
         /*['header' => 'labels'],
