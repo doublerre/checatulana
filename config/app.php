@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -233,6 +234,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
 
     ],
 
