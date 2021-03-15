@@ -28,7 +28,7 @@ class ProfileController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->save();
-        alert()->success('Exito!', 'Perfil editado correctamente.');
+        alert()->success('Éxito', 'Perfil editado correctamente.');
         return redirect()->route('profile.index');
     }
 
@@ -36,7 +36,7 @@ class ProfileController extends Controller
     {
         $request->user()->password = Hash::make($request->password);
         $request->user()->save();
-        alert()->success('Exito!', 'Contraseña actualizada correctamente.');
+        alert()->success('Éxito!', 'Contraseña actualizada correctamente.');
         return redirect()->back();
     }
 
