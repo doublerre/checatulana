@@ -48,4 +48,5 @@ Route::group(["middleware" => ['auth'], "as" => "admin."], function(){
    Route::get('admin/users/get', 'Admin\AdminController@get')->name('get');
    Route::put('admin/update', 'Admin\AdminController@update')->name('put');
    Route::delete('admin/{user}/destroy', 'Admin\AdminController@destroy')->name('destroy');
+   Route::put('admin/{user}/change_role', 'Admin\Admincontroller@change_role')->name('change_role');
 });

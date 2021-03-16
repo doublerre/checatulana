@@ -20,7 +20,12 @@
                         <h3 class="profile-username text-center">{{$user->name}}</h3>
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
-                                <b>Rol: </b> <a class="float-right">Administrador.</a>
+                                <b>Rol: </b> <a class="float-right">@if($user->role == "EDITOR")
+                                        <small class="badge badge-primary"><i class="fas fa-user-edit"></i> EDITOR</small>
+                                    @elseif($user->role == "ADMINISTRADOR")
+                                        <small class="badge badge-success"><i class="fas fa-user-shield"></i> ADMINISTRADOR</small>
+                                    @endif
+                                </a>
                             </li>
                             <li class="list-group-item">
                                 <b>Miembro desde: </b> <a class="float-right">{{$user->created_at->diffForHumans()}}</a>

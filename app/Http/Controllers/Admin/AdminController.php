@@ -19,7 +19,9 @@ class AdminController extends Controller
     {
         return DataTables::of(User::get())
         ->addColumn('delete', 'admin.users.delete')
-        ->rawColumns(['delete'])
+        ->addColumn('role_user', 'admin.users.role')
+        ->addColumn('change_role', 'admin.users.change_role')
+        ->rawColumns(['delete', 'role_user', 'change_role'])
         ->toJson();
     }
 
@@ -36,6 +38,19 @@ class AdminController extends Controller
     {
         User::destroy($id);
         alert()->success('Exito!', 'El usuario ha sido eliminado.');
+        return redirect()->back();
+    }
+
+    public function change_role($id)
+    {
+        $user = User::find($id);
+        if($user->role == "EDITOR"){
+            $user->role = "ADMINISTRADOR";
+        }else{
+            $user->role = "EDITOR";
+        }
+        $user->save();
+        alert()->success('Exito!', 'Cambio de rol exitoso.');
         return redirect()->back();
     }
 }

@@ -17,7 +17,9 @@
 							<th>ID.</th>
 							<th>Nombre.</th>
 							<th>Correo Electronico.</th>
+							<th>Rol.</th>
 							<th>Editar.</th>
+							<th>Cambiar rol.</th>
 							<th>Eliminar.</th>
 						</tr>
 					</thead>
@@ -101,13 +103,16 @@
 						{data: "id"},
 						{data: "name"},
 						{data: "email"},
+						{data: "role_user"},
 						{defaultContent:"<button class='btn-sm btn-info editar_usuario'><i class='fas fa-edit'></i> Editar.</button>"},
+						{data: "change_role"},
 						{data: "delete"},
 					]
 				});
 			}
 
 			getDataUser("#users tbody", t_users);
+			changeRoleUser("#users tbody", t_users);
 
 			function getDataUser(tbody, t_users)
 			{
@@ -116,6 +121,14 @@
 					$("#id").val(data.id);
 					$("#name").val(data.name);
 					$("#editUsers").modal("show");
+				});
+			}
+
+			function changeRoleUser(tbody, t_users)
+			{
+				$(tbody).on("click", ".cambiar_rol", function(){
+					var data = t_users.row($(this).parents("tr")).data();
+					window.location="/admin/" + data.id +"/change_role";
 				});
 			}
 
