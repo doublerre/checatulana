@@ -50,3 +50,10 @@ Route::group(["middleware" => ['auth'], "as" => "admin."], function(){
    Route::delete('admin/{user}/destroy', 'Admin\AdminController@destroy')->name('destroy');
    Route::put('admin/{user}/change_role', 'Admin\Admincontroller@change_role')->name('change_role');
 });
+
+Route::group(["middleware" => ['auth'], "as" => "banners."], function(){
+   Route::get("banners", "Admin\BannerController@index")->name("index");
+   Route::post("banners", "Admin\BannerController@store")->name("store");
+   Route::get("banners/get", "Admin\BannerController@get")->name("get");
+   Route::delete("banners/{id}/destroy", "Admin\BannerController@destroy")->name('destroy');
+});

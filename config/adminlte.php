@@ -277,6 +277,11 @@ return [
             'url'  => 'admin/users',
             'icon' => 'fas fa-users',
         ],
+        [
+            'text' => 'Banners',
+            'url' => 'banners',
+            'icon' => 'fas fa-images'
+        ]
         /*['header' => 'labels'],
         [
             'text'       => 'important',
