@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Banners')
 
 @section('content_header')
     <h1>Banners de la plataforma.</h1>
