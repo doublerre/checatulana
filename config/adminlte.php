@@ -283,6 +283,11 @@ return [
             'url' => 'banners',
             'icon' => 'fas fa-images'
         ],
+        [
+            'text' => 'Logos',
+            'url' => 'logos',
+            'icon' => 'far fa-file-image'
+        ],
         /*['header' => 'labels'],
         [
             'text'       => 'important',
