@@ -277,11 +277,12 @@ return [
             'url'  => 'admin/users',
             'icon' => 'fas fa-users',
         ],
+        ['header' => 'ChecaTuLana-Client'],
         [
             'text' => 'Banners',
             'url' => 'banners',
             'icon' => 'fas fa-images'
-        ]
+        ],
         /*['header' => 'labels'],
         [
             'text'       => 'important',
