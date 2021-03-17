@@ -44,6 +44,6 @@ class BannerController extends Controller
     {
         Banners::destroy($id);
         alert()->success('Exito!', 'El banner ha sido eliminado.');
-        return redirect()->back();
+        return redirect()->route('banners.index');
     }
 }

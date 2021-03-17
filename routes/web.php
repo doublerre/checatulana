@@ -57,3 +57,10 @@ Route::group(["middleware" => ['auth'], "as" => "banners."], function(){
    Route::get("banners/get", "Admin\BannerController@get")->name("get");
    Route::delete("banners/{id}/destroy", "Admin\BannerController@destroy")->name('destroy');
 });
+
+Route::group(["middleware" => ["auth"], "as" => "logos."], function(){
+   Route::get("logos", "Admin\LogoController@index")->name('index');
+   Route::post("logos", "Admin\LogoController@store")->name('store');
+   Route::get("logos/get", "Admin\LogoController@get")->name('get');
+   Route::delete("logos/{id}/destroy", "Admin\LogoController@destroy")->name('destroy');
+});
