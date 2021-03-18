@@ -84,7 +84,7 @@ class SubcategoryController extends Controller
     {
         $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $subcategory = Subcategories::find($id);
-        return view('admin.subcategories.edit', compact('subcategory'));
+        return view('admin.subcategories.edit', compact('subcategory', 'categories'));
     }
 
     /**

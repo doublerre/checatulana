@@ -9,6 +9,7 @@ use App\Http\Requests\CategoryUpdateRequest;
 use App\Http\Controllers\Controller;
 
 use App\Category;
+use App\Logo;
 
 class CategoryController extends Controller
 {
@@ -41,7 +42,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        $logos = Logo::get();
+        return view('admin.categories.create', [
+            "logos" => $logos,
+        ]);
     }
 
     /**
@@ -82,8 +86,9 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
+        $logos = Logo::get();
 
-        return view('admin.categories.edit', compact('category'));
+        return view('admin.categories.edit', compact('category', 'logos'));
     }
 
     /**
