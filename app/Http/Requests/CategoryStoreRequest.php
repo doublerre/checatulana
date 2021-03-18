@@ -13,7 +13,7 @@ class CategoryStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,6 +26,8 @@ class CategoryStoreRequest extends FormRequest
         return [
             'name' => 'required',
             'slug' => 'required|unique:categories,slug',
+            'body' => 'required',
+            'logo_id' => 'required'
         ];
     }
 }

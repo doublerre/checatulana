@@ -13,7 +13,7 @@ class CategoryUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,6 +26,8 @@ class CategoryUpdateRequest extends FormRequest
         return [
             'name' => 'required',
             'slug' => 'required|unique:categories,slug,'.$this->category,
+            'body' => 'required',
+            'logo_id' => 'required'
         ];
     }
 }
