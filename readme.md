@@ -30,7 +30,8 @@ Composer V2.0.8 o superior.
 _Abrir el CMD o una terminal y ejecutar:_
 
 ```
-cd \xampp\htdocs
+cd \xampp\htdocs para Windows 🖥️
+cd /var/www/html para Linux 🐧
 git clone https://gitlab.com/JoniGo/checatulana.git
 ```
 
