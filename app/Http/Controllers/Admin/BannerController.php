@@ -13,10 +13,13 @@ class BannerController extends Controller
 {
     public function index()
     {
-        $banners = Banners::get();
-        return view('admin.banners.index', [
-            "banners" => $banners,
-        ]);
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $banners = Banners::get();
+            return view('admin.banners.index', [
+                "banners" => $banners,
+            ]);
+        }
+        abort(403);
     }
 
     public function store(BannerRequest $request)

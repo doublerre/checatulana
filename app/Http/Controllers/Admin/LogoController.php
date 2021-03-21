@@ -13,7 +13,10 @@ class LogoController extends Controller
 {
     public function index()
     {
-        return view('admin.logos.index');
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            return view('admin.logos.index');
+        }
+        abort(403);
     }
 
     public function store(LogoRequest $request)
