@@ -71,15 +71,11 @@ _Y tendremos nuestra aplicación funcionando a la perfeccion:_
 
 ## Construido con 🛠
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
 * [Laravel](https://laravel.com/docs/8.x) - El framework web usado.
 * [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Usado para los estilos de las vistas.
 * [DataTables](https://datatables.net/manual/installation) - Plugin para un paginado de tablas.
 
 ## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
 * **Jonathan Gonzalez.** - *Trabajo Inicial* - [JoniGo](https://gitlab.com/JoniGo)
 * **Perla Conde** - *Trabajo Inicial* - [Conde_](https://gitlab.com/Conde_)
