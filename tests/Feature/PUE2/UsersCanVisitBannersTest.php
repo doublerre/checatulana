@@ -18,7 +18,6 @@ class UsersCanVisitBannersTest extends TestCase
     public function UsersCanVisitBannersTest()
     {
         $user = User::find(1);
-        $id = 5;
         $response = $this->actingAs($user)
                 ->withSession(['foo' => 'bar'])
                 ->get('banners/');
