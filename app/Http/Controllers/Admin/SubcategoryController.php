@@ -53,7 +53,7 @@ class SubcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubcategoryStoreRequest $request)
     {
         $subcategory = Subcategories::create($request->all());
         //$this->authorize('pass', $subcategory);
