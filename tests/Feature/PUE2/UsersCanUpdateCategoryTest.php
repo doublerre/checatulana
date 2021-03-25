@@ -23,7 +23,7 @@ class UsersCanUpdateCategoryTest extends TestCase
                 ->withSession(['foo' => 'bar'])
                 ->put('categories/'. $id, [
                     'name' => 'Unit test',
-                    'slug' => 'unit/test',
+                    'slug' => 'unit-test',
                     'body' => 'Unit Test 2.4',
                     'logo_id' => 10,
                 ])
