@@ -10,6 +10,11 @@ use App\Post;
 
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getSubcategory($id){
         $subcategories_posts= Subcategories::where('category_id',$id)->get();
         return response()->json($subcategories_posts);
