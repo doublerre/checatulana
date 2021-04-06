@@ -87,7 +87,7 @@ También puedes mirar la lista de todos los [contribuyentes](https://gitlab.com/
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (GPL3.0) - mira el archivo [LICENSE.md](LICENSE.md) para detalles.
+Este proyecto está bajo la Licencia (GPL3.0) - mira el archivo [LICENSE.md](https://gitlab.com/JoniGo/checatulana/-/blob/master/LICENSE) para detalles.
 
 ## Expresiones de Gratitud 🎁
 
