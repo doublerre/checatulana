@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-   return view('auth.login');});
+   if(!auth()->user()){
+      return redirect()->route('login');
+   }else{
+      return redirect()->route('blog');
+   }
+});
 // Route::get('/portal', function () {
 //     return view('content');
 // });
@@ -34,3 +39,33 @@ Route::resource('categories', 	'Admin\CategoryController');
 Route::resource('subcategories', 	'Admin\SubcategoryController');
 Route::resource('posts', 		'Admin\PostController');
 //Route::get('/subcategory/{id}', 'Web\PageController@getSubcategory')->name('apiCategory');
+
+//Rutas de la parte del perfil
+Route::group(["middleware" => ['auth'], "as" => "profile."], function(){
+   Route::get('profile', 'Admin\ProfileController@index')->name('index');
+   Route::put('profile/{user}/update', 'Admin\ProfileController@update')->name('put');
+   Route::put('profile/change_password', 'Admin\ProfileController@change_password')->name('change_password');
+   Route::get('profile/posts', 'Admin\ProfileController@get_posts')->name('posts');
+});
+
+Route::group(["middleware" => ['auth'], "as" => "admin."], function(){
+   Route::get('admin/users', 'Admin\AdminController@index')->name('index');
+   Route::get('admin/users/get', 'Admin\AdminController@get')->name('get');
+   Route::put('admin/update', 'Admin\AdminController@update')->name('put');
+   Route::delete('admin/{user}/destroy', 'Admin\AdminController@destroy')->name('destroy');
+   Route::put('admin/{user}/change_role', 'Admin\Admincontroller@change_role')->name('change_role');
+});
+
+Route::group(["middleware" => ['auth'], "as" => "banners."], function(){
+   Route::get("banners", "Admin\BannerController@index")->name("index");
+   Route::post("banners", "Admin\BannerController@store")->name("store");
+   Route::get("banners/get", "Admin\BannerController@get")->name("get");
+   Route::delete("banners/{id}/destroy", "Admin\BannerController@destroy")->name('destroy');
+});
+
+Route::group(["middleware" => ["auth"], "as" => "logos."], function(){
+   Route::get("logos", "Admin\LogoController@index")->name('index');
+   Route::post("logos", "Admin\LogoController@store")->name('store');
+   Route::get("logos/get", "Admin\LogoController@get")->name('get');
+   Route::delete("logos/{id}/destroy", "Admin\LogoController@destroy")->name('destroy');
+});

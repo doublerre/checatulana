@@ -69,7 +69,7 @@ return [
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => true,
     'usermenu_desc' => true,
-    'usermenu_profile_url' => true,
+    'usermenu_profile_url' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -200,7 +200,7 @@ return [
 
     'password_email_url' => 'password/email',
 
-    'profile_url' => false,
+    'profile_url' => 'profile',
 
     /*
     |--------------------------------------------------------------------------
@@ -269,13 +269,24 @@ return [
         ['header' => 'Administracion'],
         [
             'text' => 'perfil',
-            'url'  => 'admin/settings',
+            'url'  => 'profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Usuarios',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/users',
             'icon' => 'fas fa-users',
+        ],
+        ['header' => 'ChecaTuLana-Client'],
+        [
+            'text' => 'Banners',
+            'url' => 'banners',
+            'icon' => 'fas fa-images'
+        ],
+        [
+            'text' => 'Logos',
+            'url' => 'logos',
+            'icon' => 'far fa-file-image'
         ],
         /*['header' => 'labels'],
         [

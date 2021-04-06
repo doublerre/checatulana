@@ -10,6 +10,11 @@ use App\Post;
 
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getSubcategory($id){
         $subcategories_posts= Subcategories::where('category_id',$id)->get();
         return response()->json($subcategories_posts);
@@ -40,6 +45,11 @@ class PageController extends Controller
     	$post = Post::where('slug', $slug)->first();
 
     	return view('web.admin.post', compact('post'));
+    }
+
+    public function validation()
+    {
+        return "Hola";
     }
 
   
