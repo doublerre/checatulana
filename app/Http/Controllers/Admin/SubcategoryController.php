@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 use App\Subcategories;
 use App\Category;
 
+use Illuminate\Support\Facades\DB;
+
 class SubcategoryController extends Controller
 {
     /**
@@ -30,7 +32,13 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        $subcategories = Subcategories::orderBy('id', 'ASC')->paginate();
+        //return $subcategories = Subcategories::orderBy('id', 'ASC')->paginate()->join('categories', 'categories.id', 'subcategories.category_id');
+
+        $subcategories = DB::table('subcategories')
+        ->orderBy('id', 'ASC')
+        ->join('categories', 'categories.id', 'subcategories.category_id')
+        ->select('subcategories.*', 'categories.name as category_name')
+        ->paginate(10);
 
         return view('admin.subcategories.index', compact('subcategories'));
     }
