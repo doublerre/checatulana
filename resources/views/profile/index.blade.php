@@ -34,7 +34,7 @@
                                 <b>Correo: </b> <a class="float-right">{{$user->email}}</a>
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-danger btn-block"><b>Cerrar Sesion.</b></a>
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger btn-block"><b>Cerrar Sesion.</b></a>
                     </div>
                     <!-- /.card-body -->
                 </div>
