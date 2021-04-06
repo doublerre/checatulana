@@ -47,6 +47,11 @@ class PageController extends Controller
     	return view('web.admin.post', compact('post'));
     }
 
+    public function validation()
+    {
+        return "Hola";
+    }
+
   
 
 }

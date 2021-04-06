@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-   return view('auth.login');});
+   if(!auth()->user()){
+      return redirect()->route('login');
+   }else{
+      return redirect()->route('blog');
+   }
+});
 // Route::get('/portal', function () {
 //     return view('content');
 // });
