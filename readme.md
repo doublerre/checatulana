@@ -62,6 +62,43 @@ _Crearemos una base de datos con el nombre de checatulana, para despues ejecutar
 php artisan migrate
 ```
 
+## Actualización a la versión 2.0 🔄
+### Requisitos previos 📝:
+```
+Tener instalada la version 1.0 de este sistema.
+Contar con espacio para la actualización.
+```
+
+### Comandos de actualización 🔧
+_Abrir una terminal y ejecutar los siguientes comandos:_
+```
+cd \xampp\htdocs\checatulana para Windows 🖥️
+cd /var/www/html/checatulana para Linux 🐧
+```
+_Una Vez dentro de la carpeta del proyecto escribimos lo siguiente:_
+```
+git pull origin master
+```
+_Esperamos a que la terminal termine de descargar los nuevos archivos del sistema._
+_Una vez terminado actualizaremos las dependencias del proyecto con el siguiente comando:_
+```
+composer update
+```
+
+_Una vez termiada la actualizacón de las dependencias procedemos a actualizar la base de datos, para esto escribimos este comando:_
+```
+php artisan migrate
+Nota: "Los registros de la base de datos no se borraran".
+```
+
+_Por ultimo ejecutaremos los ultimos 2 comandos para tener la actualización completa, los cuales son:_
+```
+php artisan storage:link
+php artisan key:generate
+```
+
+_Y listo podemos hacer el despliegue de nuestra aplicación 🤑_
+
 ## Despliegue 📦
 
 _Para hacer deploy a nuestro proyecto solo basta ejecutar la siguiente linea:_
@@ -87,7 +124,7 @@ También puedes mirar la lista de todos los [contribuyentes](https://gitlab.com/
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (GPL3.0) - mira el archivo [LICENSE.md](LICENSE.md) para detalles.
+Este proyecto está bajo la Licencia (GPL3.0) - mira el archivo [LICENSE.md](https://gitlab.com/JoniGo/checatulana/-/blob/master/LICENSE) para detalles.
 
 ## Expresiones de Gratitud 🎁
 
