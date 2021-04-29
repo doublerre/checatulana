@@ -30,7 +30,7 @@ Auth::routes();
 //ROUTES ADMIN
 Route::get('/dashboard/blogs', 'Admin\PageController@blog')->name('blog');
 Route::get('/post/{slug}', 'Admin\PageController@post')->name('post');
-Route::get('/subcategory/{slug}', 'Admin\PageController@subcategory')->name('subcategory');
+//Route::get('/subcategory/{slug}', 'Admin\PageController@subcategory')->name('subcategory');
 //Route::get('/tag/{slug}', 'Admin\PageController@tag')->name('tag');
 
 //ROUTES ADMIN
@@ -48,7 +48,7 @@ Route::group(["middleware" => ['auth', 'verified'], "as" => "profile."], functio
    Route::get('profile/posts', 'Admin\ProfileController@get_posts')->name('posts');
 });
 
-Route::group(["middleware" => ['auth'], "as" => "admin."], function(){
+Route::group(["middleware" => ['auth', 'verified'], "as" => "admin."], function(){
    Route::get('admin/users', 'Admin\AdminController@index')->name('index');
    Route::get('admin/users/get', 'Admin\AdminController@get')->name('get');
    Route::put('admin/update', 'Admin\AdminController@update')->name('put');
@@ -56,14 +56,14 @@ Route::group(["middleware" => ['auth'], "as" => "admin."], function(){
    Route::put('admin/{user}/change_role', 'Admin\Admincontroller@change_role')->name('change_role');
 });
 
-Route::group(["middleware" => ['auth'], "as" => "banners."], function(){
+Route::group(["middleware" => ['auth', 'verified'], "as" => "banners."], function(){
    Route::get("banners", "Admin\BannerController@index")->name("index");
    Route::post("banners", "Admin\BannerController@store")->name("store");
    Route::get("banners/get", "Admin\BannerController@get")->name("get");
    Route::delete("banners/{id}/destroy", "Admin\BannerController@destroy")->name('destroy');
 });
 
-Route::group(["middleware" => ["auth"], "as" => "logos."], function(){
+Route::group(["middleware" => ["auth", 'verified'], "as" => "logos."], function(){
    Route::get("logos", "Admin\LogoController@index")->name('index');
    Route::post("logos", "Admin\LogoController@store")->name('store');
    Route::get("logos/get", "Admin\LogoController@get")->name('get');
