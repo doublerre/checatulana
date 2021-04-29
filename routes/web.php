@@ -53,7 +53,7 @@ Route::group(["middleware" => ['auth', 'verified'], "as" => "admin."], function(
    Route::get('admin/users/get', 'Admin\AdminController@get')->name('get');
    Route::put('admin/update', 'Admin\AdminController@update')->name('put');
    Route::delete('admin/{user}/destroy', 'Admin\AdminController@destroy')->name('destroy');
-   Route::put('admin/{user}/change_role', 'Admin\Admincontroller@change_role')->name('change_role');
+   Route::put('admin/{user}/change_status', 'Admin\Admincontroller@change_status')->name('change_status');
 });
 
 Route::group(["middleware" => ['auth', 'verified'], "as" => "banners."], function(){

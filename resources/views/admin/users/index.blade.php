@@ -18,8 +18,9 @@
 							<th>Nombre.</th>
 							<th>Correo Electronico.</th>
 							<th>Rol.</th>
+							<th>Estatus.</th>
 							<th>Editar.</th>
-							<th>Cambiar rol.</th>
+							<th>Cambiar Estatus.</th>
 							<th>Eliminar.</th>
 						</tr>
 					</thead>
@@ -104,8 +105,9 @@
 						{data: "name"},
 						{data: "email"},
 						{data: "role_user"},
+						{data: 'status'},
 						{defaultContent:"<button class='btn-sm btn-info editar_usuario'><i class='fas fa-edit'></i> Editar.</button>"},
-						{data: "change_role"},
+						{data: "change_status"},
 						{data: "delete"},
 					]
 				});

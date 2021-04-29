@@ -24,6 +24,8 @@
                                         <small class="badge badge-primary"><i class="fas fa-user-edit"></i> EDITOR</small>
                                     @elseif($user->role == "ADMINISTRADOR")
                                         <small class="badge badge-success"><i class="fas fa-user-shield"></i> ADMINISTRADOR</small>
+                                    @elseif($user->role == "MUNICIPIO")
+                                        <small class="badge badge-secundary"><i class="fas fa-user-tie"></i> MUNICIPIO</small>
                                     @endif
                                 </a>
                             </li>

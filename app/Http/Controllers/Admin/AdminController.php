@@ -31,8 +31,9 @@ class AdminController extends Controller
         return DataTables::of(User::get())
         ->addColumn('delete', 'admin.users.delete')
         ->addColumn('role_user', 'admin.users.role')
-        ->addColumn('change_role', 'admin.users.change_role')
-        ->rawColumns(['delete', 'role_user', 'change_role'])
+        ->addColumn('status', 'admin.users.status')
+        ->addColumn('change_status', 'admin.users.change_status')
+        ->rawColumns(['delete', 'role_user', 'status', 'change_status'])
         ->toJson();
     }
 
@@ -52,16 +53,16 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function change_role($id)
+    public function change_status($id)
     {
         $user = User::find($id);
-        if($user->role == "EDITOR"){
-            $user->role = "ADMINISTRADOR";
+        if($user->activated == 0){
+            $user->activated = 1;
         }else{
-            $user->role = "EDITOR";
+            $user->activated = 0;
         }
         $user->save();
-        alert()->success('Exito!', 'Cambio de rol exitoso.');
+        alert()->success('Exito!', 'Cambio de estatus exitoso.');
         return redirect()->back();
     }
 }
