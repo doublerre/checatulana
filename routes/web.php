@@ -41,7 +41,7 @@ Route::resource('posts', 		'Admin\PostController');
 //Route::get('/subcategory/{id}', 'Web\PageController@getSubcategory')->name('apiCategory');
 
 //Rutas de la parte del perfil
-Route::group(["middleware" => ['auth'], "as" => "profile."], function(){
+Route::group(["middleware" => ['auth', 'verified'], "as" => "profile."], function(){
    Route::get('profile', 'Admin\ProfileController@index')->name('index');
    Route::put('profile/{user}/update', 'Admin\ProfileController@update')->name('put');
    Route::put('profile/change_password', 'Admin\ProfileController@change_password')->name('change_password');
