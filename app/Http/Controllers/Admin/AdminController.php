@@ -55,14 +55,19 @@ class AdminController extends Controller
 
     public function change_status($id)
     {
-        $user = User::find($id);
-        if($user->activated == 0){
-            $user->activated = 1;
+        if(auth()->user()->id == $id){
+            alert()->error('Error!', 'Por seguridad no es posible cambiar tu estatus.');
+            return redirect()->back();
         }else{
-            $user->activated = 0;
+            $user = User::find($id);
+            if($user->activated == 0){
+                $user->activated = 1;
+            }else{
+                $user->activated = 0;
+            }
+            $user->save();
+            alert()->success('Exito!', 'Cambio de estatus exitoso.');
+            return redirect()->back();
         }
-        $user->save();
-        alert()->success('Exito!', 'Cambio de estatus exitoso.');
-        return redirect()->back();
     }
 }
