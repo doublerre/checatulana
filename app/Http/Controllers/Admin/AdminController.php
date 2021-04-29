@@ -9,11 +9,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
 class AdminController extends Controller
 {
     
-    public function index()
+    public function index(Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         if(auth()->user()->role=="ADMINISTRADOR"){
             return view('admin.users.index');
         }

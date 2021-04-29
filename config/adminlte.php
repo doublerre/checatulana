@@ -1,5 +1,4 @@
 <?php
-
 return [
 
     /*
@@ -241,29 +240,38 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'Entradas'],
+
         [
-            'text'        => 'Home',
-            'url'         => '/dashboard/blogs',
-            'icon'        => 'fas fa-home',
+        'header' => 'Entradas',
+        'key' => "entradas"
+        ],
+
+        [
+            'key' => 'home',
+            'text' => 'Home',    
+            'url' => '/dashboard/blogs',
+            'icon' => 'fas fa-home',
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Categorías',
-            'url'         => 'categories/',
-            'icon'        => 'fas fa-bars',
+            'key' => 'categorias',
+            'text' => 'Categorías',
+            'url' => 'categories/',
+            'icon' => 'fas fa-bars',
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Subcategorías',
-            'url'         => 'subcategories/',
-            'icon'        => 'fas fa-angle-right',
+            'key' => "subcategorias",
+            'text' => 'Subcategorías',
+            'url' => 'subcategories/',
+            'icon' => 'fas fa-angle-right',
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Articulos',
-            'url'         => 'posts/',
-            'icon'        => 'fas fa-newspaper',
+            'key' => 'articulos',
+            'text' => 'Articulos',
+            'url' => 'posts/',
+            'icon' => 'fas fa-newspaper',
             'label_color' => 'success',
         ],
         ['header' => 'Administracion'],
@@ -273,17 +281,23 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'key' => 'usuarios',
             'text' => 'Usuarios',
             'url'  => 'admin/users',
             'icon' => 'fas fa-users',
         ],
-        ['header' => 'ChecaTuLana-Client'],
         [
+            'header' => 'ChecaTuLana-Client',
+            'key' => 'checatulana'
+        ],
+        [
+            'key' => 'banners',
             'text' => 'Banners',
             'url' => 'banners',
             'icon' => 'fas fa-images'
         ],
         [
+            'key' => 'logos',
             'text' => 'Logos',
             'url' => 'logos',
             'icon' => 'far fa-file-image'

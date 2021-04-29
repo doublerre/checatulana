@@ -9,10 +9,16 @@ use Illuminate\Http\Request;
 use App\Banners;
 use Yajra\DataTables\DataTables;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
 class BannerController extends Controller
 {
-    public function index()
+    public function index(Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         if(auth()->user()->role=="ADMINISTRADOR"){
             $banners = Banners::get();
             return view('admin.banners.index', [

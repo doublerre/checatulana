@@ -10,14 +10,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-
-
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
 
 class ProfileController extends Controller
 {
-    public function index()
+
+    public function index(Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $user = auth()->user();
+        
         return view('profile.index', [
             'user' => $user
         ]);

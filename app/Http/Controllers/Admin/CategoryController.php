@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Logo;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
 class CategoryController extends Controller
 {
     /**
@@ -28,8 +31,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $categories = Category::orderBy('id', 'ASC')->paginate();
 
         return view('admin.categories.index', compact('categories'));
@@ -40,8 +46,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+        
         $logos = Logo::get();
         return view('admin.categories.create', [
             "logos" => $logos,
@@ -70,8 +79,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $category = Category::find($id);
 
         return view('admin.categories.show', compact('category'));
@@ -83,8 +95,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $category = Category::find($id);
         $logos = Logo::get();
 

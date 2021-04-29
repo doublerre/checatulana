@@ -8,6 +8,9 @@ use App\Category;
 use App\Subcategories;
 use App\Post;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
 class PageController extends Controller
 {
     public function __construct()
@@ -26,7 +29,10 @@ class PageController extends Controller
         return view('welcome',$data);
     }
   
-    public function blog(){
+    public function blog(Dispatcher $events){
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
     	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
     	return view('web.admin.posts', compact('posts'));
@@ -41,17 +47,12 @@ class PageController extends Controller
     }
 
 
-    public function post($slug){
+    public function post($slug, Dispatcher $events){
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
     	$post = Post::where('slug', $slug)->first();
 
     	return view('web.admin.post', compact('post'));
     }
-
-    public function validation()
-    {
-        return "Hola";
-    }
-
-  
-
 }

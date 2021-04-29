@@ -14,6 +14,10 @@ use App\Post;
 use App\Category;
 use App\Subcategories;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
+
 class PostController extends Controller
 {
     /**
@@ -31,8 +35,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $posts = Post::orderBy('id', 'DESC')
             ->where('user_id', auth()->user()->id)
             ->paginate();
@@ -45,9 +52,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Dispatcher $events)
     {
         //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
 
         return view('admin.posts.create', compact('subcategories'));
@@ -81,8 +91,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $post = Post::find($id);
         //$this->authorize('pass', $post);
 
@@ -95,8 +108,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
         $post= Post::find($id);
