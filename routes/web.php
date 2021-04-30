@@ -30,7 +30,7 @@ Auth::routes();
 //ROUTES ADMIN
 Route::get('/dashboard/blogs', 'Admin\PageController@blog')->name('blog');
 Route::get('/post/{slug}', 'Admin\PageController@post')->name('post');
-//Route::get('/subcategory/{slug}', 'Admin\PageController@subcategory')->name('subcategory');
+Route::get('/subcategory/{slug}', 'Admin\PageController@subcategory')->name('subcategory');
 //Route::get('/tag/{slug}', 'Admin\PageController@tag')->name('tag');
 
 //ROUTES ADMIN
