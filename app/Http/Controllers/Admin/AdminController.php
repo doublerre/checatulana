@@ -41,8 +41,9 @@ class AdminController extends Controller
     {
         $user = User::find($request->id);
         $user->name = $request->name;
+        $user->role = $request->role;
         $user->save();
-        alert()->success('Exito!', 'Perfil editado correctamente.');
+        alert()->success('Exito!', 'Usuario editado correctamente.');
         return redirect()->back();
     }
 

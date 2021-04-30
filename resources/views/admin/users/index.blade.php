@@ -52,6 +52,14 @@
                                 <input type="text" required class="form-control" name="name" id="name" placeholder="Nombre">
                             </div>
                         </div>
+						<div class="form-group row">
+							<label>Rol:</label>
+							<select name="role" id="role"class="form-control">
+								<option value="ADMINISTRADOR">ADMINISTRADOR</option>
+								<option value="EDITOR">EDITOR</option>
+								<option value="MUNICIPIO">MUNICIPIO</option>
+							</select>
+						</div>
                         <div class="form-group row">
                             <div class="offset-sm-2 col-sm-10">
                                 <button type="submit" class="btn btn-info float-right">Actualizar usuario.</button>
@@ -122,6 +130,7 @@
 					var data = t_users.row($(this).parents("tr")).data();
 					$("#id").val(data.id);
 					$("#name").val(data.name);
+					$("#role").val(data.role);
 					$("#editUsers").modal("show");
 				});
 			}
