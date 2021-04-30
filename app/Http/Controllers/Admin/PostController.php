@@ -113,13 +113,19 @@ class PostController extends Controller
     {
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
+        
 
         //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
         $post= Post::find($id);
+        if($post == null || $post->user_id != auth()->user()->id){
+            abort(404);
+        }else{
+            return view('admin.posts.edit', compact('post','subcategories'));
+        }
        // $this->authorize('pass', $post);
 
-        return view('admin.posts.edit', compact('post','subcategories'));
+        
     }
 
     /**
