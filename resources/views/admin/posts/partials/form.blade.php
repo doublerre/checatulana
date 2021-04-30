@@ -19,9 +19,6 @@
 <div class="form-group">
     {{ Form::label('slug', 'Estado') }}
     <label>
-        {{ Form::radio('status', 'PUBLISHED') }} Publicado
-    </label>
-    <label>
         {{ Form::radio('status', 'DRAFT') }} Borrador
     </label>
 </div>
