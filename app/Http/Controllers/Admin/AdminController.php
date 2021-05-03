@@ -12,6 +12,8 @@ use Yajra\DataTables\DataTables;
 use Illuminate\Contracts\Events\Dispatcher;
 use App\Http\Controllers\MenuFilterController;
 
+use App\Notifications\BannedUser;
+
 class AdminController extends Controller
 {
     
@@ -62,8 +64,10 @@ class AdminController extends Controller
         }else{
             $user = User::find($id);
             if($user->activated == 0){
+                $user->notify(new BannedUser);
                 $user->activated = 1;
             }else{
+                $user->notify(new BannedUser);
                 $user->activated = 0;
             }
             $user->save();
