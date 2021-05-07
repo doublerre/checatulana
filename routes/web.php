@@ -69,3 +69,7 @@ Route::group(["middleware" => ["auth", 'verified'], "as" => "logos."], function(
    Route::get("logos/get", "Admin\LogoController@get")->name('get');
    Route::delete("logos/{id}/destroy", "Admin\LogoController@destroy")->name('destroy');
 });
+
+//Rutas de solicitudes de cambio a los post.
+Route::put('posts/{id}/send_review', 'Admin\PostController@send_review')->name('post.send_review');
+//Route::get('posts/aprobados/', 'Admin\PostController@index2');

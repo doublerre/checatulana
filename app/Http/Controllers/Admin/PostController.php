@@ -140,6 +140,9 @@ class PostController extends Controller
         $post = Post::find($id);
         //$this->authorize('pass', $post);
 
+        $post->status = "DRAFT";
+        $post->validated = 0;
+
         $post->fill($request->all())->save();
 
         //IMAGE 
@@ -151,7 +154,7 @@ class PostController extends Controller
         //TAGS
        // $post->categories()->sync($request->get('categories'));
 
-        return redirect()->route('posts.edit', $post->id);
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -166,5 +169,15 @@ class PostController extends Controller
         //$this->authorize('pass', $post);
 
         return back()->with('eliminar','ok');
+    }
+
+    //Funcion de envio a revision de post por algun administrador.
+    public function send_review($id)
+    {
+        $post = Post::find($id);
+        $post->validated = 1;
+        $post->save();
+        alert()->success('Éxito', 'Post enviado a revisión.');
+        return redirect()->back();
     }
 }
