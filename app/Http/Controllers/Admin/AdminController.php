@@ -14,6 +14,8 @@ use Illuminate\Contracts\Events\Dispatcher;
 use App\Http\Controllers\MenuFilterController;
 
 use App\Notifications\BannedUser;
+use App\Http\Requests\CommentStoreRequest;
+use App\Comment;
 
 class AdminController extends Controller
 {
@@ -89,5 +91,19 @@ class AdminController extends Controller
         return view('posts.index', [
             "posts" => $posts,
         ]);
+    }
+
+    public function comment(CommentStoreRequest $request)
+    {
+        $comment = (new Comment)->fill($request->all());
+        $comment->user_id = auth()->user()->id;
+        $comment->save();
+
+        $post = Post::find($request->post_id);
+        $post->validated = 0;
+        $post->save();
+
+        alert()->success('Exito!', 'El comentario ha sido enviado.');
+        return redirect()->back();
     }
 }
