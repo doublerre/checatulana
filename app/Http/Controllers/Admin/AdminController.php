@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+Use App\Post;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -74,5 +75,19 @@ class AdminController extends Controller
             alert()->success('Exito!', 'Cambio de estatus exitoso.');
             return redirect()->back();
         }
+    }
+
+    public function posts(Dispatcher $events)
+    {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
+        $posts = Post::orderBy('id', 'DESC')
+            ->where('validated', 1)
+            ->where('status', 'DRAFT')
+            ->paginate();
+        return view('posts.index', [
+            "posts" => $posts,
+        ]);
     }
 }

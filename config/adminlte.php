@@ -269,14 +269,14 @@ return [
         ],
         [
             'key' => 'articulos',
-            'text' => 'Articulos',
+            'text' => 'Artículos',
             'url' => 'posts/',
             'icon' => 'fas fa-newspaper',
             'label_color' => 'success',
         ],
-        ['header' => 'Administracion'],
+        ['header' => 'Administración'],
         [
-            'text' => 'perfil',
+            'text' => 'Perfil',
             'url'  => 'profile',
             'icon' => 'fas fa-fw fa-user',
         ],
@@ -285,6 +285,13 @@ return [
             'text' => 'Usuarios',
             'url'  => 'admin/users',
             'icon' => 'fas fa-users',
+        ],
+        [
+            'key' => 'articulos_review',
+            'text' => 'Artículos en revisión',
+            'url' => 'admin/posts',
+            'icon' => 'fas fa-newspaper',
+            'label_color' => 'success',
         ],
         [
             'header' => 'ChecaTuLana-Client',

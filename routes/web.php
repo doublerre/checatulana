@@ -52,8 +52,10 @@ Route::group(["middleware" => ['auth', 'verified'], "as" => "admin."], function(
    Route::get('admin/users', 'Admin\AdminController@index')->name('index');
    Route::get('admin/users/get', 'Admin\AdminController@get')->name('get');
    Route::put('admin/update', 'Admin\AdminController@update')->name('put');
+   Route::get('admin/posts/', 'Admin\AdminController@posts')->name('posts');
    Route::delete('admin/{user}/destroy', 'Admin\AdminController@destroy')->name('destroy');
    Route::put('admin/{user}/change_status', 'Admin\Admincontroller@change_status')->name('change_status');
+   
 });
 
 Route::group(["middleware" => ['auth', 'verified'], "as" => "banners."], function(){
@@ -70,6 +72,5 @@ Route::group(["middleware" => ["auth", 'verified'], "as" => "logos."], function(
    Route::delete("logos/{id}/destroy", "Admin\LogoController@destroy")->name('destroy');
 });
 
-//Rutas de solicitudes de cambio a los post.
+
 Route::put('posts/{id}/send_review', 'Admin\PostController@send_review')->name('post.send_review');
-//Route::get('posts/aprobados/', 'Admin\PostController@index2');
