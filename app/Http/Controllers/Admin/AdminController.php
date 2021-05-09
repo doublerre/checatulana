@@ -106,4 +106,15 @@ class AdminController extends Controller
         alert()->success('Exito!', 'El comentario ha sido enviado.');
         return redirect()->back();
     }
+
+    public function aceptPost($id)
+    {
+        $post = Post::find($id);
+        $post->status = "PUBLISHED";
+        $post->validated = 0;
+        $post->save();
+
+        alert()->success('Exito!', 'El post ha sido publicado.');
+        return redirect()->back();
+    }
 }

@@ -35,7 +35,7 @@
                                     <a href="{{ route('post', $post->slug) }}" class="btn btn-sm btn-default">Ver</a>
                                 </td>
                                 <td width="10px">
-                                    {!! Form::open(['class'=>'put','route' => ['post.send_review', $post->id], 'method' => 'PUT']) !!}
+                                    {!! Form::open(['class'=>'put','route' => ['admin.acept_post', $post->id], 'method' => 'PUT']) !!}
                                         <button class="btn btn-sm btn-success">
                                             <i class="far fa-check-circle"></i>
                                         </button> 

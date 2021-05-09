@@ -56,6 +56,7 @@ Route::group(["middleware" => ['auth', 'verified'], "as" => "admin."], function(
    Route::delete('admin/{user}/destroy', 'Admin\AdminController@destroy')->name('destroy');
    Route::put('admin/{user}/change_status', 'Admin\Admincontroller@change_status')->name('change_status');
    Route::post('admin/post/comment', 'Admin\AdminController@comment')->name('comment');
+   Route::put('admin/{post}/acept', 'Admin\AdminController@aceptPost')->name('acept_post');
 });
 
 Route::group(["middleware" => ['auth', 'verified'], "as" => "banners."], function(){

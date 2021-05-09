@@ -171,7 +171,7 @@ class PostController extends Controller
         return back()->with('eliminar','ok');
     }
 
-    //Funcion de envio a revision de post por algun administrador.
+    //Funcion de envio a revision de post.
     public function send_review($id)
     {
         $post = Post::find($id);

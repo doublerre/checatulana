@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Subcategories;
 use App\Post;
+use App\Comment;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use App\Http\Controllers\MenuFilterController;
@@ -53,7 +54,13 @@ class PageController extends Controller
         $menu->menuFilter($events);
 
     	$post = Post::where('slug', $slug)->first();
-
-    	return view('web.admin.post', compact('post'));
+        $comments = Comment::where('post_id', $post->id)
+        ->join('users', 'users.id', 'comments.user_id')
+        ->select('comments.*', 'users.name')
+        ->paginate(3);
+    	return view('web.admin.post', [
+            'post' => $post,
+            'comments' => $comments,
+        ]);
     }
 }
