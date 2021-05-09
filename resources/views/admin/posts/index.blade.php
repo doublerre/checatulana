@@ -29,7 +29,7 @@
                                 <td>{{ $post->name }}</td>
                                 <td>{{$post->subcategory_id}}</td>
                                 <td width="10px">
-                                    <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-default">Ver</a>
+                                    <a href="{{ route('post', $post->slug) }}" class="btn btn-sm btn-default">Ver</a>
                                 </td>
                                 <td width="10px">
                                     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-default">Editar</a>
