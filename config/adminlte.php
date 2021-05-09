@@ -309,6 +309,22 @@ return [
             'url' => 'logos',
             'icon' => 'far fa-file-image'
         ],
+        [
+            'header' => 'Municipios',
+            'key' => 'municipios'
+        ],
+        [
+            'key' => 'fondo3',
+            'text' => 'Fondo III',
+            'url' => 'fondo-iii',
+            'icon' => 'fab fa-monero'
+        ],
+        [
+            'key' => 'fondo4',
+            'text' => 'Fondo IV',
+            'url' => 'fondo-iv',
+            'icon' => 'fab fa-monero'
+        ],
         /*['header' => 'labels'],
         [
             'text'       => 'important',

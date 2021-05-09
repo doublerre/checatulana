@@ -21,9 +21,21 @@ class MenuFilterController extends Controller
                 $event->menu->remove('categorias');
                 $event->menu->remove('subcategorias');
                 $event->menu->remove('articulos_review');
+                $event->menu->remove('municipios');
+                $event->menu->remove('fondo3');
+                $event->menu->remove('fondo4');
             });
         }else if($user->role == "MUNICIPIO"){
-
+            $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
+                $event->menu->remove('usuarios');
+                $event->menu->remove('checatulana');
+                $event->menu->remove('logos');
+                $event->menu->remove('banners');
+                $event->menu->remove('categorias');
+                $event->menu->remove('subcategorias');
+                $event->menu->remove('articulos_review');
+                $event->menu->remove('articulos');
+            });
         }
     }
 }
