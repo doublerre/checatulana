@@ -39,13 +39,16 @@ class SubcategoryController extends Controller
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
 
-        $subcategories = DB::table('subcategories')
-        ->orderBy('id', 'ASC')
-        ->join('categories', 'categories.id', 'subcategories.category_id')
-        ->select('subcategories.*', 'categories.name as category_name')
-        ->paginate(10);
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $subcategories = DB::table('subcategories')
+            ->orderBy('id', 'ASC')
+            ->join('categories', 'categories.id', 'subcategories.category_id')
+            ->select('subcategories.*', 'categories.name as category_name')
+            ->paginate(10);
 
-        return view('admin.subcategories.index', compact('subcategories'));
+            return view('admin.subcategories.index', compact('subcategories'));
+        }
+        abort(403);
     }
 
     /**
@@ -58,9 +61,12 @@ class SubcategoryController extends Controller
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
 
-        $categories = Category::pluck('name', 'id');
-        //return $categories;
-        return view('admin.subcategories.create', compact('categories'));
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $categories = Category::pluck('name', 'id');
+            //return $categories;
+            return view('admin.subcategories.create', compact('categories'));
+        }
+        abort(403);
     }
 
     /**
@@ -88,9 +94,12 @@ class SubcategoryController extends Controller
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
 
-        $subcategory = Subcategories::find($id);
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $subcategory = Subcategories::find($id);
 
-        return view('admin.subcategories.show', compact('subcategory'));
+            return view('admin.subcategories.show', compact('subcategory'));
+        }
+        abort(403);
     }
 
     /**
@@ -104,9 +113,12 @@ class SubcategoryController extends Controller
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
         
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $subcategory = Subcategories::find($id);
-        return view('admin.subcategories.edit', compact('subcategory', 'categories'));
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+            $subcategory = Subcategories::find($id);
+            return view('admin.subcategories.edit', compact('subcategory', 'categories'));
+        }
+        abort(403);
     }
 
     /**
