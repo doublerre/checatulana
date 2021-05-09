@@ -36,10 +36,12 @@ class CategoryController extends Controller
     {
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $categories = Category::orderBy('id', 'ASC')->paginate();
 
-        $categories = Category::orderBy('id', 'ASC')->paginate();
-
-        return view('admin.categories.index', compact('categories'));
+            return view('admin.categories.index', compact('categories'));
+        }
+        abort(403);
     }
 
     /**
@@ -51,11 +53,14 @@ class CategoryController extends Controller
     {
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
-        
-        $logos = Logo::get();
-        return view('admin.categories.create', [
-            "logos" => $logos,
-        ]);
+
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $logos = Logo::get();
+            return view('admin.categories.create', [
+                "logos" => $logos,
+            ]);
+        }
+        abort(403);
     }
 
     /**
@@ -85,9 +90,12 @@ class CategoryController extends Controller
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
 
-        $category = Category::find($id);
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $category = Category::find($id);
 
-        return view('admin.categories.show', compact('category'));
+            return view('admin.categories.show', compact('category'));
+        }
+        abort(403);
     }
 
     /**
@@ -101,10 +109,13 @@ class CategoryController extends Controller
         $menu = new MenuFilterController();
         $menu->menuFilter($events);
 
-        $category = Category::find($id);
-        $logos = Logo::get();
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $category = Category::find($id);
+            $logos = Logo::get();
 
-        return view('admin.categories.edit', compact('category', 'logos'));
+            return view('admin.categories.edit', compact('category', 'logos'));
+        }
+        abort(403);
     }
 
     /**

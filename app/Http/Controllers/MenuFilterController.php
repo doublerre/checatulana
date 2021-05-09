@@ -18,6 +18,9 @@ class MenuFilterController extends Controller
                 $event->menu->remove('checatulana');
                 $event->menu->remove('logos');
                 $event->menu->remove('banners');
+                $event->menu->remove('categorias');
+                $event->menu->remove('subcategorias');
+                $event->menu->remove('articulos_review');
             });
         }else if($user->role == "MUNICIPIO"){
 
