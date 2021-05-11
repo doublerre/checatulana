@@ -36,7 +36,6 @@
                                 <b>Correo: </b> <a class="float-right">{{$user->email}}</a>
                             </li>
                         </ul>
-                        
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -50,11 +49,14 @@
                         <table id="cfdis" style="text-align:center;" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>CFDI Municipal.</th>
-                                    <th>CFDI Finanzas.</th>
-                                    <th>Fecha de subida.</th>
-                                    <th>Estado.</th>
-                                    <th>Acciones.</th>
+                                    <th rowspan="2">CFDI Municipal.</th>
+                                    <th rowspan="2">CFDI Finanzas.</th>
+                                    <th rowspan="2">Fecha de subida.</th>
+                                    <th rowspan="2">Estado.</th>
+                                    <th colspan="2">Acciones.</th>
+                                </tr>
+                                <tr style="display: none">
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -137,12 +139,14 @@
 						url: "{{route('fondo3.cfdis', $user->id)}}",
 					},
 					columns: [
-						{data: "file"},
-						{data: "file_user"},
+						{data: "view_pdf_m"},
+						{data: "view_pdf"},
 						{data: "created_at"},
-                        {data: "status"}
+                        {data: "estado"},
+                        {data: 'aceptar'},
+                        {data: 'rechazar'},
 					],
-					iDisplayLength: 3,
+					iDisplayLength: 10,
 					responsive: "true",
 					dom: 'Bfrtilp',
 					buttons:[

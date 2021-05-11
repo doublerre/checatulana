@@ -59,6 +59,12 @@ class Fondo3Controller extends Controller
     public function getCFDIs($id)
     {
         return DataTables::of(Fondo3::get()->where('m_user_id', $id))
+        ->addColumn('estado', 'admin.municipios.estado')
+        ->addColumn('view_pdf', 'admin.municipios.view_pdf')
+        ->addColumn('view_pdf_m', 'admin.municipios.view_pdf_m')
+        ->addColumn('aceptar', 'admin.municipios.aceptar')
+        ->addColumn('rechazar', 'admin.municipios.rechazar')
+        ->rawColumns(['estado', 'aceptar', 'rechazar', 'view_pdf', 'view_pdf_m'])
         ->toJson();
     }
 
@@ -75,5 +81,10 @@ class Fondo3Controller extends Controller
 
         alert()->success('Exito!', 'El pdf ha sido guardado con éxito.');
         return redirect()->back();
+    }
+
+    public function aprobarCFDI($id)
+    {
+        dd($id);
     }
 }
