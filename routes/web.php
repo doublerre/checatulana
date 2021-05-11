@@ -76,3 +76,11 @@ Route::group(["middleware" => ["auth", 'verified'], "as" => "logos."], function(
 
 Route::put('posts/{id}/send_review', 'Admin\PostController@send_review')->name('post.send_review');
 
+Route::group(["middleware" => ["auth", "verified"], "as" => "fondo3."], function(){
+   Route::get('fondo-iii', 'Admin\Fondo3Controller@index')->name('index');
+   Route::get('fondo-iii/getUsers', 'Admin\Fondo3Controller@getUsers')->name('getUsers');
+   Route::get('fondo-iii/{id}/history', 'Admin\Fondo3Controller@history')->name('history');
+   Route::get('fondo-iii/{id}/getCfdis', 'Admin\Fondo3Controller@getCFDIs')->name('cfdis');
+   Route::post('fondo-iii/uploadCFDIsUA', 'Admin\Fondo3Controller@uploadCFDIsUA')->name('uploadCFDIsUA');
+});
+

@@ -17,8 +17,11 @@ class CreateFondo3sTable extends Migration
             $table->Increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('m_user_id');
-            $table->string('file', 128)->nullable();
+            $table->string('file', 128)->default('EN ESPERA...');
             $table->string('file_user', 128);
+            $table->enum('status', ['APROBADO', 'RECHAZADO', 'EN REVISION', 'PENDIENTE'])->default('PENDIENTE');
+            $table->string('anio', 4);
+            $table->string('month', 11);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
