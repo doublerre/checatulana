@@ -103,6 +103,40 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+
+{{--Modal para los comentarios--}}
+<div class="modal fade" id="add_comment" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Añadir comenarios.</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{route('fondo3.rechazarCFDI')}}" method="POST">
+                    {{ method_field('PUT')}}
+                    {{csrf_field()}}
+                    <div class="form-group">
+                        <label>Comentario:</label>
+                        <textarea class="form-control" rows="3" name="comment" placeholder="Escribe aquí tu comentario..."></textarea>
+                        <input type="hidden" id="fondo3_id" name="fondo3_id">
+                    </div>
+                    @if ($errors->has('comment'))
+						<span>
+							<strong style="color:red">{{$errors->first('comment')}}</strong>
+						</span>
+                    @endif
+					<br>
+					<button type="submit" class="btn btn-primary btn-lg">Enviar comentarios.</button>
+                </form>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
 @stop
 
 @section('css')
@@ -161,6 +195,12 @@
 
             $(document).on('click', '.upload_pdf', function(){
                 $("#upload_file").modal('show');
+            });
+
+            $(document).on('click', '.refuse', function(){
+                console.log($(this).val());
+                $('#fondo3_id').val($(this).val());
+				$('#add_comment').modal('show');
             });
         });
     </script>

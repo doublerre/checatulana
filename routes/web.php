@@ -83,5 +83,6 @@ Route::group(["middleware" => ["auth", "verified"], "as" => "fondo3."], function
    Route::get('fondo-iii/{id}/getCfdis', 'Admin\Fondo3Controller@getCFDIs')->name('cfdis');
    Route::post('fondo-iii/uploadCFDIsUA', 'Admin\Fondo3Controller@uploadCFDIsUA')->name('uploadCFDIsUA');
    Route::put('fondo-iii/{id}/aprobar-cfdi', 'Admin\Fondo3Controller@aprobarCFDI')->name('aprobarCFDI');
+   Route::put('fondo-iii/rechazar-cfdi', 'Admin\Fondo3Controller@rechazarCFDI')->name('rechazarCFDI');
 });
 

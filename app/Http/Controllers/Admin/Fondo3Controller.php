@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use Yajra\DataTables\DataTables;
 
@@ -12,6 +13,8 @@ use App\Http\Controllers\MenuFilterController;
 
 use App\User;
 use App\Fondo3;
+use App\Fondo3Comments;
+
 use App\Http\Requests\Fondo3\StoreUserFile;
 
 use Jenssegers\Date\Date;
@@ -85,6 +88,27 @@ class Fondo3Controller extends Controller
 
     public function aprobarCFDI($id)
     {
-        dd($id);
+        $fondo3 = Fondo3::find($id);
+        $fondo3->status = "APROBADO";
+
+        $fondo3->save();
+        alert()->success('Exito!', 'El CFDI ha sido aprobado.');
+        return redirect()->back();
+    }
+
+    public function rechazarCFDI(Request $request)
+    {
+        $fondo3 = Fondo3::find($request->fondo3_id);
+        $fondo3->status = "RECHAZADO";
+        //Se quedara pendiente ya que aun no existen los archivos por parte de los municipios
+        //Storage::delete($fondo3->file);
+        $fondo3->file = "EN ESPERA...";
+        $fondo3->save();
+        
+        $comment = (new Fondo3Comments)->fill($request->all());
+        $comment->user_id = auth()->user()->id;
+        $comment->save();
+        alert()->success('Exito!', 'El comentario ha sido guardado.');
+        return redirect()->back();
     }
 }
