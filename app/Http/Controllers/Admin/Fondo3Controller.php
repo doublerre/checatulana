@@ -16,6 +16,7 @@ use App\Fondo3;
 use App\Fondo3Comments;
 
 use App\Http\Requests\Fondo3\StoreUserFile;
+use App\Http\Requests\Fondo3\StoreUserMFile;
 
 use Jenssegers\Date\Date;
 
@@ -67,7 +68,8 @@ class Fondo3Controller extends Controller
         ->addColumn('view_pdf_m', 'admin.municipios.view_pdf_m')
         ->addColumn('aceptar', 'admin.municipios.aceptar')
         ->addColumn('rechazar', 'admin.municipios.rechazar')
-        ->rawColumns(['estado', 'aceptar', 'rechazar', 'view_pdf', 'view_pdf_m'])
+        ->addColumn('view_all', 'admin.municipios.fondo3.view_all')
+        ->rawColumns(['estado', 'aceptar', 'rechazar', 'view_pdf', 'view_pdf_m', 'view_all'])
         ->toJson();
     }
 
@@ -101,7 +103,7 @@ class Fondo3Controller extends Controller
         $fondo3 = Fondo3::find($request->fondo3_id);
         $fondo3->status = "RECHAZADO";
         //Se quedara pendiente ya que aun no existen los archivos por parte de los municipios
-        //Storage::delete($fondo3->file);
+        Storage::delete($fondo3->file);
         $fondo3->file = "EN ESPERA...";
         $fondo3->save();
         
@@ -109,6 +111,36 @@ class Fondo3Controller extends Controller
         $comment->user_id = auth()->user()->id;
         $comment->save();
         alert()->success('Exito!', 'El comentario ha sido guardado.');
+        return redirect()->back();
+    }
+
+    public function verCFDI($id, Dispatcher $events)
+    {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+        
+        $fondo3 = Fondo3::find($id);
+        $comments = Fondo3Comments::where('fondo3_id', $fondo3->id)
+        ->join('users', 'users.id', 'fondo3_comments.user_id')
+        ->select('fondo3_comments.*', 'users.name')
+        ->get();
+        return view('admin.municipios.fondo3.show', [
+            'fondo3' => $fondo3,
+            'comments' => $comments,
+        ]);
+    }
+
+    public function uploadCFDIsUM($id, StoreUserMFile $request)
+    {
+        $anio = date('Y');
+
+        $fondo3 = Fondo3::find($id);
+        $fondo3->file = $request->file('file')->store('public/pdfs/municipio/' . $anio);
+        $fondo3->status = "EN REVISION";
+        $fondo3->save();
+        //Espacio para el envio de notificaciones.
+
+        alert()->success('Exito!', 'El CFDI ha sido guardado y enviado a revisión con éxito.');
         return redirect()->back();
     }
 }

@@ -1,0 +1,1 @@
+<a href="{{route('fondo3.verCFDI', $id)}}" class="btn btn-sm btn-default">Ver archivo.</a>
