@@ -317,7 +317,7 @@ return [
             'key' => 'fondo3',
             'text' => 'Fondo III',
             'url' => 'fondo-iii',
-            'icon' => 'fab fa-monero'
+            'icon' => 'fab fa-monero',
         ],
         [
             'key' => 'fondo4',
