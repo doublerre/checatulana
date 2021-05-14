@@ -50,7 +50,7 @@
                             <thead>
                                 <tr>
                                     <th rowspan="2">CFDI Municipal.</th>
-                                    <th rowspan="2">CFDI Finanzas.</th>
+                                    <th rowspan="2">Comprobante de pago.</th>
                                     <th rowspan="2">Fecha de subida.</th>
                                     <th rowspan="2">Estado.</th>
                                     <th colspan="2">Acciones.</th>

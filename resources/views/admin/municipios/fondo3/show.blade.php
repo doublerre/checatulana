@@ -73,7 +73,7 @@
                 <div class="card">
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <h2>CFDI de finanzas.</h2>
+                        <h2>Comprobante de pago.</h2>
                         <br>
                         <p align="center">
                             <iframe src="{{Storage::url($fondo3->file_user)}}#toolbar=0" width="90%" height="600px">
