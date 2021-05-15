@@ -41,6 +41,7 @@ class MenuFilterController extends Controller
                 $red = $this->notifications_red_fondo3();
                 $blue = $this->notifications_blue_fondo3();
                 $event->menu->remove('fondo3');
+                $event->menu->remove('fondo4');
                 //Numero de CFDI emulando un sistema de notificaciones
                 $event->menu->addAfter('municipios', [
                     'key' => 'fondo3',
@@ -63,10 +64,40 @@ class MenuFilterController extends Controller
                             'label_color' => 'danger',
                         ],
                         [
-                            'text'  => 'Rechazados:',
+                            'text'  => 'En revision:',
                             'url' => 'fondo-iii',
                             'icon' => 'fab fa-monero',
                             'label' => $blue,
+                            'label_color' => 'info',
+                        ],
+                    ],
+                ]);
+
+                $event->menu->addAfter('fondo3', [
+                    'key' => 'fondo4',
+                    'text' => 'Fondo IV',
+                    'url' => 'fondo-iv',
+                    'icon' => 'fab fa-monero',
+                    'submenu' => [
+                        [
+                            'text'  => 'Pendienes:',
+                            'url' => 'fondo-iv',
+                            'icon' => 'fab fa-monero',
+                            'label' => 0,
+                            'label_color' => 'warning',
+                        ],
+                        [
+                            'text'  => 'Rechazados:',
+                            'url' => 'fondo-iv',
+                            'icon' => 'fab fa-monero',
+                            'label' => 0,
+                            'label_color' => 'danger',
+                        ],
+                        [
+                            'text'  => 'En revision:',
+                            'url' => 'fondo-iv',
+                            'icon' => 'fab fa-monero',
+                            'label' => 0,
                             'label_color' => 'info',
                         ],
                     ],
