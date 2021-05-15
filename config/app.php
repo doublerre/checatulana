@@ -13,8 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
-
+    'name' => env('APP_NAME', 'ChecaTuLana'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -52,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://admin.checatulana.zacatecas.gob.mx/'),
 
     /*
     |--------------------------------------------------------------------------
