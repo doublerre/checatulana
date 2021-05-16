@@ -1,0 +1,1 @@
+<a href="{{ route('fondo4.history', $id) }}" class="btn btn-sm btn-default">Ver</a>

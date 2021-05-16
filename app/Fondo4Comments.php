@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Fondo4Comments extends Model
 {
     protected $fillable = [
-        'id', 'user_id', 'fondo3_id', 'comment',
+        'id', 'user_id', 'fondo4_id', 'comment',
     ];
 }

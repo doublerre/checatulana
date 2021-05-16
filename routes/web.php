@@ -88,3 +88,14 @@ Route::group(["middleware" => ["auth", "verified"], "as" => "fondo3."], function
    Route::put('fondo-iii/{id}/uploadCFDIsUM', 'Admin\Fondo3Controller@uploadCFDIsUM')->name('uploadCFDIsUM');
 });
 
+Route::group(["middleware" => ["auth", "verified"], "as" => "fondo4."], function(){
+   Route::get('fondo-iv', 'Admin\Fondo4Controller@index')->name('index');
+   Route::get('fondo-iv/getUsers', 'Admin\Fondo4Controller@getUsers')->name('getUsers');
+   Route::get('fondo-iv/{id}/history', 'Admin\Fondo4Controller@history')->name('history');
+   Route::get('fondo-iv/{id}/getCfdis', 'Admin\Fondo4Controller@getCFDIs')->name('cfdis');
+   Route::post('fondo-iv/uploadCFDIsUA', 'Admin\Fondo4Controller@uploadCFDIsUA')->name('uploadCFDIsUA');
+   Route::put('fondo-iv/{id}/aprobar-cfdi', 'Admin\Fondo4Controller@aprobarCFDI')->name('aprobarCFDI');
+   Route::put('fondo-iv/rechazar-cfdi', 'Admin\Fondo4Controller@rechazarCFDI')->name('rechazarCFDI');
+   Route::get('fondo-iv/{id}/verCFDI', 'Admin\Fondo4Controller@verCFDI')->name('verCFDI');
+   Route::put('fondo-iv/{id}/uploadCFDIsUM', 'Admin\Fondo4Controller@uploadCFDIsUM')->name('uploadCFDIsUM');
+});
