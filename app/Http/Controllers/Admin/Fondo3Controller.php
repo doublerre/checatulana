@@ -15,6 +15,9 @@ use App\User;
 use App\Fondo3;
 use App\Fondo3Comments;
 
+use App\Notifications\NewFondoPdfNotification;
+use App\Notifications\FondoCFDIUpdateNotification;
+
 use App\Http\Requests\Fondo3\StoreUserFile;
 use App\Http\Requests\Fondo3\StoreUserMFile;
 
@@ -84,6 +87,10 @@ class Fondo3Controller extends Controller
         $fondo3->month = ucwords(Date::now()->format('F'));
         $fondo3->save();
 
+        //Metodo para enviar el correo electronico al municipio.
+        $user = User::find($request->m_user_id);
+        $user->notify(new NewFondoPdfNotification(3));
+
         alert()->success('Exito!', 'El pdf ha sido guardado con éxito.');
         return redirect()->back();
     }
@@ -102,7 +109,7 @@ class Fondo3Controller extends Controller
     {
         $fondo3 = Fondo3::find($request->fondo3_id);
         $fondo3->status = "RECHAZADO";
-        //Se quedara pendiente ya que aun no existen los archivos por parte de los municipios
+
         Storage::delete($fondo3->file);
         $fondo3->file = "EN ESPERA...";
         $fondo3->save();
@@ -137,8 +144,12 @@ class Fondo3Controller extends Controller
         $fondo3 = Fondo3::find($id);
         $fondo3->file = $request->file('file')->store('public/pdfs/municipio/fondo3/' . $anio);
         $fondo3->status = "EN REVISION";
+
         $fondo3->save();
         //Espacio para el envio de notificaciones.
+        $user = User::find($fondo3->user_id);
+        $municipio = User::find($fondo3->m_user_id);
+        $user->notify(new FondoCFDIUpdateNotification(3, $municipio->name, $municipio->id));
 
         alert()->success('Exito!', 'El CFDI ha sido guardado y enviado a revisión con éxito.');
         return redirect()->back();

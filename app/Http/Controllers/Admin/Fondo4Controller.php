@@ -15,6 +15,8 @@ use App\User;
 use App\Fondo4;
 use App\Fondo4Comments;
 
+use App\Notifications\NewFondoPdfNotification;
+
 use App\Http\Requests\Fondo3\StoreUserFile;
 use App\Http\Requests\Fondo3\StoreUserMFile;
  
@@ -76,12 +78,16 @@ class Fondo4Controller extends Controller
     {
         $anio = date('Y');
 
-        $fondo3 = (new Fondo4)->fill($request->all());
-        $fondo3->file_user = $request->file('file_user')->store('public/pdfs/finanzas/fondo4/' . $anio);
-        $fondo3->user_id = auth()->user()->id;
-        $fondo3->anio = $anio;
-        $fondo3->month = ucwords(Date::now()->format('F'));
-        $fondo3->save();
+        $fondo4 = (new Fondo4)->fill($request->all());
+        $fondo4->file_user = $request->file('file_user')->store('public/pdfs/finanzas/fondo4/' . $anio);
+        $fondo4->user_id = auth()->user()->id;
+        $fondo4->anio = $anio;
+        $fondo4->month = ucwords(Date::now()->format('F'));
+        $fondo4->save();
+
+        //Metodo para enviar el correo electronico al municipio.
+        $user = User::find($request->m_user_id);
+        $user->notify(new NewFondoPdfNotification(4));
 
         alert()->success('Exito!', 'El pdf ha sido guardado con éxito.');
         return redirect()->back();
@@ -89,10 +95,10 @@ class Fondo4Controller extends Controller
 
     public function aprobarCFDI($id)
     {
-        $fondo3 = Fondo4::find($id);
-        $fondo3->status = "APROBADO";
+        $fondo4 = Fondo4::find($id);
+        $fondo4->status = "APROBADO";
 
-        $fondo3->save();
+        $fondo4->save();
         alert()->success('Exito!', 'El CFDI ha sido aprobado.');
         return redirect()->back();
     }
@@ -133,11 +139,14 @@ class Fondo4Controller extends Controller
     {
         $anio = date('Y');
 
-        $fondo3 = Fondo4::find($id);
-        $fondo3->file = $request->file('file')->store('public/pdfs/municipio/fondo4/' . $anio);
-        $fondo3->status = "EN REVISION";
-        $fondo3->save();
+        $fondo4 = Fondo4::find($id);
+        $fondo4->file = $request->file('file')->store('public/pdfs/municipio/fondo4/' . $anio);
+        $fondo4->status = "EN REVISION";
+        $fondo4->save();
         //Espacio para el envio de notificaciones.
+        $user = User::find($fondo4->user_id);
+        $municipio = User::find($fondo4->m_user_id);
+        $user->notify(new FondoCFDIUpdateNotification(4, $municipio->name, $municipio->id));
 
         alert()->success('Exito!', 'El CFDI ha sido guardado y enviado a revisión con éxito.');
         return redirect()->back();
