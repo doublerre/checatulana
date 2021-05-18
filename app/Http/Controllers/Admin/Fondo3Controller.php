@@ -18,6 +18,7 @@ use App\Fondo3Comments;
 use App\Notifications\NewFondoPdfNotification;
 use App\Notifications\FondoCFDIUpdateNotification;
 use App\Notifications\AprobarCFDINotification;
+use App\Notifications\RechazarCFDINotification;
 
 use App\Http\Requests\Fondo3\StoreUserFile;
 use App\Http\Requests\Fondo3\StoreUserMFile;
@@ -121,6 +122,10 @@ class Fondo3Controller extends Controller
         $comment = (new Fondo3Comments)->fill($request->all());
         $comment->user_id = auth()->user()->id;
         $comment->save();
+
+        $user = User::find($fondo3->m_user_id);
+        $user->notify(new RechazarCFDINotification(3, $fondo3->id, $request->comment));
+        
         alert()->success('Exito!', 'El comentario ha sido guardado.');
         return redirect()->back();
     }
