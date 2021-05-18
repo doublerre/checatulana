@@ -99,6 +99,47 @@ php artisan key:generate
 
 _Y listo podemos hacer el despliegue de nuestra aplicación 🤑_
 
+## Actualización a la versión 3.0 🔄
+### Requisitos previos 📝:
+```
+Tener instalada la version 2.0 de este sistema.
+Contar con espacio suficiente para la actualización.
+```
+
+### Comandos de actualización 🔧
+_Abrir una terminal y ejecutar los siguientes comandos:_
+```
+cd \xampp\htdocs\checatulana para Windows 🖥️
+cd /var/www/html/checatulana para Linux 🐧
+```
+_Una Vez dentro de la carpeta del proyecto escribimos lo siguiente:_
+```
+git pull origin master
+```
+_Esperamos a que la terminal termine de descargar los nuevos archivos del sistema._
+_Una vez terminado actualizaremos las dependencias del proyecto con el siguiente comando:_
+```
+composer update
+```
+
+_Una vez termiada la actualizacón de las dependencias procedemos a actualizar la base de datos, para esto escribimos este comando:_
+```
+php artisan migrate
+Nota: "Los registros de la base de datos no se borraran".
+```
+_Por cambios a la base de datos, los usuarios ya registrados estaran desactivados por default, dejando sin acceso al sistema a todos los usuarios._
+_Para evitar perder el acceso al sistema se debe ejecutar el siguiente comando:_
+```
+php artisan db:seed --class=UserAdminSeeder
+```
+_Este comando nos creara 2 usuarios **Administradores**, los cuales estaran activados para no perder el acceso al sistema, son usuarios temporales los cuales podran ser eliminados del sistema.:_
+| Usuario | Correo electronico | Contraseña | Tipo de rol | Activado |
+| :---:   |     :---:          |  :---:     |  :---:      | :---:    |
+| Finanzas   | finanzas@admin.com | finanzas | **Administrador** | ✔️ |
+| Finanzas2   | finanzas2@admin.com | finanzas2 | **Administrador** | ✔️ |
+
+_Y listo podemos hacer el despliegue de nuestra aplicación 🤑_
+
 ## Despliegue 📦
 
 _Para hacer deploy a nuestro proyecto solo basta ejecutar la siguiente linea:_
@@ -118,7 +159,7 @@ _Y tendremos nuestra aplicación funcionando a la perfeccion:_
 * **Jonathan Gonzalez.** - *Trabajo Inicial* - [JoniGo](https://gitlab.com/JoniGo)
 * **Perla Conde** - *Trabajo Inicial* - [Conde_](https://gitlab.com/Conde_)
 * **Esmeralda Pacheco** - *Trabajo Inicial* - [esmeraldapacheco05](https://gitlab.com/esmeraldapacheco05)
-* **Rafael Rangel** - *Actualización a la versión 2* - [rafaelrangelx12](https://gitlab.com/rafaelrangelx12)
+* **Rafael Rangel** - *Actualización a la versión 2 y 3* - [rafaelrangelx12](https://gitlab.com/rafaelrangelx12)
 
 También puedes mirar la lista de todos los [contribuyentes](https://gitlab.com/JoniGo/checatulana/-/project_members) quíenes han participado en este proyecto. 
 
