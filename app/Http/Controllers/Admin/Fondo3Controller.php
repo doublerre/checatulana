@@ -17,6 +17,7 @@ use App\Fondo3Comments;
 
 use App\Notifications\NewFondoPdfNotification;
 use App\Notifications\FondoCFDIUpdateNotification;
+use App\Notifications\AprobarCFDINotification;
 
 use App\Http\Requests\Fondo3\StoreUserFile;
 use App\Http\Requests\Fondo3\StoreUserMFile;
@@ -99,8 +100,11 @@ class Fondo3Controller extends Controller
     {
         $fondo3 = Fondo3::find($id);
         $fondo3->status = "APROBADO";
-
         $fondo3->save();
+
+        $user = User::find($fondo3->m_user_id);
+        $user->notify(new AprobarCFDINotification(3, $id));
+        
         alert()->success('Exito!', 'El CFDI ha sido aprobado.');
         return redirect()->back();
     }
