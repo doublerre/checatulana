@@ -18,9 +18,7 @@ class UserIsVerifed
     {
         if(Auth::guard()->check() && auth()->user()->activated == 0)
         {
-            Auth::guard()->logout();
-            $request->session()->invalidate();
-            abort(403);
+            return response(view('errors.banned'));
         }else{
             return $next($request);
         }
