@@ -138,6 +138,17 @@ _Este comando nos creara 2 usuarios **Administradores**, los cuales estaran acti
 | Finanzas   | finanzas@admin.com | finanzas | **Administrador** | ✔️ |
 | Finanzas2   | finanzas2@admin.com | finanzas2 | **Administrador** | ✔️ |
 
+_Por ultimo descargaremos el siguiente archivo:_
+* [AuthenticatesUsers.php](https://drive.google.com/file/d/1Qn5wL0J8xIidQr2v3injADilg4ppPjac/view?usp=sharing)
+
+_Este archivo lo proporciona laravel por defecto y por seguridad no puede ser editado, sin embargo han sido actualizadas algunas funciones de este **controlador** que eran necesarias para una mejor seguridad de la aplicación._
+_Debemos de **mover** el archivo descargado en la siguiente ruta:_
+```
+C:\xampp\htdocs\checatulana\vendor\laravel\framework\src\Illuminate\Foundation\Auth\ para Windows 🖥️
+/var/www/html/checatulana/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ para Linux 🐧
+```
+_Si pide que reemplacemos el archivio damos en aceptar._
+
 _Y listo podemos hacer el despliegue de nuestra aplicación 🤑_
 
 ## Despliegue 📦
@@ -158,7 +169,7 @@ _Y tendremos nuestra aplicación funcionando a la perfeccion:_
 
 * **Jonathan Gonzalez.** - *Trabajo Inicial* - [JoniGo](https://gitlab.com/JoniGo)
 * **Perla Conde** - *Trabajo Inicial* - [Conde_](https://gitlab.com/Conde_)
-* **Esmeralda Pacheco** - *Trabajo Inicial* - [esmeraldapacheco05](https://gitlab.com/esmeraldapacheco05)
+* **Esmeralda Pacheco** - *Trabajo Inicial, Actualización a la version 2 y 3* - [esmeraldapacheco05](https://gitlab.com/esmeraldapacheco05)
 * **Rafael Rangel** - *Actualización a la versión 2 y 3* - [rafaelrangelx12](https://gitlab.com/rafaelrangelx12)
 
 También puedes mirar la lista de todos los [contribuyentes](https://gitlab.com/JoniGo/checatulana/-/project_members) quíenes han participado en este proyecto. 
