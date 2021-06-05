@@ -132,7 +132,7 @@ _Para evitar perder el acceso al sistema se debe ejecutar el siguiente comando:_
 ```
 php artisan db:seed --class=UserAdminSeeder
 ```
-_Este comando nos creara 2 usuarios **Administradores**, los cuales estaran activados para no perder el acceso al sistema, son usuarios temporales los cuales podran ser eliminados del sistema.:_
+_Este comando nos creara 2 usuarios **Administradores**, los cuales estaran activados para no perder el acceso al sistema, son usuarios temporales los cuales podran ser eliminados del sistema:_
 | Usuario | Correo electronico | Contraseña | Tipo de rol | Activado |
 | :---:   |     :---:          |  :---:     |  :---:      | :---:    |
 | Finanzas   | finanzas@admin.com | finanzas | **Administrador** | ✔️ |
