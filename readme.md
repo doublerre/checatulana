@@ -112,7 +112,7 @@ checatulana/.env
 
 ### Eliminar el proyecto ❌
 _Nos percatamos de un error de diseño por parte del componente Adminlte, el cual se daña al realizar un **Composer update**, el error se muestra a continuacion:_
-![2015-09-20 17 02 28](https://lh3.google.com/u/0/d/1AzA7RPSp5wkMSnkw8MBfCBOapgZgMHoE=w1920-h969-iv1)
+![2015-09-20 17 02 28](https://gitlab.com/JoniGo/checatulana/-/blob/V3.0/public/img/errors/error.png)
 
 _Para evitar este error es necesario eliminar el proyecto (Solo el proyecto, la base de datos queda igual), una vez terminado realizaremos la instalacion de la versión 3._
 
@@ -169,7 +169,7 @@ _Si pide que reemplacemos el archivio damos en aceptar._
 
 _Y listo podemos hacer el despliegue de nuestra aplicación sin ningun error🤑_
 
-![2015-09-20 17 02 28](https://lh3.google.com/u/0/d/1O3WRJLgDk1Pm_4N6blQEczurakZ4jdvq=w1920-h969-iv1)
+![2015-09-20 17 02 28](https://gitlab.com/JoniGo/checatulana/-/blob/V3.0/public/img/errors/vistasinerrores.png)
 
 ## Despliegue 📦
 
