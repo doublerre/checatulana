@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://admin.checatulana.zacatecas.gob.mx/'),
+    'url' => env('APP_URL', 'https://adminchecatulana.zacatecas.gob.mx/'),
 
     /*
     |--------------------------------------------------------------------------
