@@ -1,6 +1,6 @@
 # ChecaTuLana
 
-Este repositorio contiene el proyecto que se mostrara al administrador del sitio. Debera ir en el dominio https://admin.checatulana.zacatecas.gob.mx/ sera conectado a la misma base de datos
+Este repositorio contiene el proyecto que se mostrara al administrador del sitio. Debera ir en el dominio https://adminchecatulana.zacatecas.gob.mx/ sera conectado a la misma base de datos
 
 ## Comenzando 🚀
 
@@ -136,6 +136,7 @@ _Una vez termiada la instalacion de las dependencias procedemos a actualizar la 
 ```
 php artisan migrate
 Nota: "Los registros de la base de datos no se borraran".
+php artisan storage:link
 ```
 _Por cambios a la base de datos, los usuarios ya registrados estaran desactivados por default, dejando sin acceso al sistema a todos los usuarios._
 _Para evitar perder el acceso al sistema se debe ejecutar el siguiente comando:_
@@ -162,8 +163,8 @@ _Este archivo lo proporciona laravel por defecto y por seguridad no puede ser ed
 
 _Debemos de **mover** el archivo descargado en la siguiente ruta:_
 ```
-C:\xampp\htdocs\checatulana\vendor\laravel\framework\src\Illuminate\Foundation\Auth\ para Windows 🖥️
-/var/www/html/checatulana/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ para Linux 🐧
+checatulana\vendor\laravel\framework\src\Illuminate\Foundation\Auth\ para Windows 🖥️
+checatulana/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ para Linux 🐧
 ```
 _Si pide que reemplacemos el archivio damos en aceptar._
 
@@ -184,6 +185,7 @@ _Y tendremos nuestra aplicación funcionando a la perfeccion:_
 * [Laravel](https://laravel.com/docs/8.x) - El framework web usado.
 * [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Usado para los estilos de las vistas.
 * [DataTables](https://datatables.net/manual/installation) - Plugin para un paginado de tablas.
+* [AdminLte](https://github.com/jeroennoten/Laravel-AdminLTE) - Plantilla utilizada en el Admin
 
 ## Autores ✒️
 
