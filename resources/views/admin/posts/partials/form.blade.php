@@ -10,20 +10,11 @@
 </div>
 <div class="form-group">
     {{ Form::label('slug', 'URL amigable') }}
-    {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug']) }}
+    {{ Form::text('slug', null, ['class' => 'form-control', 'id' => 'slug', 'readonly']) }}
 </div>
 <div class="form-group">
     {{ Form::label('image', 'Imagen') }}
     {{ Form::file('image') }}
-</div>
-<div class="form-group">
-    {{ Form::label('slug', 'Estado') }}
-    <label>
-        {{ Form::radio('status', 'PUBLISHED') }} Publicado
-    </label>
-    <label>
-        {{ Form::radio('status', 'DRAFT') }} Borrador
-    </label>
 </div>
 <div class="form-group">
     {{ Form::label('excerpt', 'Extracto') }}
@@ -34,7 +25,7 @@
     {{ Form::textarea('body', null, ['class' => 'form-control']) }}
 </div>
 <div class="form-group">
-    {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
+    {{ Form::submit('Guardar como borrador.', ['class' => 'btn btn-sm btn-primary']) }}
 </div>
 <div>
     @foreach ($errors->all() as $error)

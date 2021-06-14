@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Logo;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
 class CategoryController extends Controller
 {
     /**
@@ -21,6 +24,7 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('verified');
     }
     
     /**
@@ -28,11 +32,16 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Dispatcher $events)
     {
-        $categories = Category::orderBy('id', 'ASC')->paginate();
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $categories = Category::orderBy('id', 'ASC')->paginate();
 
-        return view('admin.categories.index', compact('categories'));
+            return view('admin.categories.index', compact('categories'));
+        }
+        abort(403);
     }
 
     /**
@@ -40,12 +49,18 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Dispatcher $events)
     {
-        $logos = Logo::get();
-        return view('admin.categories.create', [
-            "logos" => $logos,
-        ]);
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $logos = Logo::get();
+            return view('admin.categories.create', [
+                "logos" => $logos,
+            ]);
+        }
+        abort(403);
     }
 
     /**
@@ -70,11 +85,17 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Dispatcher $events)
     {
-        $category = Category::find($id);
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
 
-        return view('admin.categories.show', compact('category'));
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $category = Category::find($id);
+
+            return view('admin.categories.show', compact('category'));
+        }
+        abort(403);
     }
 
     /**
@@ -83,12 +104,18 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Dispatcher $events)
     {
-        $category = Category::find($id);
-        $logos = Logo::get();
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
 
-        return view('admin.categories.edit', compact('category', 'logos'));
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $category = Category::find($id);
+            $logos = Logo::get();
+
+            return view('admin.categories.edit', compact('category', 'logos'));
+        }
+        abort(403);
     }
 
     /**

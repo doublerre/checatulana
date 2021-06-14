@@ -36,7 +36,7 @@ class User extends Authenticatable
         return "/vendor/adminlte/dist/img/icon.png";
     }
     public function adminlte_desc(){
-        return "Admin";
+        return auth()->user()->role;
     }
     public function adminlte_profile_url(){
         return "profile/username";

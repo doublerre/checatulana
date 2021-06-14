@@ -7,12 +7,17 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Subcategories;
 use App\Post;
+use App\Comment;
+
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
 
 class PageController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('verified');
     }
 
     public function getSubcategory($id){
@@ -26,7 +31,10 @@ class PageController extends Controller
         return view('welcome',$data);
     }
   
-    public function blog(){
+    public function blog(Dispatcher $events){
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
     	$posts = Post::orderBy('id', 'DESC')->where('status', 'PUBLISHED')->paginate(3);
 
     	return view('web.admin.posts', compact('posts'));
@@ -41,17 +49,18 @@ class PageController extends Controller
     }
 
 
-    public function post($slug){
+    public function post($slug, Dispatcher $events){
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
     	$post = Post::where('slug', $slug)->first();
-
-    	return view('web.admin.post', compact('post'));
+        $comments = Comment::where('post_id', $post->id)
+        ->join('users', 'users.id', 'comments.user_id')
+        ->select('comments.*', 'users.name')
+        ->paginate(3);
+    	return view('web.admin.post', [
+            'post' => $post,
+            'comments' => $comments,
+        ]);
     }
-
-    public function validation()
-    {
-        return "Hola";
-    }
-
-  
-
 }

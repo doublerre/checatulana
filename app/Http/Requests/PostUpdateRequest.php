@@ -29,7 +29,6 @@ class PostUpdateRequest extends FormRequest
             'user_id'       => 'required|integer',
             'subcategory_id'   => 'required|integer',
             'body'          => 'required',
-            'status'        => 'required|in:DRAFT,PUBLISHED',
         ];
 
         if($this->get('image'))        

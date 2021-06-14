@@ -1,0 +1,1 @@
+<a href="{{Storage::url($file_user)}}" target="_blank" class="btn btn-sm btn-default">Ver PDF.</a>

@@ -24,10 +24,31 @@
                     <hr>
                     {!! $post->body !!}
                     <hr>
-
+                </div>
+                <div class="card-footer">
+                    <b>Commentarios: </b>
+                    <br>
+                    @if(!$comments->count())
+                        Usuario: El equipo de ChecaTuLana.
+                        <br>
+                        Fecha: {{ date("Y-m-d H:i:s") }}
+                        <br>
+                        Comentario: Aun no existen comentarios para este post, favor de esperar un poco más.
+                        <br><hr>
+                    @else
+                        @foreach ($comments as $comment)
+                            Usuario: {{ $comment->name }}
+                            <br>
+                            Fecha: {{ $comment-> created_at}}
+                            <br>
+                            Comentario: {{ $comment->comment }}
+                            <br><hr>
+                        @endforeach
+                    @endif
+                    
                 </div>
             </div>
-
+            {{ $comments->render() }}
         </div>
     </div>
 </div>

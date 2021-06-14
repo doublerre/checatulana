@@ -26,7 +26,7 @@
             <label>Select</label>
             <select name="logo_id" class="form-control">
                 @foreach ($logos as $logo)
-                    <option value="{{$logo->id}}" data-imagesrc="{{Storage::url($logo->file)}}">Opción {{$logo->id}}</option>
+                    <option value="{{$logo->id}}" data-imagesrc="{{Storage::url($logo->file)}}">Opción {{$loop->index + 1}}</option>
                 @endforeach
             </select>
         </div>

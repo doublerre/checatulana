@@ -9,10 +9,16 @@ use App\Logo;
 use App\Http\Requests\Logo\LogoRequest;
 use Yajra\DataTables\DataTables;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
 class LogoController extends Controller
 {
-    public function index()
+    public function index(Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         if(auth()->user()->role=="ADMINISTRADOR"){
             return view('admin.logos.index');
         }

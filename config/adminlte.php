@@ -1,5 +1,4 @@
 <?php
-
 return [
 
     /*
@@ -241,52 +240,90 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'Entradas'],
+
         [
-            'text'        => 'Home',
-            'url'         => '/dashboard/blogs',
-            'icon'        => 'fas fa-home',
+        'header' => 'Entradas',
+        'key' => "entradas"
+        ],
+
+        [
+            'key' => 'home',
+            'text' => 'Home',    
+            'url' => '/dashboard/blogs',
+            'icon' => 'fas fa-home',
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Categorías',
-            'url'         => 'categories/',
-            'icon'        => 'fas fa-bars',
+            'key' => 'categorias',
+            'text' => 'Categorías',
+            'url' => 'categories/',
+            'icon' => 'fas fa-bars',
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Subcategorías',
-            'url'         => 'subcategories/',
-            'icon'        => 'fas fa-angle-right',
+            'key' => "subcategorias",
+            'text' => 'Subcategorías',
+            'url' => 'subcategories/',
+            'icon' => 'fas fa-angle-right',
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Articulos',
-            'url'         => 'posts/',
-            'icon'        => 'fas fa-newspaper',
+            'key' => 'articulos',
+            'text' => 'Artículos',
+            'url' => 'posts/',
+            'icon' => 'fas fa-newspaper',
             'label_color' => 'success',
         ],
-        ['header' => 'Administracion'],
+        ['header' => 'Administración'],
         [
-            'text' => 'perfil',
+            'text' => 'Perfil',
             'url'  => 'profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'key' => 'usuarios',
             'text' => 'Usuarios',
             'url'  => 'admin/users',
             'icon' => 'fas fa-users',
         ],
-        ['header' => 'ChecaTuLana-Client'],
         [
+            'key' => 'articulos_review',
+            'text' => 'Artículos en revisión',
+            'url' => 'admin/posts',
+            'icon' => 'fas fa-newspaper',
+            'label_color' => 'success',
+        ],
+        [
+            'header' => 'ChecaTuLana-Client',
+            'key' => 'checatulana'
+        ],
+        [
+            'key' => 'banners',
             'text' => 'Banners',
             'url' => 'banners',
             'icon' => 'fas fa-images'
         ],
         [
+            'key' => 'logos',
             'text' => 'Logos',
             'url' => 'logos',
             'icon' => 'far fa-file-image'
+        ],
+        [
+            'header' => 'Municipios',
+            'key' => 'municipios'
+        ],
+        [
+            'key' => 'fondo3',
+            'text' => 'Fondo III',
+            'url' => 'fondo-iii',
+            'icon' => 'fab fa-monero',
+        ],
+        [
+            'key' => 'fondo4',
+            'text' => 'Fondo IV',
+            'url' => 'fondo-iv',
+            'icon' => 'fab fa-monero'
         ],
         /*['header' => 'labels'],
         [
@@ -341,6 +378,16 @@ return [
     */
 
     'plugins' => [
+        'BsCustomFileInput' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/bs-custom-file-input/bs-custom-file-input.min.js',
+                ],
+            ],
+        ],
         'Datatables' => [
             'active' => false,
             'files' => [

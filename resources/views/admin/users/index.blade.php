@@ -18,8 +18,9 @@
 							<th>Nombre.</th>
 							<th>Correo Electronico.</th>
 							<th>Rol.</th>
+							<th>Estatus.</th>
 							<th>Editar.</th>
-							<th>Cambiar rol.</th>
+							<th>Cambiar Estatus.</th>
 							<th>Eliminar.</th>
 						</tr>
 					</thead>
@@ -51,6 +52,14 @@
                                 <input type="text" required class="form-control" name="name" id="name" placeholder="Nombre">
                             </div>
                         </div>
+						<div class="form-group row">
+							<label>Rol:</label>
+							<select name="role" id="role"class="form-control">
+								<option value="ADMINISTRADOR">ADMINISTRADOR</option>
+								<option value="EDITOR">EDITOR</option>
+								<option value="MUNICIPIO">MUNICIPIO</option>
+							</select>
+						</div>
                         <div class="form-group row">
                             <div class="offset-sm-2 col-sm-10">
                                 <button type="submit" class="btn btn-info float-right">Actualizar usuario.</button>
@@ -104,8 +113,9 @@
 						{data: "name"},
 						{data: "email"},
 						{data: "role_user"},
+						{data: 'status'},
 						{defaultContent:"<button class='btn-sm btn-info editar_usuario'><i class='fas fa-edit'></i> Editar.</button>"},
-						{data: "change_role"},
+						{data: "change_status"},
 						{data: "delete"},
 					]
 				});
@@ -120,6 +130,7 @@
 					var data = t_users.row($(this).parents("tr")).data();
 					$("#id").val(data.id);
 					$("#name").val(data.name);
+					$("#role").val(data.role);
 					$("#editUsers").modal("show");
 				});
 			}

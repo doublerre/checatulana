@@ -14,6 +14,10 @@ use App\Post;
 use App\Category;
 use App\Subcategories;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
+
 class PostController extends Controller
 {
     /**
@@ -24,6 +28,7 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('verified');
     }
     
     /**
@@ -31,8 +36,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $posts = Post::orderBy('id', 'DESC')
             ->where('user_id', auth()->user()->id)
             ->paginate();
@@ -45,9 +53,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Dispatcher $events)
     {
         //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
 
         return view('admin.posts.create', compact('subcategories'));
@@ -72,7 +83,7 @@ class PostController extends Controller
         //TAGS
        // $post->subcategories()->attach($request->get('subcategories'));
 
-        return redirect()->route('posts.show', $post->id);
+        return redirect()->route('post', $post->slug);
     }
 
     /**
@@ -81,8 +92,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
         $post = Post::find($id);
         //$this->authorize('pass', $post);
 
@@ -95,14 +109,23 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Dispatcher $events)
     {
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+        
+
         //$categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
         $subcategories= Subcategories::orderBy('name', 'ASC')->pluck('name', 'id');
         $post= Post::find($id);
+        if($post == null || $post->user_id != auth()->user()->id){
+            abort(404);
+        }else{
+            return view('admin.posts.edit', compact('post','subcategories'));
+        }
        // $this->authorize('pass', $post);
 
-        return view('admin.posts.edit', compact('post','subcategories'));
+        
     }
 
     /**
@@ -117,6 +140,9 @@ class PostController extends Controller
         $post = Post::find($id);
         //$this->authorize('pass', $post);
 
+        $post->status = "DRAFT";
+        $post->validated = 0;
+
         $post->fill($request->all())->save();
 
         //IMAGE 
@@ -128,7 +154,7 @@ class PostController extends Controller
         //TAGS
        // $post->categories()->sync($request->get('categories'));
 
-        return redirect()->route('posts.edit', $post->id);
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -143,5 +169,15 @@ class PostController extends Controller
         //$this->authorize('pass', $post);
 
         return back()->with('eliminar','ok');
+    }
+
+    //Funcion de envio a revision de post.
+    public function send_review($id)
+    {
+        $post = Post::find($id);
+        $post->validated = 1;
+        $post->save();
+        alert()->success('Éxito', 'Post enviado a revisión.');
+        return redirect()->back();
     }
 }

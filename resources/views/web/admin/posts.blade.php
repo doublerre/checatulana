@@ -17,7 +17,7 @@
                     @endif
                     
                     {!! $post->excerpt !!}
-                    <a href="{{ route('post', $post->slug) }}" class="pull-right">Leer más</a>
+                    <a href="{{ route('posts.show', $post->id) }}" class="pull-right">Leer más</a>
                 </div>
             </div>
             @endforeach

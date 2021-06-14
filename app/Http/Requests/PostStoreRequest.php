@@ -28,8 +28,7 @@ class PostStoreRequest extends FormRequest
             'slug'          => 'required|unique:posts,slug',
             'user_id'       => 'required|integer',
             'subcategory_id'   => 'required|integer',
-            'body'          => 'required',
-            'status'        => 'required|in:DRAFT,PUBLISHED',            
+            'body'          => 'required',          
         ];
 
         if($this->get('image'))        

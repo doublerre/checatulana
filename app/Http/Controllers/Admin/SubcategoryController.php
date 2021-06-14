@@ -13,6 +13,9 @@ use App\Category;
 
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Http\Controllers\MenuFilterController;
+
 class SubcategoryController extends Controller
 {
     /**
@@ -23,6 +26,7 @@ class SubcategoryController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('verified');
     }
     
     /**
@@ -30,17 +34,21 @@ class SubcategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Dispatcher $events)
     {
-        //return $subcategories = Subcategories::orderBy('id', 'ASC')->paginate()->join('categories', 'categories.id', 'subcategories.category_id');
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
 
-        $subcategories = DB::table('subcategories')
-        ->orderBy('id', 'ASC')
-        ->join('categories', 'categories.id', 'subcategories.category_id')
-        ->select('subcategories.*', 'categories.name as category_name')
-        ->paginate(10);
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $subcategories = DB::table('subcategories')
+            ->orderBy('id', 'ASC')
+            ->join('categories', 'categories.id', 'subcategories.category_id')
+            ->select('subcategories.*', 'categories.name as category_name')
+            ->paginate(10);
 
-        return view('admin.subcategories.index', compact('subcategories'));
+            return view('admin.subcategories.index', compact('subcategories'));
+        }
+        abort(403);
     }
 
     /**
@@ -48,11 +56,17 @@ class SubcategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Dispatcher $events)
     {
-        $categories = Category::pluck('name', 'id');
-        //return $categories;
-        return view('admin.subcategories.create', compact('categories'));
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $categories = Category::pluck('name', 'id');
+            //return $categories;
+            return view('admin.subcategories.create', compact('categories'));
+        }
+        abort(403);
     }
 
     /**
@@ -75,11 +89,17 @@ class SubcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Dispatcher $events)
     {
-        $subcategory = Subcategories::find($id);
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
 
-        return view('admin.subcategories.show', compact('subcategory'));
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $subcategory = Subcategories::find($id);
+
+            return view('admin.subcategories.show', compact('subcategory'));
+        }
+        abort(403);
     }
 
     /**
@@ -88,11 +108,17 @@ class SubcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Dispatcher $events)
     {
-        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
-        $subcategory = Subcategories::find($id);
-        return view('admin.subcategories.edit', compact('subcategory', 'categories'));
+        $menu = new MenuFilterController();
+        $menu->menuFilter($events);
+        
+        if(auth()->user()->role=="ADMINISTRADOR"){
+            $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+            $subcategory = Subcategories::find($id);
+            return view('admin.subcategories.edit', compact('subcategory', 'categories'));
+        }
+        abort(403);
     }
 
     /**

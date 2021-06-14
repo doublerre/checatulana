@@ -29,7 +29,7 @@
                                 <td>{{ $post->name }}</td>
                                 <td>{{$post->subcategory_id}}</td>
                                 <td width="10px">
-                                    <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-default">Ver</a>
+                                    <a href="{{ route('post', $post->slug) }}" class="btn btn-sm btn-default">Ver</a>
                                 </td>
                                 <td width="10px">
                                     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-default">Editar</a>
@@ -41,6 +41,23 @@
                                         </button>                           
                                     {!! Form::close() !!}
                                 </td>
+                                @if ($post->status == "PUBLISHED")
+                                    <td>
+                                        <small class="badge badge-success"><i class="far fa-check-square"></i> Aprobado.</small>
+                                    </td>
+                                @elseif($post->status == "DRAFT" && $post->validated == 1)
+                                    <td>
+                                        <small class="badge badge-warning"><i class="fas fa-search"></i> En revisión.</small>
+                                    </td>
+                                @else
+                                    <td>
+                                        {!! Form::open(['class'=>'put','route' => ['post.send_review', $post->id], 'method' => 'PUT']) !!}
+                                        <button class="btn btn-sm btn-success">
+                                            Enviar a revisión.
+                                        </button> 
+                                        {!! Form::close() !!}
+                                    </td>
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>   
@@ -54,6 +71,8 @@
 </div>
 @endsection
 @section('js')
+@include('sweetalert::alert')
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
  @if (session('eliminar')== 'ok')
