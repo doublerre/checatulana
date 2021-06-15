@@ -325,6 +325,20 @@ return [
             'url' => 'fondo-iv',
             'icon' => 'fab fa-monero'
         ],
+        [
+            'header' => 'Información',
+            'key' => 'info'
+        ],
+        [
+            'text' => 'Login',
+            'url' => 'info/login',
+            'icon' => 'fas fa-users'
+        ],
+        [
+            'text' => 'Docs',
+            'url' => 'info/docs',
+            'icon' => 'fab fa-dochub'
+        ],
         /*['header' => 'labels'],
         [
             'text'       => 'important',

@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
    if(!auth()->user()){
-      return redirect()->route('login');
+      return redirect()->route('info.index');
    }else{
       return redirect()->route('blog');
    }
@@ -98,4 +98,8 @@ Route::group(["middleware" => ["auth", "verified"], "as" => "fondo4."], function
    Route::put('fondo-iv/rechazar-cfdi', 'Admin\Fondo4Controller@rechazarCFDI')->name('rechazarCFDI');
    Route::get('fondo-iv/{id}/verCFDI', 'Admin\Fondo4Controller@verCFDI')->name('verCFDI');
    Route::put('fondo-iv/{id}/uploadCFDIsUM', 'Admin\Fondo4Controller@uploadCFDIsUM')->name('uploadCFDIsUM');
+});
+
+Route::group(["as" => "info."], function(){
+   Route::get('info/login', 'Admin\InfoController@index')->name('index');
 });
