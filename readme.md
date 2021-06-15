@@ -156,7 +156,7 @@ checatulana/storage/app/ - Para la carpeta public
 checatulana/ - Para el archivo de configuración
 ```
 
-_Por ultimo descargaremos el siguiente archivo:_
+_Procedemos a descargar el siguiente archivo:_
 * [AuthenticatesUsers.php](https://drive.google.com/file/d/1Qn5wL0J8xIidQr2v3injADilg4ppPjac/view?usp=sharing)
 
 _Este archivo lo proporciona laravel por defecto y por seguridad no puede ser editado, sin embargo han sido actualizadas algunas funciones de este **controlador** que eran necesarias para una mejor seguridad de la aplicación._
@@ -167,6 +167,18 @@ checatulana\vendor\laravel\framework\src\Illuminate\Foundation\Auth\ para Window
 checatulana/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ para Linux 🐧
 ```
 _Si pide que reemplacemos el archivio damos en aceptar._
+
+_Por ultimo limpearemos el cache que haya dejado la aplicacion aplicando los siguientes 3 comandos:_
+```
+php artisan cache:clear
+php artisan config:clear
+php artisan config:cache
+```
+_En caso de tener el siguiente error: "Failed to clear cache. Make sure you have the appropriate permissions.", debemos de crear la carpeta data en la siguiente ruta:_
+```
+checatulana\storage\framework\cache\ para Windows 🖥️
+checatulana/storage/framework/cache/ para Linux 🐧
+```
 
 _Y listo podemos hacer el despliegue de nuestra aplicación sin ningun error🤑_
 
