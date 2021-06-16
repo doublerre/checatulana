@@ -62,14 +62,14 @@
                 </div>
             </div>
             <div class="card card-danger card-outline">
-                <a class="d-block w-100" data-toggle="collapse" href="#collapseSeven">
+                <a class="d-block w-100" data-toggle="collapse" href="#collapseocho">
                     <div class="card-header">
                         <h4 class="card-title w-100">
                             4. Usuario sin acceso al sistema.
                         </h4>
                     </div>
                 </a>
-                <div id="collapseSeven" class="collapse" data-parent="#accordion">
+                <div id="collapseocho" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                         <p>Solo sera necesario registrarte como usuario nuevo en el sistema.</p>
                         <b>Usuario:</b> cualquiera
@@ -96,5 +96,4 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
 @stop
