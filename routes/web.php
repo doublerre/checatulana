@@ -102,4 +102,5 @@ Route::group(["middleware" => ["auth", "verified"], "as" => "fondo4."], function
 
 Route::group(["as" => "info."], function(){
    Route::get('info/login', 'Admin\InfoController@index')->name('index');
+   Route::get('info/docs', 'Admin\InfoController@docs')->name('docs');
 });

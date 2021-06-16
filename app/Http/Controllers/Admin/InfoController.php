@@ -11,4 +11,9 @@ class InfoController extends Controller
     {
         return view("admin.info.index");
     }
+
+    public function docs()
+    {
+        return view("admin.info.docs");
+    }
 }
