@@ -108,64 +108,135 @@
                                     <span class="username">
                                     <a href="#">El equipo de ChecaTuLana.</a>
                                     </span>
-                                    <span class="description">Shared publicly - 7:45 PM today</span>
+                                    <span class="description">Instalación: Paso 2:</span>
                                 </div>
                                 <!-- /.user-block -->
                                 <p>
-                                    Lorem ipsum represents a long-held tradition for designers,
-                                    typographers and the like. Some people hate it and argue for
-                                    its demise, but others ignore.
+                                    Ingresaremos a la carpeta del proyecto con un <b>cd checatulana/</b>, una vez dentro del proyecto ejecutaremos
+                                    el siguiente comando para instalar las dependencias del proyecto: <b>composer install</b>.
+                                    <br>
+                                    La velocidad de instalación dependera de tu conexión a internet.
                                 </p>
                                 <p>
-                                    <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v2</a>
+                                    <video
+                                        id="paso2"
+                                        class="video-js"
+                                        controls
+                                        preload="auto"
+                                        width="640"
+                                        height="264"
+                                        poster="MY_VIDEO_POSTER.jpg"
+                                        data-setup="{}"
+                                    >
+                                        <source src="/video/paso2.mp4" type="video/mp4" />
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="post clearfix">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="/vendor/adminlte/dist/img/icon.png" alt="User Image">
+                                    <span class="username">
+                                    <a href="#">El equipo de ChecaTuLana.</a>
+                                    </span>
+                                    <span class="description">Instalación: Paso 3:</span>
+                                </div>
+                                <!-- /.user-block -->
+                                <p>
+                                    Descargaremos un archivo de configuracion indispensable para el correcto funcionamiento del proyecto
+                                    ya que cuenta con las variables de configuracion para su correcto funcionamiento.
+                                    <br>
+                                    <ul>
+                                        <li><a href="https://drive.google.com/file/d/1st8uuLyxNccxaMALN3UpqWjeKK3frq3E/view" target="_blank">.env</a></li>
+                                    </ul>
+                                    Lo pegaremos en la carpeta raiz del proyecto.
+                                </p>
+                                <p>
+                                    <video
+                                        id="paso3"
+                                        class="video-js"
+                                        controls
+                                        preload="auto"
+                                        width="640"
+                                        height="264"
+                                        poster="MY_VIDEO_POSTER.jpg"
+                                        data-setup="{}"
+                                    >
+                                        <source src="/video/paso3.mp4" type="video/mp4" />
+                                    </video>
+                                </p>
+                            </div>
+                            <div class="post">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="/vendor/adminlte/dist/img/icon.png" alt="user image">
+                                    <span class="username">
+                                    <a href="#">El equipo de ChecaTuLana.</a>
+                                    </span>
+                                    <span class="description">Instalación: Paso 4:</span>
+                                </div>
+                                <!-- /.user-block -->
+                                <p>
+                                    Toca el turno de hacer la migracion de la base de datos, para esto solo sera necesario ejecutar el siguiente comando: <b>php artisan migrate.</b>
+                                    <br>
+                                    Una vez terminado ejecutaremos el siguiente comando: <b>php artisan storage:link</b> esto hara que nuestra aplicacion pueda cargar los archivos
+                                    multimedia, y no nos muestre errores.
+                                </p>
+                                <p>
+                                    <video
+                                        id="paso4"
+                                        class="video-js"
+                                        controls
+                                        preload="auto"
+                                        width="640"
+                                        height="264"
+                                        poster="MY_VIDEO_POSTER.jpg"
+                                        data-setup="{}"
+                                    >
+                                        <source src="/video/paso2.mp4" type="video/mp4" />
+                                    </video>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
-                    <h3 class="text-primary"><i class="fas fa-code-branch"></i> ChecaTuLana v3</h3>
-                    <p class="text-muted">Plataforma de transparencia gubernamental de la secretaria de finanzas del estado de Zacatecas.</p>
+                    <h3 class="text-primary text-center"><i class="fas fa-code-branch"></i> ChecaTuLana v3</h3>
+                    <p class="text-muted text-center">Plataforma de transparencia gubernamental de la secretaria de finanzas del estado de Zacatecas.</p>
                     <br>
                     <div class="text-muted">
-                        <p class="text-sm">Cliente final:
+                        <p class="text-sm text-center">Cliente final:
                             <b class="d-block">Consejo Zacatecano de Ciencia, Tecnología e Innovación.</b>
                             <b class="d-block">Laboratorio de Software Libre.</b>
                             <b class="d-block">Secretaría de Finanzas del Estado de Zacatecas.</b>
                         </p>
-                        <p class="text-sm">Lideres del proyecto:
+                        <p class="text-sm text-center">Lideres del proyecto:
                             <b class="d-block">Jonathan González.</b>
                             <b class="d-block">Alfonso Rafael Solis Rangel.</b>
                         </p>
-                        <p class="text-sm">Sublider y diseñadora del proyecto:
+                        <p class="text-sm text-center">Sublider y diseñadora del proyecto:
                             <b class="d-block">María Esmeralda Pacheco González.</b>
                         </p>
-                        <p class="text-sm">Encargada de la base de datos:
+                        <p class="text-sm text-center">Encargada de la base de datos:
                             <b class="d-block">Perla Conde.</b>
                         </p>
                     </div>
-                    <h5 class="mt-5 text-muted">Project files</h5>
-                    <ul class="list-unstyled">
+                    <h5 class="mt-5 text-muted text-center">Extras del proyecto:</h5>
+                    <ul class="list-unstyled text-center">
                         <li>
-                            <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Functional-requirements.docx</a>
+                            <a href="https://drive.google.com/file/d/1Kh3Y5UgRmAvCxNLEK81QB_qkEpC-3_G4/view?usp=sharing" target="_blank" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Requerimientos v1.0</a>
                         </li>
                         <li>
-                            <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-pdf"></i> UAT.pdf</a>
+                            <a href="https://drive.google.com/file/d/1WFs3ZTycLESLTfOY_89RFjZu4vAEcicH/view?usp=sharing" target="_blank" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Requerimientos v2.0</a>
                         </li>
                         <li>
-                            <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-envelope"></i> Email-from-flatbal.mln</a>
+                            <a href="https://drive.google.com/file/d/13jVjsJb4aqOmS9By1JE53o-kYQaJ_7ei/view?usp=sharing" target="_blank" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Requerimientos v3.0</a>
                         </li>
                         <li>
-                            <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-image "></i> Logo.png</a>
+                            <a href="https://gitlab.com/JoniGo/checatulana" target="_blank" class="btn-link text-secondary"><i class="fab fa-gitlab"></i> Repositorio principal</a>
                         </li>
                         <li>
-                            <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Contract-10_12_2014.docx</a>
+                            <a href="https://github.com/doublerre/checatulana" target="_blank" class="btn-link text-secondary"><i class="fab fa-github"></i> Repositorio de respaldo</a>
                         </li>
                     </ul>
-                    <div class="text-center mt-5 mb-3">
-                        <a href="#" class="btn btn-sm btn-primary">Add files</a>
-                        <a href="#" class="btn btn-sm btn-warning">Report contact</a>
-                    </div>
                 </div>
             </div>
         </div>
