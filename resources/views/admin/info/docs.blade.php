@@ -195,6 +195,71 @@
                                     </video>
                                 </p>
                             </div>
+                            <div class="post clearfix">
+                                <div class="user-block">
+                                    <img class="img-circle img-bordered-sm" src="/vendor/adminlte/dist/img/icon.png" alt="User Image">
+                                    <span class="username">
+                                    <a href="#">El equipo de ChecaTuLana.</a>
+                                    </span>
+                                    <span class="description">Instalación: Paso 5:</span>
+                                </div>
+                                <!-- /.user-block -->
+                                <p>
+                                    Para terminar ejecutaremos el siguiente comando: <b>php artisan db:seed --class=UserAdminSeeder</b> el cual
+                                    nos creara 2 usuarios para acceder al sistema los cuales se detallan a continuación:
+                                    
+                                    <div class="card-body justify-content-center table-responsive p-0">
+                                        <table class="table table-hover text-nowrap center">
+                                            <thead>
+                                                <tr>
+                                                    <th>Usuario</th>
+                                                    <th>Correo electronico</th>
+                                                    <th>Contraseña</th>
+                                                    <th>Tipo de rol</th>
+                                                    <th>Activado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Finanzas</td>
+                                                    <td>finanzas@admin.com</td>
+                                                    <td>finanzas</td>
+                                                    <td><span class="badge bg-success">Administrador</span></td>
+                                                    <td>✔️</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Finanzas2</td>
+                                                    <td>finanzas2@admin.com</td>
+                                                    <td>finanzas2</td>
+                                                    <td><span class="badge bg-success">Administrador</span></td>
+                                                    <td>✔️</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <br>
+                                    <b>Nota:</b> Estos usuarios tienen un error los cuales no podran acceder su perfil ya que son usuarios temporales, una vez los nuevos usuarios 
+                                    administradores hayan sido aprobados, se deberan de eliminar los usuarios temporales.
+                                    <br>
+                                    <br>
+                                    Una vez terminado ejecutaremos <b>php artisan serve</b> para hacer el deploy de nuestra aplicación.
+                                </p>
+                                <p>
+                                    <video
+                                        id="paso5"
+                                        class="video-js"
+                                        controls
+                                        preload="auto"
+                                        width="640"
+                                        height="264"
+                                        poster="MY_VIDEO_POSTER.jpg"
+                                        data-setup="{}"
+                                    >
+                                        <source src="/video/paso5.mp4" type="video/mp4" />
+                                    </video>
+                                </p>
+                                <p>Y listo, tendremos una copia funcional de ChecaTuLana v3.0</p>
+                            </div>
                         </div>
                     </div>
                 </div>
