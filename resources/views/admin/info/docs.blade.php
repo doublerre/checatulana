@@ -191,7 +191,7 @@
                                         poster="MY_VIDEO_POSTER.jpg"
                                         data-setup="{}"
                                     >
-                                        <source src="/video/paso2.mp4" type="video/mp4" />
+                                        <source src="/video/paso4.mp4" type="video/mp4" />
                                     </video>
                                 </p>
                             </div>
