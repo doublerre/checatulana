@@ -45,14 +45,14 @@ class BannedUser extends Notification
           return (new MailMessage)
 			->subject(Lang::get('Cuenta desactivada.'))
 			->greeting(Lang::get('¡Hola ' . $notifiable->name . '!'))
-			->line(Lang::get('Recibes este email porque tu cuanta ha sido desactivada.'))
+			->line(Lang::get('Recibes este email porque tu cuenta ha sido desactivada.'))
 			->line(Lang::get('Si crees que esto es un error puedes contactar al administrador para más información.'))
 			->salutation(Lang::get('¡Saludos!'));
         }else{
 		return (new MailMessage)
 			->subject(Lang::get('Cuenta activada.'))
 			->greeting(Lang::get('¡Hola ' . $notifiable->name . '!'))
-			->line(Lang::get('Recibes este email porque tu cuanta ha sido activada exitosamente.'))
+			->line(Lang::get('Recibes este email porque tu cuenta ha sido activada exitosamente.'))
 			->action(Lang::get('Iniciar sesión'), url(route('login')))
 			->line(Lang::get('Ahora tienes acceso al sistema de checa tu lana.'))
 			->salutation(Lang::get('¡Saludos!'));
