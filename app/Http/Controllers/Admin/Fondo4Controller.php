@@ -90,7 +90,7 @@ class Fondo4Controller extends Controller
 
         //Metodo para enviar el correo electronico al municipio.
         $user = User::find($request->m_user_id);
-        $user->notify(new NewFondoPdfNotification(4));
+        $user->notify(new NewFondoPdfNotification(4, 'FORTAMUN'));
 
         alert()->success('Exito!', 'El pdf ha sido guardado con éxito.');
         return redirect()->back();
@@ -102,7 +102,7 @@ class Fondo4Controller extends Controller
         $fondo4->status = "APROBADO";
 
         $user = User::find($fondo4->m_user_id);
-        $user->notify(new AprobarCFDINotification(4, $id));
+        $user->notify(new AprobarCFDINotification(4, 'FORTAMUN', $id));
 
         $fondo4->save();
         alert()->success('Exito!', 'El CFDI ha sido aprobado.');
@@ -123,7 +123,7 @@ class Fondo4Controller extends Controller
         $comment->save();
 
         $user = User::find($fondo4->m_user_id);
-        $user->notify(new RechazarCFDINotification(4, $fondo4->id, $request->comment));
+        $user->notify(new RechazarCFDINotification(4, 'FORTAMUN', $fondo4->id, $request->comment));
 
         alert()->success('Exito!', 'El comentario ha sido guardado.');
         return redirect()->back();
@@ -156,7 +156,7 @@ class Fondo4Controller extends Controller
         //Espacio para el envio de notificaciones.
         $user = User::find($fondo4->user_id);
         $municipio = User::find($fondo4->m_user_id);
-        $user->notify(new FondoCFDIUpdateNotification(4, $municipio->name, $municipio->id));
+        $user->notify(new FondoCFDIUpdateNotification(4, 'FORTAMUN', $municipio->name, $municipio->id));
 
         alert()->success('Exito!', 'El CFDI ha sido guardado y enviado a revisión con éxito.');
         return redirect()->back();

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Fondo 3. Detalles.')
+@section('title', 'FAIS. Detalles.')
 
 @section('content_header')
-    <h1>Fondo 3. / {{$fondo3->anio}} / {{$fondo3->month}}</h1>
+    <h1>FAIS. / {{$fondo3->anio}} / {{$fondo3->month}}</h1>
 @stop
 
 @section('content')
@@ -82,7 +82,7 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <a download="Fondo3_{{$fondo3->anio}}_{{$fondo3->month}}" href="{{Storage::url($fondo3->file_user)}}" class="btn btn-secondary btn-block"><b>Descargar PDF.</b></a>
+                        <a download="FAIS_{{$fondo3->anio}}_{{$fondo3->month}}" href="{{Storage::url($fondo3->file_user)}}" class="btn btn-secondary btn-block"><b>Descargar PDF.</b></a>
                     </div>
                 </div>
                 <!-- /.card -->

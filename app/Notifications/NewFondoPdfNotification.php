@@ -17,8 +17,9 @@ class NewFondoPdfNotification extends Notification
      *
      * @return void
      */
-    public function __construct($fondo)
+    public function __construct($num, $fondo)
     {
+        $this->num = $num;
         $this->fondo = $fondo;
     }
 
@@ -42,11 +43,11 @@ class NewFondoPdfNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject(Lang::get('Fondo ' . $this->fondo. ': Nuevo comprobante de pago disponible.'))
+            ->subject(Lang::get($this->fondo. ': Nuevo comprobante de pago disponible.'))
             ->greeting(Lang::get('¡Hola ' . $notifiable->name . '!'))
-            ->line(Lang::get('Recibes este email porque existe un nuevo comprobante de pago para fondo ' . $this->fondo . '.'))
+            ->line(Lang::get('Recibes este email porque existe un nuevo comprobante de pago para ' . $this->fondo . '.'))
             ->line(Lang::get('Debes subir tu CFDI acorde a este comprobante de pago.'))
-            ->action(Lang::get('Lista de comprobantes de pago.'), url(route('fondo'. $this->fondo .'.index')))
+            ->action(Lang::get('Lista de comprobantes de pago.'), url(route('fondo'. $this->num .'.index')))
             ->line(Lang::get('Es necesario subir tu CFDI en tiempo y forma.'))
             ->salutation(Lang::get('¡Saludos!'));
     }

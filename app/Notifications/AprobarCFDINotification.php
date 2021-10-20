@@ -17,8 +17,9 @@ class AprobarCFDINotification extends Notification
      *
      * @return void
      */
-    public function __construct($fondo, $id)
+    public function __construct($num, $fondo, $id)
     {
+        $this->num = $num;
 		$this->fondo = $fondo;
 		$this->id = $id;
     }
@@ -43,10 +44,10 @@ class AprobarCFDINotification extends Notification
     public function toMail($notifiable)
     {
 		return (new MailMessage)
-			->subject(Lang::get('Fondo ' . $this->fondo. ': Tu CFDI ha sido aprobado.'))
+			->subject(Lang::get($this->fondo. ': Tu CFDI ha sido aprobado.'))
 			->greeting(Lang::get('¡Hola ' . $notifiable->name . '!'))
 			->line(Lang::get('Recibes este email porque tu CFDI ha sido aprobado por un administrador.'))
-			->action(Lang::get('Ver el estado del CFDI.'), url(route('fondo'. $this->fondo .'.verCFDI', $this->id)))
+			->action(Lang::get('Ver el estado del CFDI.'), url(route('fondo'. $this->num .'.verCFDI', $this->id)))
 			->salutation(Lang::get('¡Saludos!'));
     }
 

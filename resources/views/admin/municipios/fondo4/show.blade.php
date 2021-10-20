@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Fondo 4. Detalles.')
+@section('title', 'FORTAMUN. Detalles.')
 
 @section('content_header')
-    <h1>Fondo 4. / {{$fondo4->anio}} / {{$fondo4->month}}</h1>
+    <h1>FORTAMUN. / {{$fondo4->anio}} / {{$fondo4->month}}</h1>
 @stop
 
 @section('content')

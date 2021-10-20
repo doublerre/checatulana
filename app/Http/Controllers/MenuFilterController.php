@@ -25,8 +25,8 @@ class MenuFilterController extends Controller
                 $event->menu->remove('subcategorias');
                 $event->menu->remove('articulos_review');
                 $event->menu->remove('municipios');
-                $event->menu->remove('fondo3');
-                $event->menu->remove('fondo4');
+                $event->menu->remove('fais');
+                $event->menu->remove('fortamun');
             });
         }else if($user->role == "MUNICIPIO"){
             $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
@@ -47,33 +47,33 @@ class MenuFilterController extends Controller
                 $red_fondo4 = $this->notifications_red_fondo4();
                 $blue_fondo4 = $this->notifications_blue_fondo4();
 
-                $event->menu->remove('fondo3');
-                $event->menu->remove('fondo4');
+                $event->menu->remove('fais');
+                $event->menu->remove('fortamun');
                 
                 //Numero de CFDI emulando un sistema de notificaciones
                 $event->menu->addAfter('municipios', [
-                    'key' => 'fondo3',
-                    'text' => 'Fondo III',
-                    'url' => 'fondo-iii',
+                    'key' => 'fais',
+                    'text' => 'FAIS',
+                    'url' => 'fais',
                     'icon' => 'fab fa-monero',
                     'submenu' => [
                         [
                             'text'  => 'Pendienes:',
-                            'url' => 'fondo-iii',
+                            'url' => 'fais',
                             'icon' => 'fab fa-monero',
                             'label' => $yellow,
                             'label_color' => 'warning',
                         ],
                         [
                             'text'  => 'Rechazados:',
-                            'url' => 'fondo-iii',
+                            'url' => 'fais',
                             'icon' => 'fab fa-monero',
                             'label' => $red,
                             'label_color' => 'danger',
                         ],
                         [
                             'text'  => 'En revision:',
-                            'url' => 'fondo-iii',
+                            'url' => 'fais',
                             'icon' => 'fab fa-monero',
                             'label' => $blue,
                             'label_color' => 'info',
@@ -81,29 +81,29 @@ class MenuFilterController extends Controller
                     ],
                 ]);
 
-                $event->menu->addAfter('fondo3', [
-                    'key' => 'fondo4',
-                    'text' => 'Fondo IV',
-                    'url' => 'fondo-iv',
+                $event->menu->addAfter('fais', [
+                    'key' => 'fortamun',
+                    'text' => 'FORTAMUN',
+                    'url' => 'fortamun',
                     'icon' => 'fab fa-monero',
                     'submenu' => [
                         [
                             'text'  => 'Pendienes:',
-                            'url' => 'fondo-iv',
+                            'url' => 'fortamun',
                             'icon' => 'fab fa-monero',
                             'label' => $yellow_fondo4,
                             'label_color' => 'warning',
                         ],
                         [
                             'text'  => 'Rechazados:',
-                            'url' => 'fondo-iv',
+                            'url' => 'fortamun',
                             'icon' => 'fab fa-monero',
                             'label' => $red_fondo4,
                             'label_color' => 'danger',
                         ],
                         [
                             'text'  => 'En revision:',
-                            'url' => 'fondo-iv',
+                            'url' => 'fortamun',
                             'icon' => 'fab fa-monero',
                             'label' => $blue_fondo4,
                             'label_color' => 'info',

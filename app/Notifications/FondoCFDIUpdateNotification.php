@@ -17,8 +17,9 @@ class FondoCFDIUpdateNotification extends Notification
      *
      * @return void
      */
-    public function __construct($fondo, $nombre, $id)
+    public function __construct($num, $fondo, $nombre, $id)
     {
+        $this->num = $num;
         $this->fondo = $fondo;
         $this->nombre = $nombre;
         $this->id = $id;
@@ -44,11 +45,11 @@ class FondoCFDIUpdateNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject(Lang::get('Fondo ' . $this->fondo. ': Nuevo CFDI en espera de revisión.'))
+            ->subject(Lang::get($this->fondo. ': Nuevo CFDI en espera de revisión.'))
             ->greeting(Lang::get('¡Hola ' . $notifiable->name . '!'))
-            ->line(Lang::get('Recibes este email porque el municipio de '. $this->nombre .' subio un nuevo CFDI para fondo ' . $this->fondo . '.'))
+            ->line(Lang::get('Recibes este email porque el municipio de '. $this->nombre .' subio un nuevo CFDI para ' . $this->fondo . '.'))
             ->line(Lang::get('Debes validar que este CFDI sea correcto.'))
-            ->action(Lang::get('Historial de CFDIs de ' . $this->nombre . '.'), url(route('fondo'. $this->fondo .'.history', $this->id)))
+            ->action(Lang::get('Historial de CFDIs de ' . $this->nombre . '.'), url(route('fondo'. $this->num .'.history', $this->id)))
             ->line(Lang::get('Es necesario validar el CFDI en tiempo y forma.'))
             ->salutation(Lang::get('¡Saludos!'));
     }

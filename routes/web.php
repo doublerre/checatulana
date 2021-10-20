@@ -77,25 +77,25 @@ Route::group(["middleware" => ["auth", 'verified'], "as" => "logos."], function(
 Route::put('posts/{id}/send_review', 'Admin\PostController@send_review')->name('post.send_review');
 
 Route::group(["middleware" => ["auth", "verified"], "as" => "fondo3."], function(){
-   Route::get('fondo-iii', 'Admin\Fondo3Controller@index')->name('index');
-   Route::get('fondo-iii/getUsers', 'Admin\Fondo3Controller@getUsers')->name('getUsers');
-   Route::get('fondo-iii/{id}/history', 'Admin\Fondo3Controller@history')->name('history');
-   Route::get('fondo-iii/{id}/getCfdis', 'Admin\Fondo3Controller@getCFDIs')->name('cfdis');
-   Route::post('fondo-iii/uploadCFDIsUA', 'Admin\Fondo3Controller@uploadCFDIsUA')->name('uploadCFDIsUA');
-   Route::put('fondo-iii/{id}/aprobar-cfdi', 'Admin\Fondo3Controller@aprobarCFDI')->name('aprobarCFDI');
-   Route::put('fondo-iii/rechazar-cfdi', 'Admin\Fondo3Controller@rechazarCFDI')->name('rechazarCFDI');
-   Route::get('fondo-iii/{id}/verCFDI', 'Admin\Fondo3Controller@verCFDI')->name('verCFDI');
-   Route::put('fondo-iii/{id}/uploadCFDIsUM', 'Admin\Fondo3Controller@uploadCFDIsUM')->name('uploadCFDIsUM');
+   Route::get('fais', 'Admin\Fondo3Controller@index')->name('index');
+   Route::get('fais/getUsers', 'Admin\Fondo3Controller@getUsers')->name('getUsers');
+   Route::get('fais/{id}/history', 'Admin\Fondo3Controller@history')->name('history');
+   Route::get('fais/{id}/getCfdis', 'Admin\Fondo3Controller@getCFDIs')->name('cfdis');
+   Route::post('fais/uploadCFDIsUA', 'Admin\Fondo3Controller@uploadCFDIsUA')->name('uploadCFDIsUA');
+   Route::put('fais/{id}/aprobar-cfdi', 'Admin\Fondo3Controller@aprobarCFDI')->name('aprobarCFDI');
+   Route::put('fais/rechazar-cfdi', 'Admin\Fondo3Controller@rechazarCFDI')->name('rechazarCFDI');
+   Route::get('fais/{id}/verCFDI', 'Admin\Fondo3Controller@verCFDI')->name('verCFDI');
+   Route::put('fais/{id}/uploadCFDIsUM', 'Admin\Fondo3Controller@uploadCFDIsUM')->name('uploadCFDIsUM');
 });
 
 Route::group(["middleware" => ["auth", "verified"], "as" => "fondo4."], function(){
-   Route::get('fondo-iv', 'Admin\Fondo4Controller@index')->name('index');
-   Route::get('fondo-iv/getUsers', 'Admin\Fondo4Controller@getUsers')->name('getUsers');
-   Route::get('fondo-iv/{id}/history', 'Admin\Fondo4Controller@history')->name('history');
-   Route::get('fondo-iv/{id}/getCfdis', 'Admin\Fondo4Controller@getCFDIs')->name('cfdis');
-   Route::post('fondo-iv/uploadCFDIsUA', 'Admin\Fondo4Controller@uploadCFDIsUA')->name('uploadCFDIsUA');
-   Route::put('fondo-iv/{id}/aprobar-cfdi', 'Admin\Fondo4Controller@aprobarCFDI')->name('aprobarCFDI');
-   Route::put('fondo-iv/rechazar-cfdi', 'Admin\Fondo4Controller@rechazarCFDI')->name('rechazarCFDI');
-   Route::get('fondo-iv/{id}/verCFDI', 'Admin\Fondo4Controller@verCFDI')->name('verCFDI');
-   Route::put('fondo-iv/{id}/uploadCFDIsUM', 'Admin\Fondo4Controller@uploadCFDIsUM')->name('uploadCFDIsUM');
+   Route::get('fortamun', 'Admin\Fondo4Controller@index')->name('index');
+   Route::get('fortamun/getUsers', 'Admin\Fondo4Controller@getUsers')->name('getUsers');
+   Route::get('fortamun/{id}/history', 'Admin\Fondo4Controller@history')->name('history');
+   Route::get('fortamun/{id}/getCfdis', 'Admin\Fondo4Controller@getCFDIs')->name('cfdis');
+   Route::post('fortamun/uploadCFDIsUA', 'Admin\Fondo4Controller@uploadCFDIsUA')->name('uploadCFDIsUA');
+   Route::put('fortamun/{id}/aprobar-cfdi', 'Admin\Fondo4Controller@aprobarCFDI')->name('aprobarCFDI');
+   Route::put('fortamun/rechazar-cfdi', 'Admin\Fondo4Controller@rechazarCFDI')->name('rechazarCFDI');
+   Route::get('fortamun/{id}/verCFDI', 'Admin\Fondo4Controller@verCFDI')->name('verCFDI');
+   Route::put('fortamun/{id}/uploadCFDIsUM', 'Admin\Fondo4Controller@uploadCFDIsUM')->name('uploadCFDIsUM');
 });

@@ -17,8 +17,9 @@ class RechazarCFDINotification extends Notification
      *
      * @return void
      */
-    public function __construct($fondo, $id, $message)
+    public function __construct($num, $fondo, $id, $message)
     {
+        $this->num = $num;
         $this->fondo = $fondo;
         $this->id = $id;
         $this->message = $message;
@@ -44,12 +45,12 @@ class RechazarCFDINotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-			->subject(Lang::get('Fondo ' . $this->fondo. ': Tu CFDI ha sido rechazado.'))
+			->subject(Lang::get($this->fondo. ': Tu CFDI ha sido rechazado.'))
 			->greeting(Lang::get('¡Hola ' . $notifiable->name . '!'))
 			->line(Lang::get('Recibes este email porque tu CFDI ha sido rechazado.'))
             ->line(Lang::get('Un usuario ha dejado el siguiente comentario: ' . $this->message))
             ->line(Lang::get('Debes de corregir tu CFDI y volverlo a subir a la plataforma.'))
-			->action(Lang::get('Ver el estado del CFDI.'), url(route('fondo'. $this->fondo .'.verCFDI', $this->id)))
+			->action(Lang::get('Ver el estado del CFDI.'), url(route('fondo'. $this->num .'.verCFDI', $this->id)))
 			->salutation(Lang::get('¡Saludos!'));
     }
 

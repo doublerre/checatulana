@@ -91,7 +91,7 @@ class Fondo3Controller extends Controller
 
         //Metodo para enviar el correo electronico al municipio.
         $user = User::find($request->m_user_id);
-        $user->notify(new NewFondoPdfNotification(3));
+        $user->notify(new NewFondoPdfNotification(3, 'FAIS'));
 
         alert()->success('Exito!', 'El pdf ha sido guardado con éxito.');
         return redirect()->back();
@@ -104,7 +104,7 @@ class Fondo3Controller extends Controller
         $fondo3->save();
 
         $user = User::find($fondo3->m_user_id);
-        $user->notify(new AprobarCFDINotification(3, $id));
+        $user->notify(new AprobarCFDINotification(3, 'FAIS', $id));
         
         alert()->success('Exito!', 'El CFDI ha sido aprobado.');
         return redirect()->back();
@@ -124,7 +124,7 @@ class Fondo3Controller extends Controller
         $comment->save();
 
         $user = User::find($fondo3->m_user_id);
-        $user->notify(new RechazarCFDINotification(3, $fondo3->id, $request->comment));
+        $user->notify(new RechazarCFDINotification(3, 'FAIS', $fondo3->id, $request->comment));
         
         alert()->success('Exito!', 'El comentario ha sido guardado.');
         return redirect()->back();
@@ -158,7 +158,7 @@ class Fondo3Controller extends Controller
         //Espacio para el envio de notificaciones.
         $user = User::find($fondo3->user_id);
         $municipio = User::find($fondo3->m_user_id);
-        $user->notify(new FondoCFDIUpdateNotification(3, $municipio->name, $municipio->id));
+        $user->notify(new FondoCFDIUpdateNotification(3, 'FAIS', $municipio->name, $municipio->id));
 
         alert()->success('Exito!', 'El CFDI ha sido guardado y enviado a revisión con éxito.');
         return redirect()->back();

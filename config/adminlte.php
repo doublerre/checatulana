@@ -314,15 +314,15 @@ return [
             'key' => 'municipios'
         ],
         [
-            'key' => 'fondo3',
-            'text' => 'Fondo III',
-            'url' => 'fondo-iii',
+            'key' => 'fais',
+            'text' => 'FAIS',
+            'url' => 'fais',
             'icon' => 'fab fa-monero',
         ],
         [
-            'key' => 'fondo4',
-            'text' => 'Fondo IV',
-            'url' => 'fondo-iv',
+            'key' => 'fortamun',
+            'text' => 'FORTAMUN',
+            'url' => 'fortamun',
             'icon' => 'fab fa-monero'
         ],
         /*['header' => 'labels'],
