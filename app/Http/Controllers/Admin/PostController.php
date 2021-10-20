@@ -72,14 +72,17 @@ class PostController extends Controller
      */
     public function store(PostStoreRequest $request)
     {
-        $post = Post::create($request->all());
+        //$post = Post::create($request->all());
+        $post = new Post($request->all());
         //$this->authorize('pass', $post);
 
         //IMAGE 
         if($request->file('image')){
-            $path = Storage::disk('public')->put('image',  $request->file('image'));
-            $post->fill(['file' => asset($path)])->save();
+            $path =  $request->file('image')->store('public/posts');
+            $post->file = Storage::url($path);
         }
+
+        $post->save();
         //TAGS
        // $post->subcategories()->attach($request->get('subcategories'));
 

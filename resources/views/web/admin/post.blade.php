@@ -17,7 +17,7 @@
 
                 <div class="card-body">
                     @if($post->file)
-                        <img src="{{ $post->file }}" class="img-responsive" style="width: 740px">
+                        <img src="{{$post->file}}" class="img-responsive" style="width: 740px">
                     @endif
                     
                     {!! $post->excerpt !!}
