@@ -84,9 +84,8 @@ return [
     |
     */
 
-    'username' => 'checatulana@gmail.com',
-
-    'password' => '58875ee34c8d24082fe5282c61ac07e6ce9606f9c76e7b45da6f21d366a26c0c',
+    'username' => env('MAIL_USERNAME'),
+    'password' => env('MAIL_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------

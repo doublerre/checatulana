@@ -82,7 +82,7 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <a download="Fondo4_{{$fondo4->anio}}_{{$fondo4->month}}" href="{{Storage::url($fondo4->file_user)}}" class="btn btn-secondary btn-block"><b>Descargar PDF.</b></a>
+                        <a download="FORTAMUN{{$fondo4->anio}}_{{$fondo4->month}}" href="{{Storage::url($fondo4->file_user)}}" class="btn btn-secondary btn-block"><b>Descargar PDF.</b></a>
                     </div>
                 </div>
                 <!-- /.card -->
