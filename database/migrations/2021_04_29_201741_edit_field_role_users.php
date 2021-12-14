@@ -25,6 +25,8 @@ class EditFieldRoleUsers extends Migration
      */
     public function down()
     {
-        $table->dropColumn('role');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');
+        });
     }
 }
